@@ -1,8 +1,5 @@
-package DB;
+package servlet.user;
 
-<<<<<<< HEAD
-public class DBManager {
-=======
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class DBManager
+ * Servlet implementation class UserRegistInput
  */
-@WebServlet("/DBManager")
-public class DBManager extends HttpServlet {
+@WebServlet("/UserRegistInput")
+public class UserRegistInput extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DBManager() {
+    public UserRegistInput() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,6 +37,5 @@ public class DBManager extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
->>>>>>> 007d331458d588eb7e761b99ef8a585a248b3617
 
 }
