@@ -62,4 +62,10 @@ public class Constants {
 	/** 生年月日の値が予期しない値時のエラーメッセージ */
 	public static final String BIRTHDAY_MISSMATCH = "正しい日付を入力してください。";
 
+	/** 電話番号が未入力のエラーメッセージ */
+	public static final String TEL_EMPTY = "電話番号を入力してください。";
+
+	/** 電話番号の入力文字が8文字えない場合のエラーメッセージ */
+	public static final String TEL_LENGTH_MISMATCH = "電話番号は8字で入力してください。";
+
 }

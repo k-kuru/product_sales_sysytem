@@ -8,8 +8,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.validation.Validator;
 
-import org.apache.catalina.User;
+import bean.User;
+
+
 
 /**
  * Servlet implementation class UserRegistInput
@@ -31,10 +34,10 @@ public class UserRegistCheck extends HttpServlet {
 		user.setUserId(userId);
 		user.setUserName(userName);
 		user.setPass(pass);
-		user.setBirthday(birthday);
-		user.setGender(gender);
-		user.setTel(tel);
-		user.userAddress(address);
+		user.setBirthDay(birthday);
+		user.setGender(Integer.parseInt(gender));
+		user.setTel(Integer.parseInt(tel));
+		user.setAddress(address);
 
 		// 入力チェック
 		List<String> errorMessageList = Validator.makeInputErrorMessageList(user);

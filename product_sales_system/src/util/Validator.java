@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import bean.User;
+
 /**
  * エラーに関する処理をまとめたクラス
  */
@@ -148,18 +150,32 @@ public class Validator {
 	public static List<String> makeInputErrorMessageList(User userBean) {
 		List<String> errorMessageList = new ArrayList<String>();
 
+		// ****** ユーザIDのチェック ******
+		// 未入力チェック
+		if (isEmpty(userBean.getUserId())) {
+			errorMessageList.add(Constants.USERID_EMPTY);
+		} else {
+			// 桁数チェック
+			if (overLength(userBean.getUserId(), 20)) {
+				errorMessageList.add(Constants.USERID_LENGTH_OVER);
+				// 数値チェック
+			} else if (!IsNumberOrAlphabet(userBean.getUserId())) {
+				errorMessageList.add(Constants.USERID_MISSMATCH);
+			}
+		}
+
 		// ****** パスワードのチェック ******
 		// 未入力チェック
-		if (isEmpty(userBean.getUserPass())) {
+		if (isEmpty(userBean.getPass())) {
 			errorMessageList.add(Constants.PASSWORD_EMPTY);
 		} else {
 			// 桁数チェック
-			if (overLength(userBean.UserEmpPass(), 16)) {
+			if (overLength(userBean.getPass(), 16)) {
 				errorMessageList.add(Constants.PASSWORD_LENGTH_OVER);
 			}
 		}
 
-		// ****** 社員名のチェック ******
+		// ****** ユーザ名のチェック ******
 		// 未入力チェック
 		if (isEmpty(userBean.getUserName())) {
 			errorMessageList.add(Constants.NAME_EMPTY);
@@ -172,25 +188,37 @@ public class Validator {
 
 		// ****** 住所のチェック ******
 		// 未入力チェック
-		if (isEmpty(employeeBean.getAddress())) {
+		if (isEmpty(userBean.getAddress())) {
 			errorMessageList.add(Constants.ADDRESS_EMPTY);
 		} else {
 			// 桁数チェック
-			if (overLength(employeeBean.getAddress(), 60)) {
+			if (overLength(userBean.getAddress(), 60)) {
 				errorMessageList.add(Constants.ADDRESS_LENGTH_OVER);
 			}
 		}
 
 		// ****** 生年月日のチェック ******
 		// 未入力チェック
-		if (isEmpty(employeeBean.getBirthday())) {
+		if (isEmpty(userBean.getBirthDay())) {
 			errorMessageList.add(Constants.BIRTHDAY_EMPTY);
 		} else {
 			// 日付の妥当性チェック
-			if (!isDate(employeeBean.getBirthday())) {
+			if (!isDate(userBean.getBirthDay())) {
 				errorMessageList.add(Constants.BIRTHDAY_MISSMATCH);
+			}
+		}
+
+		// ****** 電話番号のチェック ******
+		// 未入力チェック
+		if (String.valueOf(userBean.getTel()).length() == 0) {
+			errorMessageList.add(Constants.TEL_EMPTY);
+		} else {
+			// 桁数チェック
+			if (String.valueOf(userBean.getTel()).length() > 11) {
+				errorMessageList.add(Constants.TEL_LENGTH_MISMATCH);
 			}
 		}
 
 		return errorMessageList;
 	}
+}
