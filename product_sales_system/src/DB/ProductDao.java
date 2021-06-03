@@ -26,7 +26,7 @@ public class ProductDao  {
 				Product product = new Product();
 				product.setProductId(rs.getString("product_id"));
 				product.setProductName(rs.getString("product_name"));
-				product.setProductId(rs.getString("product_explain"));
+				product.setProductExplain(rs.getString("product_explain"));
 				product.setPrice(rs.getInt("price"));
 				product.setStock(rs.getInt("stock"));
 				product.setDeleteFlag(rs.getInt("delete_flag"));
@@ -58,7 +58,7 @@ public class ProductDao  {
 				product = new Product();
 				product.setProductId(rs.getString("product_id"));
 				product.setProductName(rs.getString("product_name"));
-				product.setProductId(rs.getString("product_explain"));
+				product.setProductExplain(rs.getString("product_explain"));
 				product.setPrice(rs.getInt("price"));
 				product.setStock(rs.getInt("stock"));
 				product.setDeleteFlag(rs.getInt("delete_flag"));
@@ -88,7 +88,7 @@ public class ProductDao  {
 				Product product = new Product();
 				product.setProductId(rs.getString("product_id"));
 				product.setProductName(rs.getString("product_name"));
-				product.setProductId(rs.getString("product_explain"));
+				product.setProductExplain(rs.getString("product_explain"));
 				product.setPrice(rs.getInt("price"));
 				product.setStock(rs.getInt("stock"));
 				product.setDeleteFlag(rs.getInt("delete_flag"));
