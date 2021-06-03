@@ -179,11 +179,11 @@ public class Validator {
 		// ****** ユーザ名のチェック ******
 		// 未入力チェック
 		if (isEmpty(userBean.getUserName())) {
-			errorMessageList.add(Constants.NAME_EMPTY);
+			errorMessageList.add(Constants.USER_NAME_EMPTY);
 		} else {
 			// 桁数チェック
 			if (overLength(userBean.getUserName(), 30)) {
-				errorMessageList.add(Constants.NAME_LENGTH_OVER);
+				errorMessageList.add(Constants.USER_NAME_LENGTH_OVER);
 			}
 		}
 
@@ -226,71 +226,55 @@ public class Validator {
 	public static List<String> makeProductInputErrorMessageList(Product productBean) {
 		List<String> errorMessageList = new ArrayList<String>();
 
-		// ****** ユーザIDのチェック ******
+		// ****** 商品IDのチェック ******
 		// 未入力チェック
-		if (isEmpty(userBean.getUserId())) {
-			errorMessageList.add(Constants.USERID_EMPTY);
+		if (isEmpty(productBean.getProductId())) {
+			errorMessageList.add(Constants.PRODUCT_ID_EMPTY);
 		} else {
 			// 桁数チェック
-			if (overLength(userBean.getUserId(), 20)) {
-				errorMessageList.add(Constants.USERID_LENGTH_OVER);
+			if (overLength(productBean.getProductId(), 60)) {
+				errorMessageList.add(Constants.PRODUCT_ID_LENGTH_OVER);
 				// 数値チェック
-			} else if (isNumberOrAlphabet(userBean.getUserId())) {
-				errorMessageList.add(Constants.USERID_MISSMATCH);
+			} else if (isNumberOrAlphabet(productBean.getProductId())) {
+				errorMessageList.add(Constants.PRODUCT_ID_MISSMATCH);
 			}
 		}
 
-		// ****** パスワードのチェック ******
+		// ****** 商品名のチェック ******
 		// 未入力チェック
-		if (isEmpty(userBean.getPass())) {
-			errorMessageList.add(Constants.PASSWORD_EMPTY);
+		if (isEmpty(productBean.getProductName())) {
+			errorMessageList.add(Constants. PRODUCT_NAME_EMPTY);
 		} else {
 			// 桁数チェック
-			if (overLength(userBean.getPass(), 16)) {
-				errorMessageList.add(Constants.PASSWORD_LENGTH_OVER);
+			if (overLength(productBean.getProductName(), 140)) {
+				errorMessageList.add(Constants.PRODUCT_NAME_LENGTH_OVER);
 			}
 		}
 
-		// ****** ユーザ名のチェック ******
-		// 未入力チェック
-		if (isEmpty(userBean.getUserName())) {
-			errorMessageList.add(Constants.NAME_EMPTY);
-		} else {
-			// 桁数チェック
-			if (overLength(userBean.getUserName(), 30)) {
-				errorMessageList.add(Constants.NAME_LENGTH_OVER);
-			}
+		// ****** 商品説明のチェック ******
+		// 桁数チェック
+		if (overLength(productBean.getAddress(), 60)) {
+			errorMessageList.add(Constants.ADDRESS_LENGTH_OVER);
 		}
 
-		// ****** 住所のチェック ******
+		// ****** 商品の値段のチェック ******
 		// 未入力チェック
-		if (isEmpty(userBean.getAddress())) {
-			errorMessageList.add(Constants.ADDRESS_EMPTY);
-		} else {
-			// 桁数チェック
-			if (overLength(userBean.getAddress(), 60)) {
-				errorMessageList.add(Constants.ADDRESS_LENGTH_OVER);
-			}
-		}
-
-		// ****** 生年月日のチェック ******
-		// 未入力チェック
-		if (isEmpty(userBean.getBirthDay())) {
+		if (isEmpty(productBean.getBirthDay())) {
 			errorMessageList.add(Constants.BIRTHDAY_EMPTY);
 		} else {
-			// 日付の妥当性チェック
-			if (!isDate(userBean.getBirthDay())) {
+			// チェック
+			if (String.valueOf(productBean.getPrice()).length() > 20) {
 				errorMessageList.add(Constants.BIRTHDAY_MISSMATCH);
 			}
 		}
 
-		// ****** 電話番号のチェック ******
+		// ****** 在庫数のチェック ******
 		// 未入力チェック
-		if (String.valueOf(userBean.getTel()).length() == 0) {
+		if (String.valueOf(productBean.getStock()).length() == 0) {
 			errorMessageList.add(Constants.TEL_EMPTY);
 		} else {
 			// 桁数チェック
-			if (String.valueOf(userBean.getTel()).length() != 11) {
+			if (String.valueOf(productBean.getStock()).length() != 11) {
 				errorMessageList.add(Constants.TEL_LENGTH_MISMATCH);
 			}
 		}
