@@ -63,7 +63,7 @@ public class Constants {
 	public static final String TEL_MISMATCH = "電話番号は数字を入力してください。";
 
 	/** 電話番号の入力文字が8文字でない場合のエラーメッセージ */
-	public static final String TEL_LENGTH_MISMATCH = "電話番号は8字で入力してください。";
+	public static final String TEL_LENGTH_MISMATCH = "電話番号は11桁で入力してください。";
 
 	/** 商品IDの桁数が5桁を超えた場合のチェックエラーメッセージ */
 	public static final String PRODUCT_ID_LENGTH_OVER = "商品IDは60桁までで入力してください。";

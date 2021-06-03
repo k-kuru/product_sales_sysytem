@@ -139,7 +139,7 @@ public class Validator {
 			if (overLength(id, 20)) {
 				errorMessageList.add(Constants.USERID_LENGTH_OVER);
 				// 数値チェック
-			} else if (isNumberOrAlphabet(id)) {
+			} else if (!isNumberOrAlphabet(id)) {
 				errorMessageList.add(Constants.USERID_MISSMATCH);
 			}
 		}
@@ -176,7 +176,7 @@ public class Validator {
 			if (overLength(userBean.getUserId(), 20)) {
 				errorMessageList.add(Constants.USERID_LENGTH_OVER);
 				// 数値チェック
-			} else if (isNumberOrAlphabet(userBean.getUserId())) {
+			} else if (!isNumberOrAlphabet(userBean.getUserId())) {
 				errorMessageList.add(Constants.USERID_MISSMATCH);
 			}
 		}
@@ -235,7 +235,7 @@ public class Validator {
 				errorMessageList.add(Constants.TEL_MISMATCH);
 			} else {
 				// 桁数チェック
-				if (justLength(userBean.getTel(), 8)) {
+				if (!justLength(userBean.getTel(), 11)) {
 					errorMessageList.add(Constants.TEL_LENGTH_MISMATCH);
 				}
 			}
@@ -256,7 +256,7 @@ public class Validator {
 			if (overLength(productBean.getProductId(), 60)) {
 				errorMessageList.add(Constants.PRODUCT_ID_LENGTH_OVER);
 				// 数値チェック
-			} else if (isNumberOrAlphabet(productBean.getProductId())) {
+			} else if (!isNumberOrAlphabet(productBean.getProductId())) {
 				errorMessageList.add(Constants.PRODUCT_ID_MISSMATCH);
 			}
 		}
