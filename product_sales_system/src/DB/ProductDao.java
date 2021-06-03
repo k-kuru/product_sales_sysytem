@@ -9,7 +9,7 @@ import java.util.List;
 
 import bean.Product;
 
-public class ProductDao  {
+public class ProductDao {
 
 	/**
 	 * productテーブルの全データを取得
@@ -31,15 +31,16 @@ public class ProductDao  {
 				product.setStock(rs.getString("stock"));
 				product.setDeleteFlag(rs.getInt("delete_flag"));
 
-               productList.add(product);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            DBManager.close(ps, con);
-        }
-        return productList;
+				productList.add(product);
 			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(ps, con);
+		}
+		return productList;
+	}
+
 	/**
 	 * 商品詳細表示
 	 * 商品IDで検索
@@ -62,14 +63,15 @@ public class ProductDao  {
 				product.setPrice(rs.getString("price"));
 				product.setStock(rs.getString("stock"));
 				product.setDeleteFlag(rs.getInt("delete_flag"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            DBManager.close(ps, con);
-        }
-        return product;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(ps, con);
+		}
+		return product;
 	}
+
 	/**
 	 * 商品名で検索
 	 * 一致する名前があればデータを取得
@@ -80,11 +82,12 @@ public class ProductDao  {
 		List<Product> productList = new ArrayList<Product>();
 		try {
 			con = DBManager.getConnection();
-			ps = con.prepareStatement("SELECT * FROM product WHERE product_name like ? ,"
-					+ " delete_flag = 0 ORDER BY product_name ASC");
+			ps = con.prepareStatement(
+					"FROM product WHERE product_name like ? AND delete_flag = 0 ORDER BY product_name ASC");
 			ps.setString(1, "%" + product_name + "%");
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
+				System.out.println("1");
 				Product product = new Product();
 				product.setProductId(rs.getString("product_id"));
 				product.setProductName(rs.getString("product_name"));
@@ -93,14 +96,15 @@ public class ProductDao  {
 				product.setStock(rs.getString("stock"));
 				product.setDeleteFlag(rs.getInt("delete_flag"));
 				productList.add(product);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            DBManager.close(ps, con);
-        }
-        return productList;
 			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(ps, con);
+		}
+		return productList;
+	}
+
 	/**
 	 * productテーブルにデータを登録
 	 */
@@ -120,58 +124,58 @@ public class ProductDao  {
 			ps.setString(5, product.getStock());
 			ps.executeUpdate();
 
-		}
-		catch (SQLException e) {
-        e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
 		} finally {
-        DBManager.close(ps, con);
+			DBManager.close(ps, con);
 		}
 	}
+
 	/**
 	 * productテーブルのデータを更新
 	 */
 	public static void updateProduct(Product product) {
 
-        Connection con = null;
-        PreparedStatement ps = null;
+		Connection con = null;
+		PreparedStatement ps = null;
 
-        try {
-            con = DBManager.getConnection();
-            ps = con.prepareStatement("UPDATE product SET product_name = ?, "
-            		+ "product_explain = ?, price = ?, stock = ? WHERE product_id = ?");
+		try {
+			con = DBManager.getConnection();
+			ps = con.prepareStatement("UPDATE product SET product_name = ?, "
+					+ "product_explain = ?, price = ?, stock = ? WHERE product_id = ?");
 
+			ps.setString(1, product.getProductName());
+			ps.setString(2, product.getProductExplain());
+			ps.setString(3, product.getPrice());
+			ps.setString(4, product.getStock());
+			ps.setString(5, product.getProductId());
 
-            ps.setString(1, product.getProductName());
-            ps.setString(2, product.getProductExplain());
-            ps.setString(3, product.getPrice());
-            ps.setString(4, product.getStock());
-            ps.setString(5, product.getProductId());
-
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            DBManager.close(ps, con);
-        }
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(ps, con);
+		}
 	}
-    /**
+
+	/**
 	 * productテーブルのデータを論理削除
 	 */
-	 public static void deleteProduct(String product_id) {
-         Connection con = null;
-         PreparedStatement ps = null;
+	public static void deleteProduct(String product_id) {
+		Connection con = null;
+		PreparedStatement ps = null;
 
-         try {
-             con = DBManager.getConnection();
-             ps = con.prepareStatement("UPDATE FROM product SET delete_flag = 1 WHERE product_id = ?");
+		try {
+			con = DBManager.getConnection();
+			ps = con.prepareStatement("UPDATE FROM product SET delete_flag = 1 WHERE product_id = ?");
 
-             ps.setString(1, product_id);
+			ps.setString(1, product_id);
 
-             ps.executeUpdate();
-         } catch (SQLException e) {
-             e.printStackTrace();
-         } finally {
-             DBManager.close(ps, con);
-         }
-	 }
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(ps, con);
+		}
+	}
 }
