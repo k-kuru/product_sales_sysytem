@@ -11,6 +11,9 @@
 	<%@include file="/jsp/header.jsp"%>
 
 	<h2>商品登録入力画面</h2>
+	<c:forEach var="error" items="${errorMessageList}">
+		${error}
+	</c:forEach>
 	<p>登録する情報を入力してください。</p>
 		<form action="<%=request.getContextPath()%>/ProductRegistCheck" method="post">
 					<div class="form">
