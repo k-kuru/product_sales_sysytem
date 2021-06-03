@@ -8,7 +8,7 @@
 	<div class="content">
 		<div class="title">商品購入システム</div>
 		<div class="user_info">
-			ようこそ、<a href="<%=request.getContextPath() %>/UserUpdateInput"><%=user.getUserName() %>></a>さん　　　　
+			ようこそ、[ここにユーザーネーム]さん　　　　
 			カート　　　　
 			<a href="<%=request.getContextPath()%>/Logout">ログアウト</a>
 		</div>
