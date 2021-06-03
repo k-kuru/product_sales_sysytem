@@ -36,7 +36,7 @@ public class UserRegistCheck extends HttpServlet {
 		user.setPass(pass);
 		user.setBirthDay(birthday);
 		user.setGender(Integer.parseInt(gender));
-		user.setTel(Integer.parseInt(tel));
+		user.setTel(tel);
 		user.setAddress(address);
 
 		// 入力チェック

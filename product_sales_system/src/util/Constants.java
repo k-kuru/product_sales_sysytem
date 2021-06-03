@@ -9,22 +9,16 @@ public class Constants {
 	}
 
 	/** 一般社員の権限を表す */
-	public static final int USER = 1;
+	public static final int USER = 0;
 
 	/** 管理者の権限を表す */
-	public static final int SYSTEM = 2;
+	public static final int SYSTEM = 1;
 
 	/** 男性を表す */
-	public static final int MAN = 1;
+	public static final int MAN = 0;
 
 	/** 女性を表す */
-	public static final int WOMAN = 2;
-
-	/** 最小部署ID */
-	public static final int MIN_DEPT_ID = 1;
-
-	/** 最大部署ID */
-	public static final int MAX_DEPT_ID = 3;
+	public static final int WOMAN = 1;
 
 	/** 社員ID、またはパスワードが間違っていた場合のエラーメッセージ */
 	public static final String EMPID_OR_PASSWORD_MISMATCH = "社員ID、またはパスワードが間違っています。";
@@ -45,10 +39,10 @@ public class Constants {
 	public static final String PASSWORD_LENGTH_OVER = "パスワードは16文字以内で入力してください。";
 
 	/** ユーザ名が未入力のエラーメッセージ */
-	public static final String USER_NAME_EMPTY = "ユーザ名を入力してください。";
+	public static final String USER_NAME_EMPTY = "名前を入力してください。";
 
 	/** ユーザ名の入力文字が30文字を超えた場合のエラーメッセージ */
-	public static final String USER_NAME_LENGTH_OVER = "ユーザ名は30文字以内で入力してください。";
+	public static final String USER_NAME_LENGTH_OVER = "名前は30文字以内で入力してください。";
 
 	/** 住所が未入力のエラーメッセージ */
 	public static final String ADDRESS_EMPTY = "住所を入力してください。";
