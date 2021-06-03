@@ -15,9 +15,9 @@ import util.Validator;
 
 
 /**
- * Servlet implementation class UserRegistInput
+ * Servlet implementation class UserRegistCheck
  */
-@WebServlet("/UserRegistInput")
+@WebServlet("/UserRegistCheck")
 public class UserRegistCheck extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");

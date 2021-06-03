@@ -24,8 +24,7 @@
 		</c:forEach>
 	</div>
 
-	<form action="<%=request.getContextPath()%>/UserRegistCheck"
-		method="post">
+	<form action="<%=request.getContextPath()%>/UserRegistCheck" method="post">
 		<div class="form">
 			<div class="label">ユーザID：</div>
 			<div class="input">
@@ -59,9 +58,12 @@
 			<div class="label">性別：</div>
 			<div class="input">
 				<input type="radio" name="gender" value="1"
+					<c:if test="${emp.gender == null}">
+								checked="checked"
+							</c:if>
 					<c:if test="${emp.gender == 1}">
 						checked="checked"
-					</c:if> />男性&nbsp;
+					</c:if> />男性／
 					<input type="radio" name="gender" value="2"
 					<c:if test="${emp.gender == 2}">
 						checked="checked"
