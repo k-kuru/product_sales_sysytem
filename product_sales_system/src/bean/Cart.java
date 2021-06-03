@@ -23,4 +23,8 @@ public class Cart {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+	public void setProduct_name1(String product_name2) {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
 }
