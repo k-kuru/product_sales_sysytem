@@ -29,6 +29,7 @@ public class Cart_delete extends HttpServlet {
 		cartList.remove(Integer.parseInt(request.getParameter("cart_num")));
 		session.removeAttribute("cartList");
 		session.setAttribute("cartList", cartList);
+		request.setAttribute("page", request.getParameter("page_num"));
 		request.getRequestDispatcher("jsp/cart/cart_list.jsp").forward(request, response);
 	}
 
