@@ -30,6 +30,7 @@ public class Cart_list extends HttpServlet {
 			cartList.add(cart);
 		}
 		session.setAttribute("cartList", cartList);
+		request.setAttribute("page", 1);
 		request.getRequestDispatcher("jsp/cart/cart_list.jsp").forward(request, response);
 
 	}
