@@ -19,7 +19,7 @@
 	<div class="login">
 		<h3>ログイン画面</h3>
 		<div class="form">
-			<form action="<%=request.getContextPath()%>/LoginServlet"
+			<form action="<%=request.getContextPath()%>/Login"
 				method="post">
 				<div class="login_label">ID</div>
 				<div class="login_input">

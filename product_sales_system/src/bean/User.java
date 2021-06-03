@@ -7,7 +7,7 @@ public class User {
 	private String birthday;
 	private String address;
 	private int gender;
-	private int tel;
+	private String tel;
 	private int authority;
 	private int deleteFlag;
 
@@ -59,11 +59,11 @@ public class User {
 		this.gender = gender;
 	}
 
-	public int getTel() {
+	public String getTel() {
 		return tel;
 	}
 
-	public void setTel(int tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 
