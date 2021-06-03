@@ -253,13 +253,13 @@ public class Validator {
 
 		// ****** 商品説明のチェック ******
 		// 桁数チェック
-		if (overLength(productBean.getAddress(), 60)) {
+		if (overLength(productBean.getProductExplain(), 60)) {
 			errorMessageList.add(Constants.ADDRESS_LENGTH_OVER);
 		}
 
 		// ****** 商品の値段のチェック ******
 		// 未入力チェック
-		if (isEmpty(productBean.getBirthDay())) {
+		if (String.valueOf(productBean.getPrice()).length() == 0) {
 			errorMessageList.add(Constants.BIRTHDAY_EMPTY);
 		} else {
 			// チェック
