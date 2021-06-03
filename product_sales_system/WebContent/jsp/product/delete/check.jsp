@@ -27,11 +27,11 @@
 				</div>
 				<div class="form">
 					<div class="label">値段：</div>
-					<div class="input">${product.Price}</div>
+					<div class="input">${product.price}</div>
 				</div>
 				<div class="form">
 					<div class="label">在庫数：</div>
-					<div class="input">${product.Stock}</div>
+					<div class="input">${product.stock}</div>
 				</div>
 				<form action="<%=request.getContextPath()%>/ProductDeleteComplete" method="post">
 					<div class="form">

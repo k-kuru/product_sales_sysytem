@@ -12,7 +12,7 @@
 
 	<h2>商品削除完了画面</h2>
 	<p>削除が完了しました。</p>
-			<form action="<%=request.getContextPath() %>/Product_Serch" method="post">
+			<form action="<%=request.getContextPath() %>/ProductSerch" method="post">
 				<div class="form">
 					<input type="submit" value="戻る" />
 				</div>
