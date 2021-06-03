@@ -12,7 +12,7 @@
 
 	<h2>商品登録完了画面</h2>
 	<p>商品登録が完了しました。</p>
-			<form action="<%=request.getContextPath() %>/ProductSerch" method="post">
+			<form action="<%=request.getContextPath() %>/ProductSearch" method="post">
 				<div class="form">
 					<input type="submit" value="戻る" />
 				</div>

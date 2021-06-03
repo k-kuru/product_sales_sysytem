@@ -22,7 +22,7 @@
 					<div class="form">
 						<div class="label">商品説明：</div>
 						<div class="input">
-							<input type="text" name="productExplain" value="${product.productxplain}"/>
+							<input type="text" name="productExplain" value="${product.productExplain}"/>
 						</div>
 					</div>
 					<div class="form">
