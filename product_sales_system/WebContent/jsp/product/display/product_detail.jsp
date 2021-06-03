@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+${product.productName}
+${product.price}
+${product.stock == "0" ? "なし":"あり"}
 </body>
 </html>

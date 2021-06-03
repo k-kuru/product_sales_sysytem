@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DB.ProductDao;
+import bean.Product;
+
 /**
  * Servlet implementation class ProductDetail
  */
@@ -26,7 +29,10 @@ public class ProductDetail extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+		String productid = request.getParameter("productid");
+		Product product = ProductDao.showProductDetail(productid);
+		request.setAttribute("product", product);
+		request.getRequestDispatcher("/jsp/product/display/product_detail.jsp").forward(request,response);
+			}
 
 }

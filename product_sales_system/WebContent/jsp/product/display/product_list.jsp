@@ -19,7 +19,7 @@
 			</tr>
 			<c:forEach var="product" items="${productList}">
 				<tr>
-					<td><a href="<%=request.getContextPath()%>/ProductDetail" >${product.productName}</a></td>
+					<td>${product.productName}</td>
 					<td>${product.price}</td>
 					<td>${product.stock == "0" ? "なし":"あり"}</td>
 				</tr>
