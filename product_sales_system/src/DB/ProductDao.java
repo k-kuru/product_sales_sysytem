@@ -110,7 +110,7 @@ public class ProductDao  {
 
 		try {
 			con = DBManager.getConnection();
-			ps = con.prepareStatement("INSERT INTO product product_id, "
+			ps = con.prepareStatement("INSERT INTO product (product_id, "
 					+ "product_name, product_explain, price, stock, delete_flag) VALUES(?,?,?,?,?,0)");
 
 			ps.setString(1, product.getProductId());
