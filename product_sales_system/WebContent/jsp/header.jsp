@@ -6,7 +6,7 @@
 %>
 <header>
 	<div class="content">
-		<div class="title">商品購入システム</div>
+		<div class="title">商品販売システム</div>
 		<div class="user_info">
 			ようこそ、[ここにユーザーネーム]さん　　　　
 			カート　　　　
