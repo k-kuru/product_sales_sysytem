@@ -57,7 +57,7 @@ public class Validator {
 	 * @return true(半角英数字)
 	 * 			false(半角英数字でない)
 	 */
-	public static boolean IsNumberOrAlphabet(String target) {
+	public static boolean isNumberOrAlphabet(String target) {
 		boolean result = true;
 
 		// 引数に指定した正規表現regexがtargetにマッチするか確認する
@@ -122,7 +122,7 @@ public class Validator {
 			if (overLength(id, 20)) {
 				errorMessageList.add(Constants.USERID_LENGTH_OVER);
 				// 数値チェック
-			} else if (!IsNumberOrAlphabet(id)) {
+			} else if (isNumberOrAlphabet(id)) {
 				errorMessageList.add(Constants.USERID_MISSMATCH);
 			}
 		}
@@ -147,7 +147,7 @@ public class Validator {
 	 * @param employeeBean
 	 * @return エラーメッセージのリスト
 	 */
-	public static List<String> makeInputErrorMessageList(User userBean) {
+	public static List<String> makeUserInputErrorMessageList(User userBean) {
 		List<String> errorMessageList = new ArrayList<String>();
 
 		// ****** ユーザIDのチェック ******
@@ -159,7 +159,7 @@ public class Validator {
 			if (overLength(userBean.getUserId(), 20)) {
 				errorMessageList.add(Constants.USERID_LENGTH_OVER);
 				// 数値チェック
-			} else if (!IsNumberOrAlphabet(userBean.getUserId())) {
+			} else if (isNumberOrAlphabet(userBean.getUserId())) {
 				errorMessageList.add(Constants.USERID_MISSMATCH);
 			}
 		}
@@ -214,7 +214,82 @@ public class Validator {
 			errorMessageList.add(Constants.TEL_EMPTY);
 		} else {
 			// 桁数チェック
-			if (String.valueOf(userBean.getTel()).length() > 11) {
+			if (String.valueOf(userBean.getTel()).length() != 11) {
+				errorMessageList.add(Constants.TEL_LENGTH_MISMATCH);
+			}
+		}
+
+		return errorMessageList;
+	}
+
+	public static List<String> makeProductInputErrorMessageList(Product productBean) {
+		List<String> errorMessageList = new ArrayList<String>();
+
+		// ****** ユーザIDのチェック ******
+		// 未入力チェック
+		if (isEmpty(userBean.getUserId())) {
+			errorMessageList.add(Constants.USERID_EMPTY);
+		} else {
+			// 桁数チェック
+			if (overLength(userBean.getUserId(), 20)) {
+				errorMessageList.add(Constants.USERID_LENGTH_OVER);
+				// 数値チェック
+			} else if (isNumberOrAlphabet(userBean.getUserId())) {
+				errorMessageList.add(Constants.USERID_MISSMATCH);
+			}
+		}
+
+		// ****** パスワードのチェック ******
+		// 未入力チェック
+		if (isEmpty(userBean.getPass())) {
+			errorMessageList.add(Constants.PASSWORD_EMPTY);
+		} else {
+			// 桁数チェック
+			if (overLength(userBean.getPass(), 16)) {
+				errorMessageList.add(Constants.PASSWORD_LENGTH_OVER);
+			}
+		}
+
+		// ****** ユーザ名のチェック ******
+		// 未入力チェック
+		if (isEmpty(userBean.getUserName())) {
+			errorMessageList.add(Constants.NAME_EMPTY);
+		} else {
+			// 桁数チェック
+			if (overLength(userBean.getUserName(), 30)) {
+				errorMessageList.add(Constants.NAME_LENGTH_OVER);
+			}
+		}
+
+		// ****** 住所のチェック ******
+		// 未入力チェック
+		if (isEmpty(userBean.getAddress())) {
+			errorMessageList.add(Constants.ADDRESS_EMPTY);
+		} else {
+			// 桁数チェック
+			if (overLength(userBean.getAddress(), 60)) {
+				errorMessageList.add(Constants.ADDRESS_LENGTH_OVER);
+			}
+		}
+
+		// ****** 生年月日のチェック ******
+		// 未入力チェック
+		if (isEmpty(userBean.getBirthDay())) {
+			errorMessageList.add(Constants.BIRTHDAY_EMPTY);
+		} else {
+			// 日付の妥当性チェック
+			if (!isDate(userBean.getBirthDay())) {
+				errorMessageList.add(Constants.BIRTHDAY_MISSMATCH);
+			}
+		}
+
+		// ****** 電話番号のチェック ******
+		// 未入力チェック
+		if (String.valueOf(userBean.getTel()).length() == 0) {
+			errorMessageList.add(Constants.TEL_EMPTY);
+		} else {
+			// 桁数チェック
+			if (String.valueOf(userBean.getTel()).length() != 11) {
 				errorMessageList.add(Constants.TEL_LENGTH_MISMATCH);
 			}
 		}
