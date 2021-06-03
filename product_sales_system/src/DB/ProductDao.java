@@ -27,8 +27,8 @@ public class ProductDao  {
 				product.setProductId(rs.getString("product_id"));
 				product.setProductName(rs.getString("product_name"));
 				product.setProductExplain(rs.getString("product_explain"));
-				product.setPrice(rs.getInt("price"));
-				product.setStock(rs.getInt("stock"));
+				product.setPrice(rs.getString("price"));
+				product.setStock(rs.getString("stock"));
 				product.setDeleteFlag(rs.getInt("delete_flag"));
 
                productList.add(product);
@@ -59,8 +59,8 @@ public class ProductDao  {
 				product.setProductId(rs.getString("product_id"));
 				product.setProductName(rs.getString("product_name"));
 				product.setProductExplain(rs.getString("product_explain"));
-				product.setPrice(rs.getInt("price"));
-				product.setStock(rs.getInt("stock"));
+				product.setPrice(rs.getString("price"));
+				product.setStock(rs.getString("stock"));
 				product.setDeleteFlag(rs.getInt("delete_flag"));
             }
         } catch (SQLException e) {
@@ -89,8 +89,8 @@ public class ProductDao  {
 				product.setProductId(rs.getString("product_id"));
 				product.setProductName(rs.getString("product_name"));
 				product.setProductExplain(rs.getString("product_explain"));
-				product.setPrice(rs.getInt("price"));
-				product.setStock(rs.getInt("stock"));
+				product.setPrice(rs.getString("price"));
+				product.setStock(rs.getString("stock"));
 				product.setDeleteFlag(rs.getInt("delete_flag"));
 				productList.add(product);
             }
@@ -116,8 +116,8 @@ public class ProductDao  {
 			ps.setString(1, product.getProductId());
 			ps.setString(2, product.getProductName());
 			ps.setString(3, product.getProductExplain());
-			ps.setInt(4, product.getPrice());
-			ps.setInt(5, product.getStock());
+			ps.setString(4, product.getPrice());
+			ps.setString(5, product.getStock());
 			ps.executeUpdate();
 
 		}
@@ -143,8 +143,8 @@ public class ProductDao  {
 
             ps.setString(1, product.getProductName());
             ps.setString(2, product.getProductExplain());
-            ps.setInt(3, product.getPrice());
-            ps.setInt(4, product.getStock());
+            ps.setString(3, product.getPrice());
+            ps.setString(4, product.getStock());
             ps.setString(5, product.getProductId());
 
             ps.executeUpdate();
