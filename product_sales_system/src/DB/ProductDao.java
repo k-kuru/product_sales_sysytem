@@ -118,7 +118,6 @@ public class ProductDao  {
 			ps.setString(3, product.getProductExplain());
 			ps.setInt(4, product.getPrice());
 			ps.setInt(5, product.getStock());
-			ps.setInt(6, product.getDeleteFlag());
 			ps.executeUpdate();
 
 		}
@@ -158,16 +157,15 @@ public class ProductDao  {
     /**
 	 * productテーブルのデータを論理削除
 	 */
-	 public static void deleteProduct(Product product) {
+	 public static void deleteProduct(String product_id) {
          Connection con = null;
          PreparedStatement ps = null;
 
          try {
              con = DBManager.getConnection();
-             ps = con.prepareStatement("UPDATE FROM product SET delete_flag = 1 WHERE emp_id = ?");
+             ps = con.prepareStatement("UPDATE FROM product SET delete_flag = 1 WHERE product_id = ?");
 
-             ps.setInt(1, product.getDeleteFlag());
-             ps.setString(2, product.getProductId());
+             ps.setString(1, product_id);
 
              ps.executeUpdate();
          } catch (SQLException e) {
