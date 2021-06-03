@@ -1,6 +1,7 @@
 package servlet.user;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,14 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DB.UserDao;
 import bean.User;
+import util.Validator;
 
 /**
- * Servlet implementation class UserRegistComplete
+ * Servlet implementation class UserUpdateCheck
  */
-@WebServlet("/UserRegist")
-public class UserRegist extends HttpServlet {
+@WebServlet("/UserUpdateCheck")
+public class UserUpdateCheck extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
@@ -26,6 +27,7 @@ public class UserRegist extends HttpServlet {
 		String gender = request.getParameter("gender");
 		String tel = request.getParameter("tel");
 		String address = request.getParameter("address");
+		String authority = request.getParameter("authority");
 
 		User user = new User();
 		user.setUserId(userId);
@@ -35,10 +37,18 @@ public class UserRegist extends HttpServlet {
 		user.setGender(Integer.parseInt(gender));
 		user.setTel(tel);
 		user.setAddress(address);
+		user.setAuthority(Integer.parseInt(authority));
 
-		UserDao.registUser(user);
-
-		request.getRequestDispatcher("/jsp/user/regist/complete.jsp").forward(request, response);
+		// 入力チェック
+		List<String> errorMessageList = Validator.makeUserInputErrorMessageList(user);
+		if(errorMessageList.size() == 0) {
+			request.setAttribute("user", user);
+			request.getRequestDispatcher("/jsp/user/update/check.jsp").forward(request, response);
+		} else {
+			request.setAttribute("errorMessage", errorMessageList);
+			request.setAttribute("user", user);
+			request.getRequestDispatcher("/jsp/user/update/input.jsp").forward(request, response);
+		}
 	}
 
 }

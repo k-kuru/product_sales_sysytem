@@ -101,9 +101,9 @@ public class UserDao {
 
 		try {
 			con = DBManager.getConnection();
-			ps = con.prepareStatement("INSERT INTO user_table user_id, user_name, "
+			ps = con.prepareStatement("INSERT INTO user_table (user_id, user_name, "
 					+ "pass, birthday, gender, tel, address, authority, delete_flag) "
-					+ "VALUES(?,?,?,?,?,?,?,?,0)");
+					+ "VALUES(?,?,?,?,?,?,?,0,0)");
 
 			ps.setString(1, user.getUserId());
 			ps.setString(2, user.getUserName());
@@ -112,7 +112,6 @@ public class UserDao {
 			ps.setInt(5, user.getGender());
 			ps.setString(6, user.getTel());
 			ps.setString(7, user.getAddress());
-			ps.setInt(8, user.getAuthority());
 			ps.executeUpdate();
 
 		}
