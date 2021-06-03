@@ -27,11 +27,11 @@
 				</div>
 				<div class="form">
 					<div class="label">値段：</div>
-					<div class="input">${product.Price}</div>
+					<div class="input">${product.price}</div>
 				</div>
 				<div class="form">
 					<div class="label">在庫数：</div>
-					<div class="input">${product.Stock}</div>
+					<div class="input">${product.stock}</div>
 				</div>
 				<form action="<%=request.getContextPath()%>/ProductRegist" method="post">
 					<div class="form">
@@ -40,8 +40,8 @@
 							<input type="hidden" name="productId" value="${product.productId}" />
 						    <input type="hidden" name="productName" value="${product.productName}"/>
 						    <input type="hidden" name="productExplain" value="${product.productxplain}"/>
-							<input type="hidden" name="Price" value="${product.Price}"/>
-							<input type="hidden" name="Stock" value="${product.Stock}"/>
+							<input type="hidden" name="price" value="${product.price}"/>
+							<input type="hidden" name="stock" value="${product.stock}"/>
 							<input type="submit" value="登録" />
 						</div>
 					</div>
@@ -53,8 +53,8 @@
 							<input type="hidden" name="productId" value="${product.productId}" />
 						    <input type="hidden" name="productName" value="${product.productName}"/>
 						    <input type="hidden" name="productExplain" value="${product.productxplain}"/>
-							<input type="hidden" name="Price" value="${product.Price}"/>
-							<input type="hidden" name="Stock" value="${product.Stock}"/>
+							<input type="hidden" name="price" value="${product.price}"/>
+							<input type="hidden" name="stock" value="${product.stock}"/>
 							<input type="submit" value="戻る" />
 						</div>
 					</div>

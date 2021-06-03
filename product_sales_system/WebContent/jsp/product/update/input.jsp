@@ -28,13 +28,13 @@
 					<div class="form">
 						<div class="label">値段：</div>
 						<div class="input">
-							<input type="text" name="Price" value="${product.Price}"/>
+							<input type="text" name="price" value="${product.price}"/>
 						</div>
 					</div>
 					<div class="form">
 						<div class="label">在庫数：</div>
 						<div class="input">
-							<input type="text" name="Stock" value="${product.Stock}"/>
+							<input type="text" name="stock" value="${product.stock}"/>
 						</div>
 					</div>
 					<div class="form">
