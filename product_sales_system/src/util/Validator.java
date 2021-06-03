@@ -85,6 +85,22 @@ public class Validator {
 	}
 
 	/**
+	 * 指定した桁数と一致しているかチェックを行うメソッド
+	 *
+	 * @param val
+	 *        digit
+	 * @return true(桁数と一致している)
+	 *         false(桁数と一致していない)
+	 */
+	public static boolean justLength(String val, int digit) {
+		if (val.length() == digit) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
 	 * 日付の妥当性チェック
 	 *
 	 * @param val
@@ -211,12 +227,17 @@ public class Validator {
 
 		// ****** 電話番号のチェック ******
 		// 未入力チェック
-		if (String.valueOf(userBean.getTel()).length() == 0) {
+		if (isEmpty(userBean.getTel())) {
 			errorMessageList.add(Constants.TEL_EMPTY);
 		} else {
-			// 桁数チェック
-			if (String.valueOf(userBean.getTel()).length() != 11) {
-				errorMessageList.add(Constants.TEL_LENGTH_MISMATCH);
+			// 文字チェック
+			if (isNumber(userBean.getTel())) {
+				errorMessageList.add(Constants.TEL_MISMATCH);
+			} else {
+				// 桁数チェック
+				if (justLength(userBean.getTel(), 8)) {
+					errorMessageList.add(Constants.TEL_LENGTH_MISMATCH);
+				}
 			}
 		}
 
@@ -254,28 +275,38 @@ public class Validator {
 		// ****** 商品説明のチェック ******
 		// 桁数チェック
 		if (overLength(productBean.getProductExplain(), 60)) {
-			errorMessageList.add(Constants.ADDRESS_LENGTH_OVER);
+			errorMessageList.add(Constants.PRODUCT_EXPLAIN_LENGTH_OVER);
 		}
 
 		// ****** 商品の値段のチェック ******
 		// 未入力チェック
-		if (String.valueOf(productBean.getPrice()).length() == 0) {
-			errorMessageList.add(Constants.BIRTHDAY_EMPTY);
+		if (isEmpty(productBean.getPrice())) {
+			errorMessageList.add(Constants.PRICE_EMPTY);
 		} else {
-			// チェック
-			if (String.valueOf(productBean.getPrice()).length() > 20) {
-				errorMessageList.add(Constants.BIRTHDAY_MISSMATCH);
+			// 文字チェック
+			if (isNumber(productBean.getPrice())) {
+				errorMessageList.add(Constants.PRICE_MISMATCH);
+			} else {
+				// 桁数チェック
+				if (overLength(productBean.getPrice(), 20)) {
+					errorMessageList.add(Constants.PRICE_LENGTH_OVER);
+				}
 			}
 		}
 
 		// ****** 在庫数のチェック ******
 		// 未入力チェック
-		if (String.valueOf(productBean.getStock()).length() == 0) {
-			errorMessageList.add(Constants.TEL_EMPTY);
+		if (isEmpty(productBean.getStock())) {
+			errorMessageList.add(Constants.STOCK_EMPTY);
 		} else {
-			// 桁数チェック
-			if (String.valueOf(productBean.getStock()).length() != 11) {
-				errorMessageList.add(Constants.TEL_LENGTH_MISMATCH);
+			// 文字チェック
+			if (isNumber(productBean.getStock())) {
+				errorMessageList.add(Constants.STOCK_MISMATCH);
+			} else {
+				// 桁数チェック
+				if (overLength(productBean.getStock(), 4)) {
+					errorMessageList.add(Constants.STOCK_LENGTH_OVER);
+				}
 			}
 		}
 

@@ -65,7 +65,10 @@ public class Constants {
 	/** 電話番号が未入力のエラーメッセージ */
 	public static final String TEL_EMPTY = "電話番号を入力してください。";
 
-	/** 電話番号の入力文字が8文字えない場合のエラーメッセージ */
+	/** 電話番号が数字でない場合のエラーメッセージ */
+	public static final String TEL_MISMATCH = "電話番号は数字を入力してください。";
+
+	/** 電話番号の入力文字が8文字でない場合のエラーメッセージ */
 	public static final String TEL_LENGTH_MISMATCH = "電話番号は8字で入力してください。";
 
 	/** 商品IDの桁数が5桁を超えた場合のチェックエラーメッセージ */
@@ -89,11 +92,17 @@ public class Constants {
 	/** 商品の値段が未入力のエラーメッセージ */
 	public static final String PRICE_EMPTY = "商品の値段を入力してください。";
 
+	/** 商品の値段が数字でない場合のエラーメッセージ */
+	public static final String PRICE_MISMATCH = "商品の値段は数字を入力してください。";
+
 	/** 商品の値段の入力文字が140文字を超えた場合のエラーメッセージ */
 	public static final String PRICE_LENGTH_OVER = "商品の値段は20桁以内で入力してください。";
 
 	/** 商品の在庫が未入力のエラーメッセージ */
 	public static final String STOCK_EMPTY = "商品の在庫を入力してください。";
+
+	/** 商品の在庫が数字でない場合のエラーメッセージ */
+	public static final String STOCK_MISMATCH = "商品の在庫は数字を入力してください。";
 
 	/** 商品の在庫の入力文字が4文字を超えた場合のエラーメッセージ */
 	public static final String STOCK_LENGTH_OVER = "商品の在庫は4桁以内で入力してください。";

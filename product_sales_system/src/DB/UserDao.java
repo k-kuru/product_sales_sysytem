@@ -38,7 +38,7 @@ public class UserDao {
 				user.setBirthDay(sdf.format(birthday));
 				user.setAddress(rs.getString("address"));
 				user.setGender(rs.getInt("gender"));
-				user.setTel(rs.getInt("tel"));
+				user.setTel(rs.getString("tel"));
 				user.setAuthority(rs.getInt("authority"));
 				user.setDeleteFlag(rs.getInt("delete_flag"));
 
@@ -77,7 +77,7 @@ public class UserDao {
 				Date birthday = rs.getDate("birthday");
 				user.setBirthDay(sdf.format(birthday));
 				user.setGender(rs.getInt("gender"));
-				user.setTel(rs.getInt("tel"));
+				user.setTel(rs.getString("tel"));
 				user.setAddress(rs.getString("address"));
 				user.setAuthority(rs.getInt("authority"));
 				user.setDeleteFlag(rs.getInt("delete_flag"));
@@ -110,7 +110,7 @@ public class UserDao {
 			ps.setString(3, user.getPass());
 			ps.setString(4, user.getBirthDay());
 			ps.setInt(5, user.getGender());
-			ps.setInt(6, user.getTel());
+			ps.setString(6, user.getTel());
 			ps.setString(7, user.getAddress());
 			ps.setInt(8, user.getAuthority());
 			ps.executeUpdate();
@@ -141,7 +141,7 @@ public class UserDao {
 			ps.setString(2, user.getPass());
 			ps.setString(3, user.getBirthDay());
 			ps.setInt(4, user.getGender());
-			ps.setInt(5, user.getTel());
+			ps.setString(5, user.getTel());
 			ps.setString(6, user.getAddress());
 			ps.setInt(7, user.getAuthority());
 			ps.setString(8, user.getUserId());
