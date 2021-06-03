@@ -8,7 +8,7 @@
 </head>
 <body>
 <h2>商品名検索</h2>
-<form action="<%=request.getContextPath()%>/ProductNameSear" method="post">
+<form action="<%=request.getContextPath()%>/ProductNameSearch" method="post">
 <input type = "text" name = "productname">
 <input type = "submit" value = "検索">
 </form>

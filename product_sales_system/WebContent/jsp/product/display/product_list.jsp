@@ -9,7 +9,8 @@
 </head>
 <body>
 	<article>
-		<%@include file="/jsp/product_search.jsp"%>
+		<%@include file="/jsp/product/display/product_search.jsp"%>
+		<a href="<%=request.getContextPath()%>/jsp/product/regist/input.jsp">新規登録</a>
 		<table>
 			<tr>
 				<th>商品名</th>
@@ -18,7 +19,7 @@
 			</tr>
 			<c:forEach var="product" items="${productList}">
 				<tr>
-					<td>${product.productName}</td>
+					<td><a href="<%=request.getContextPath()%>/ProductDetail" >${product.productName}</a></td>
 					<td>${product.price}</td>
 					<td>${product.stock == "0" ? "なし":"あり"}</td>
 				</tr>
