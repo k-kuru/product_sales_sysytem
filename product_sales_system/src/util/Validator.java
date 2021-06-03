@@ -231,7 +231,7 @@ public class Validator {
 			errorMessageList.add(Constants.TEL_EMPTY);
 		} else {
 			// 文字チェック
-			if (isNumber(userBean.getTel())) {
+			if (!isNumber(userBean.getTel())) {
 				errorMessageList.add(Constants.TEL_MISMATCH);
 			} else {
 				// 桁数チェック
@@ -284,7 +284,7 @@ public class Validator {
 			errorMessageList.add(Constants.PRICE_EMPTY);
 		} else {
 			// 文字チェック
-			if (isNumber(productBean.getPrice())) {
+			if (!isNumber(productBean.getPrice())) {
 				errorMessageList.add(Constants.PRICE_MISMATCH);
 			} else {
 				// 桁数チェック
@@ -300,7 +300,7 @@ public class Validator {
 			errorMessageList.add(Constants.STOCK_EMPTY);
 		} else {
 			// 文字チェック
-			if (isNumber(productBean.getStock())) {
+			if (!isNumber(productBean.getStock())) {
 				errorMessageList.add(Constants.STOCK_MISMATCH);
 			} else {
 				// 桁数チェック
