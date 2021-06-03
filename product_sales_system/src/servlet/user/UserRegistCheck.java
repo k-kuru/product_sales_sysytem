@@ -40,7 +40,7 @@ public class UserRegistCheck extends HttpServlet {
 		user.setAddress(address);
 
 		// 入力チェック
-		List<String> errorMessageList = Validator.makeInputErrorMessageList(user);
+		List<String> errorMessageList = Validator.makeUserInputErrorMessageList(user);
 		if(errorMessageList.size() == 0) {
 			request.setAttribute("user", user);
 			request.getRequestDispatcher("/jsp/user/regist/regist_check.jsp").forward(request, response);
