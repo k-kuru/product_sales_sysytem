@@ -22,10 +22,9 @@ public class ProductSearch extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("now");
 		List<Product> productlist = ProductDao.findAllProduct();
 		request.setAttribute("productList",productlist);
-		request.getRequestDispatcher("/jsp/product_list.jsp").forward(request,response);
+		request.getRequestDispatcher("/jsp/product/display/product_list.jsp").forward(request,response);
 	}
 
 }
