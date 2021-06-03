@@ -34,7 +34,7 @@
 					<input type="submit" value="ログイン" />
 				</div>
 				<div class="user_regist_link">
-					<a href="<%=request.getContextPath()%>/jsp/user_regist_input.jsp">新規登録はこちら</a>
+					<a href="<%=request.getContextPath()%>/jsp/user/regist/input.jsp">新規登録はこちら</a>
 				</div>
 			</form>
 			<c:if test="${errorMessageList.size() >= 1 }">

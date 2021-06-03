@@ -1,40 +1,30 @@
 package bean;
 
 public class Cart {
-	private int cartId;
-	private int orderQuantity;
-	private int deleteFlag;
-	private Product product;
+	private String product_name;
+	private int product_price;
+	private int quantity;
 
-	public int getCartId() {
-		return cartId;
+	public String getProduct_name() {
+		return product_name;
 	}
-
-	public void setCartId(int cartId) {
-		this.cartId = cartId;
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
 	}
-
-	public int getOrderQuantity() {
-		return orderQuantity;
+	public int getProduct_price() {
+		return product_price;
 	}
-
-	public void setOrderQuantity(int orderQuantity) {
-		this.orderQuantity = orderQuantity;
+	public void setProduct_price(int product_price) {
+		this.product_price = product_price;
 	}
-
-	public int getDeleteFlag() {
-		return deleteFlag;
+	public int getQuantity() {
+		return quantity;
 	}
-
-	public void setDeleteFlag(int deleteFlag) {
-		this.deleteFlag = deleteFlag;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
+	public void setProduct_name1(String product_name2) {
+		// TODO 自動生成されたメソッド・スタブ
 
-	public Product getProduct() {
-		return product;
-	}
-
-	public void setProduct(Product product) {
-		this.product = product;
 	}
 }
