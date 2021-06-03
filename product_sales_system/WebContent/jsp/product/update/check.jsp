@@ -33,13 +33,13 @@
 					<div class="label">在庫数：</div>
 					<div class="input">${product.stock}</div>
 				</div>
-				<form action="<%=request.getContextPath()%>/ProductUpdateComplete" method="post">
+				<form action="<%=request.getContextPath()%>/ProductUpdate" method="post">
 					<div class="form">
 						<div class="label"></div>
 						<div class="input">
 							<input type="hidden" name="productId" value="${product.productId}" />
 						    <input type="hidden" name="productName" value="${product.productName}"/>
-						    <input type="hidden" name="productExplain" value="${product.productxplain}"/>
+						    <input type="hidden" name="productExplain" value="${product.producEtxplain}"/>
 							<input type="hidden" name="price" value="${product.price}"/>
 							<input type="hidden" name="stock" value="${product.stock}"/>
 							<input type="submit" value="登録" />
@@ -52,7 +52,7 @@
 						<div class="input">
 							<input type="hidden" name="productId" value="${product.productId}" />
 						    <input type="hidden" name="productName" value="${product.productName}"/>
-						    <input type="hidden" name="productExplain" value="${product.productxplain}"/>
+						    <input type="hidden" name="productExplain" value="${product.producEtxplain}"/>
 							<input type="hidden" name="price" value="${product.price}"/>
 							<input type="hidden" name="stock" value="${product.stock}"/>
 							<input type="submit" value="戻る" />
