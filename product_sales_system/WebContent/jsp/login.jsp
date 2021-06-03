@@ -42,15 +42,6 @@
 					<a href="<%=request.getContextPath()%>/jsp/user/regist/input.jsp">新規登録はこちら</a>
 				</div>
 			</form>
-			<c:if test="${errorMessageList.size() >= 1 }">
-				<c:forEach var="error" items="${errorMessageList }">
-					<div class="errorMessage">${error }</div>
-					<br />
-				</c:forEach>
-			</c:if>
-			<c:if test="${errorMessageList.size() == 0}">
-				<div class="errorMesage">ID、またはパスワードが間違っています。</div>
-			</c:if>
 		</div>
 		<div>
 			<%
