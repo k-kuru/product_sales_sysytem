@@ -33,7 +33,7 @@
 					<div class="label">在庫数：</div>
 					<div class="input">${product.Stock}</div>
 				</div>
-				<form action="<%=request.getContextPath()%>/ProductRegistComplete" method="post">
+				<form action="<%=request.getContextPath()%>/ProductRegist" method="post">
 					<div class="form">
 						<div class="label"></div>
 						<div class="input">
