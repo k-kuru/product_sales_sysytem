@@ -4,8 +4,8 @@ public class Product {
 	private String productId;
 	private String productName;
 	private String productExplain;
-	private int price;
-	private int stock;
+	private String price;
+	private String stock;
 	private int deleteFlag;
 
 	public String getProductId() {
@@ -32,19 +32,19 @@ public class Product {
 		this.productExplain = productExplain;
 	}
 
-	public int getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 
-	public int getStock() {
+	public String getStock() {
 		return stock;
 	}
 
-	public void setStock(int stock) {
+	public void setStock(String stock) {
 		this.stock = stock;
 	}
 
