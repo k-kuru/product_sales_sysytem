@@ -18,6 +18,11 @@
 
 	<div class="login">
 		<h3>ログイン画面</h3>
+		<div class="error">
+			<c:forEach var="error" items="${errorMessage}">
+				${error}<br/>
+			</c:forEach>
+			</div>
 		<div class="form">
 			<form action="<%=request.getContextPath()%>/Login"
 				method="post">
@@ -27,7 +32,7 @@
 				</div>
 				<div class="login_label">パスワード</div>
 				<div class="login_input">
-					<input type="password" name="Pass" />
+					<input type="password" name="pass" />
 				</div>
 				<div class="login_label"></div>
 				<div class="login_input">
