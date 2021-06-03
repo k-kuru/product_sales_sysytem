@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>商品一覧</title>
+<title>商品販売システム</title>
 </head>
 <body>
 	<article>
@@ -20,7 +20,7 @@
 				<tr>
 					<td>${product.productName}</td>
 					<td>${product.price}</td>
-					<td>${product.stock}</td>
+					<td>${product.stock == "0" ? "なし":"あり"}</td>
 				</tr>
 			</c:forEach>
 		</table>

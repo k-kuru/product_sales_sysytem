@@ -80,7 +80,7 @@ public class ProductDao  {
 		List<Product> productList = new ArrayList<Product>();
 		try {
 			con = DBManager.getConnection();
-			ps = con.prepareStatement("SELECT * product WHERE product_name like ? ,"
+			ps = con.prepareStatement("SELECT * FROM product WHERE product_name like ? ,"
 					+ " delete_flag = 0 ORDER BY product_name ASC");
 			ps.setString(1, "%" + product_name + "%");
 			ResultSet rs = ps.executeQuery();
@@ -110,7 +110,7 @@ public class ProductDao  {
 
 		try {
 			con = DBManager.getConnection();
-			ps = con.prepareStatement("INSERT INTO product product_id, "
+			ps = con.prepareStatement("INSERT INTO product (product_id, "
 					+ "product_name, product_explain, price, stock, delete_flag) VALUES(?,?,?,?,?,0)");
 
 			ps.setString(1, product.getProductId());
