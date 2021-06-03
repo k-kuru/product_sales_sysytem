@@ -231,7 +231,7 @@ public class Validator {
 			errorMessageList.add(Constants.TEL_EMPTY);
 		} else {
 			// 文字チェック
-			if (!isNumber(userBean.getTel())) {
+			if (isNumber(userBean.getTel())) {
 				errorMessageList.add(Constants.TEL_MISMATCH);
 			} else {
 				// 桁数チェック

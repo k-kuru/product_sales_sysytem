@@ -1,23 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>商品販売システム</title>
+<title>表品販売システム</title>
 </head>
 <body>
-	<header>
-		<div class="content">
-			<div class="title">商品販売システム</div>
-		</div>
-	</header>
+	<%@include file="/jsp/header.jsp"%>
+	<h2>ユーザ更新確認画面</h2>
 
-	<h2>ユーザ新規登録確認画面</h2>
-
-	<p>以下の情報でユーザを登録します。<br/>
+	<p>以下のように情報を更新します。<br/>
 	よろしいですか。</p>
+
 
 		<div class="form">
 			<div class="label">ユーザID：</div>
@@ -26,7 +22,7 @@
 
 		<div class="form">
 			<div class="label">パスワード：</div>
-			<div class="input">${user.pass}</div>
+			<div class="input">※非表示</div>
 		</div>
 
 		<div class="form">
@@ -42,8 +38,8 @@
 		<div class="form">
 			<div class="label">性別：</div>
 			<div class="input">
-				<c:if test="${user.gender == 1}">男性</c:if>
-				<c:if test="${user.gender == 2}">女性</c:if>
+				<c:if test="${user.gender == 0}">男性</c:if>
+				<c:if test="${user.gender == 1}">女性</c:if>
 			</div>
 		</div>
 
@@ -57,7 +53,17 @@
 			<div class="input">${user.tel}</div>
 		</div>
 
-	<form action="<%=request.getContextPath()%>/UserRegist" method="post">
+		<c:if test="${loginuser.authority == 1}">
+		<div class="form">
+			<div class="label">権限：</div>
+			<div class="input">
+				<c:if test="${user.authority == 0}">一般</c:if>
+				<c:if test="${user.authority == 1}">管理者</c:if>
+			</div>
+		</div>
+		</c:if>
+
+	<form action="<%=request.getContextPath()%>/UserUpdate" method="post">
 		<div class="form">
 			<div class="label"></div>
 			<div class="input">
@@ -68,8 +74,8 @@
 				<input type="hidden" name="gender" value="${user.gender}" />
 				<input type="hidden" name="address" value="${user.address}" />
 				<input type="hidden" name="tel" value="${user.tel}" />
-
-				<input type="submit" value="登録" />
+				<input type="hidden" name="authoroty" value="${user.authority}" />
+				<input type="submit" value="更新" />
 			</div>
 		</div>
 	</form>

@@ -8,15 +8,11 @@
 <title>商品販売システム</title>
 </head>
 <body>
-	<header>
-		<div class="content">
-			<div class="title">商品販売システム</div>
-		</div>
-	</header>
+	<%@include file="/jsp/header.jsp"%>
 
-	<h2>ユーザ新規登録入力画面</h2>
+	<h2>ユーザ更新入力画面</h2>
 
-	<p>登録する情報を入力してください。</p>
+	<p>更新する内容を入力してください。</p>
 
 	<div class="error">
 		<c:forEach var="error" items="${errorMessage}">
@@ -24,14 +20,7 @@
 		</c:forEach>
 	</div>
 
-	<form action="<%=request.getContextPath()%>/UserRegistCheck" method="post">
-		<div class="form">
-			<div class="label">ユーザID：</div>
-			<div class="input">
-				<input type="text" name="userId" value="${user.userId}" />
-			</div>
-		</div>
-
+	<form action="<%=request.getContextPath()%>/UserUpdateCheck" method="post">
 		<div class="form">
 			<div class="label">パスワード：</div>
 			<div class="input">
@@ -51,7 +40,6 @@
 			<div class="input">
 				<input type="text" name="birthday" value="${user.birthDay}" />
 			</div>
-			(入力例 1999/01/01)
 		</div>
 
 		<div class="form">
@@ -85,15 +73,35 @@
 			</div>
 		</div>
 
+		<c:if test="${loginuser.authority == 1}">
+		<div class="form">
+			<div class="label">権限：</div>
+			<div class="input">
+				<input type="radio" name="authority" value="0"
+					<c:if test="${user.authority == null}">
+								checked="checked"
+							</c:if>
+					<c:if test="${user.authority == 0}">
+						checked="checked"
+					</c:if> />一般／
+					<input type="radio" name="authority" value="1"
+					<c:if test="${user.authority == 1}">
+						checked="checked"
+					</c:if> />管理者
+			</div>
+		</div>
+		</c:if>
+
 		<div class="form">
 			<div class="label"></div>
 			<div class="input">
+				<input type="hidden" name="userId" value="${user.userId}" />
 				<input type="submit" value="確認" />
 			</div>
 		</div>
 	</form>
 
-	<form action="<%=request.getContextPath()%>/jsp/login.jsp" method="post">
+	<form action="<%=request.getContextPath()%>/jsp/user_list.jsp" method="post">
 		<div class="form">
 			<div class="label"></div>
 			<div class="input">

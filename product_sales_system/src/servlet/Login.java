@@ -48,10 +48,10 @@ public class Login extends HttpServlet {
 			//該当するユーザーが見つかった時
 			if (logined) {
 				//商品一覧画面へ遷移
-				request.getRequestDispatcher("/servlet.product/ProductSearch.java").forward(request, response);
+				request.getRequestDispatcher("/ProductSearch").forward(request, response);
 			} else {
 				//ID、またはパスワードが間違っていた場合
-				request.setAttribute("errorMessageList", errorMessageList);
+				request.setAttribute("errorMessage", errorMessageList);
 				request.getRequestDispatcher("jsp/login.jsp").forward(request, response);
 
 			}

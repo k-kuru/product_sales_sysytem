@@ -18,6 +18,11 @@
 
 	<div class="login">
 		<h3>ログイン画面</h3>
+		<div class="error">
+			<c:forEach var="error" items="${errorMessage}">
+				${error}<br/>
+			</c:forEach>
+			</div>
 		<div class="form">
 			<form action="<%=request.getContextPath()%>/Login"
 				method="post">
@@ -27,7 +32,7 @@
 				</div>
 				<div class="login_label">パスワード</div>
 				<div class="login_input">
-					<input type="password" name="Pass" />
+					<input type="password" name="pass" />
 				</div>
 				<div class="login_label"></div>
 				<div class="login_input">
@@ -37,15 +42,6 @@
 					<a href="<%=request.getContextPath()%>/jsp/user/regist/input.jsp">新規登録はこちら</a>
 				</div>
 			</form>
-			<c:if test="${errorMessageList.size() >= 1 }">
-				<c:forEach var="error" items="${errorMessageList }">
-					<div class="errorMessage">${error }</div>
-					<br />
-				</c:forEach>
-			</c:if>
-			<c:if test="${errorMessageList.size() == 0}">
-				<div class="errorMesage">ID、またはパスワードが間違っています。</div>
-			</c:if>
 		</div>
 		<div>
 			<%

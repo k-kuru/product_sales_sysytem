@@ -12,10 +12,10 @@ import DB.UserDao;
 import bean.User;
 
 /**
- * Servlet implementation class UserRegistComplete
+ * Servlet implementation class UserUpdate
  */
-@WebServlet("/UserRegist")
-public class UserRegist extends HttpServlet {
+@WebServlet("/UserUpdate")
+public class UserUpdate extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
@@ -26,6 +26,7 @@ public class UserRegist extends HttpServlet {
 		String gender = request.getParameter("gender");
 		String tel = request.getParameter("tel");
 		String address = request.getParameter("address");
+		String authority = request.getParameter("authority");
 
 		User user = new User();
 		user.setUserId(userId);
@@ -35,10 +36,12 @@ public class UserRegist extends HttpServlet {
 		user.setGender(Integer.parseInt(gender));
 		user.setTel(tel);
 		user.setAddress(address);
+		user.setAuthority(Integer.parseInt(authority));
 
-		UserDao.registUser(user);
+		UserDao.updateUser(user);
 
-		request.getRequestDispatcher("/jsp/user/regist/complete.jsp").forward(request, response);
+		request.getRequestDispatcher("/jsp/user/update/complete.jsp").forward(request, response);
+
 	}
 
 }
