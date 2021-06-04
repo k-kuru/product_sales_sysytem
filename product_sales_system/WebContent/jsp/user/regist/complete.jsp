@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/layout.css" rel="stylesheet" />
 <title>商品販売システム</title>
 </head>
 <body>
@@ -16,9 +18,11 @@
 
 	<h2>ユーザ新規登録完了画面</h2>
 
-	<p>ユーザ登録が完了しました。</p>
+	<div class="complete">
+		<p>ユーザ登録が完了しました。</p>
+	</div>
 	<form action="<%=request.getContextPath() %>/jsp/login.jsp" method="post">
-		<div class="form">
+		<div class="compbutton">
 			<input type="submit" value="戻る" />
 		</div>
 	</form>

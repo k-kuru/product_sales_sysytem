@@ -15,7 +15,7 @@
 	<h2>商品登録確認画面</h2>
 	<div class="explain"><p>以下の情報を登録します。<br>よろしいですか。</p></div>
 	<div class="information"><p>商品情報</p></div>
-			<div class="info">
+			<div class="form">
 				<div class="label">商品ID：</div>
 				<div class="input">${product.productId}</div>
 			</div>

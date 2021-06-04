@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/layout.css" rel="stylesheet" />
 <title>商品販売システム</title>
 </head>
 <body>
@@ -16,9 +18,13 @@
 
 	<h2>ユーザ新規登録確認画面</h2>
 
-	<p>以下の情報でユーザを登録します。<br/>
-	よろしいですか。</p>
-
+	<div class="explain">
+		<p>以下の情報でユーザを登録します。<br/>
+		よろしいですか。</p>
+	</div>
+	<div class="information">
+		<p>商品情報</p>
+	</div>
 		<div class="form">
 			<div class="label">ユーザID：</div>
 			<div class="input">${user.userId}</div>
@@ -58,7 +64,7 @@
 		</div>
 
 	<form action="<%=request.getContextPath()%>/UserRegist" method="post">
-		<div class="form">
+		<div class="button">
 			<div class="label"></div>
 			<div class="input">
 				<input type="hidden" name="userId" value="${user.userId}" />
@@ -75,7 +81,7 @@
 	</form>
 
 	<form action="<%=request.getContextPath()%>/jsp/user/regist/input.jsp" method="post">
-		<div class="form">
+		<div class="button">
 			<div class="label"></div>
 			<div class="input">
 				<input type="submit" value="戻る">

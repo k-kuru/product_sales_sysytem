@@ -20,7 +20,7 @@ public class Userlist extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<User> userlist = UserDao.findAllUser();
 		request.setAttribute("userList",userlist);
-		request.getRequestDispatcher("/jsp/user/list/user_list.jsp").forward(request,response);
+		request.getRequestDispatcher("/jsp/user/user_list.jsp").forward(request,response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<User> userlist = UserDao.findAllUser();

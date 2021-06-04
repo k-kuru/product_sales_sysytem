@@ -22,7 +22,7 @@
 					action="<%=request.getContextPath()%>/UserDetail">
 					<input type=hidden name="userId" value="${userId}">
 				</form>
-				<table class="user_list_table" border=1>
+				<table class="user_list_table">
 					<tr>
 						<th class="user_Id">ID</th>
 						<th class="userName">名前</a></th>
