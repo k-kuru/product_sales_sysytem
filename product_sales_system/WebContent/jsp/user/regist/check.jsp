@@ -42,8 +42,8 @@
 		<div class="form">
 			<div class="label">性別：</div>
 			<div class="input">
-				<c:if test="${user.gender == 1}">男性</c:if>
-				<c:if test="${user.gender == 2}">女性</c:if>
+				<c:if test="${user.gender == 0}">男性</c:if>
+				<c:if test="${user.gender == 1}">女性</c:if>
 			</div>
 		</div>
 
