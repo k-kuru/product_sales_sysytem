@@ -38,13 +38,14 @@ public class HistoryDao {
 				BuyHistory buyHistory = new BuyHistory();
 				buyHistory.setHistoryId(rs.getInt("history_id"));
 				buyHistory.setQuantity(rs.getInt("quantity"));
-				Date birthday = rs.getDate("birthday");
-				buyHistory.setBuyDate(sdf.format(birthday));
+				Date buyDate = rs.getDate("buy_date");
+				buyHistory.setBuyDate(sdf.format(buyDate));
 				User user = new User();
 				user.setUserId(rs.getString("user_id"));
 				Product product = new Product();
 				product.setProductId(rs.getString("product_id"));
 				product.setProductName(rs.getString("product_name"));
+				product.setPrice(rs.getString("price"));
 
 				buyHistory.setUser(user);
 				buyHistory.setProduct(product);
