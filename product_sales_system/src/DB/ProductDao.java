@@ -77,17 +77,17 @@ public class ProductDao {
 	 * 一致する名前があればデータを取得
 	 */
 	public static List<Product> serchProductName(String product_name) {
+		System.out.println("1");
 		Connection con = null;
 		PreparedStatement ps = null;
 		List<Product> productList = new ArrayList<Product>();
 		try {
 			con = DBManager.getConnection();
-			ps = con.prepareStatement(
-					"FROM product WHERE product_name like ? AND delete_flag = 0 ORDER BY product_name ASC");
+			ps = con.prepareStatement("SELECT * FROM product WHERE product_name like ? AND delete_flag = 0 ORDER BY product_name ASC");
 			ps.setString(1, "%" + product_name + "%");
 			ResultSet rs = ps.executeQuery();
+			System.out.println("1");
 			while (rs.next()) {
-				System.out.println("1");
 				Product product = new Product();
 				product.setProductId(rs.getString("product_id"));
 				product.setProductName(rs.getString("product_name"));
@@ -95,6 +95,7 @@ public class ProductDao {
 				product.setPrice(rs.getString("price"));
 				product.setStock(rs.getString("stock"));
 				product.setDeleteFlag(rs.getInt("delete_flag"));
+
 				productList.add(product);
 			}
 		} catch (SQLException e) {
