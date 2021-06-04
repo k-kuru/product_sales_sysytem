@@ -12,8 +12,9 @@
 	<article>
 		<%@include file="/jsp/product/display/product_search.jsp"%>
 		<a href="<%=request.getContextPath()%>/jsp/product/regist/input.jsp">新規登録</a>
+		<div>
 			<table>
-			<tr>
+				<tr>
 					<th>商品名</th>
 					<th>値段</th>
 					<th>在庫</th>
@@ -37,6 +38,7 @@
 					</tr>
 				</c:forEach>
 			</table>
-			</article>
+		</div>
+	</article>
 </body>
 </html>
