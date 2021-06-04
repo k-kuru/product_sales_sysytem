@@ -22,7 +22,7 @@
 					<tr>
 						<td><a
 							href="<c:url value="/ProductDetail">
-    <c:param name="productid" value="${product.productId}" />
+    <c:param name="productId" value="${product.productId}" />
 </c:url>">${product.productName}</a>
 						</td>
 						<td>${product.price}</td>
