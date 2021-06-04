@@ -16,7 +16,6 @@
 		<div>
 			<table class="product_list_table" border=1>
 				<tr>
-<<<<<<< HEAD
 					<td>
 					<a href="<c:url value="/ProductDetail">
 					<c:param name="productId" value="${product.productId}" />
@@ -28,8 +27,6 @@
 		</table>
 				<tr>
 			<tr>
-=======
->>>>>>> ee4f69a45a1bb72029944a372bf717a589bb3605
 					<th>商品名</th>
 					<th>値段</th>
 					<th>在庫</th>
@@ -55,10 +52,7 @@
 			</table>
 		</div>
 	</article>
-<<<<<<< HEAD
 		</div>	</article>
 			</article>
-=======
->>>>>>> ee4f69a45a1bb72029944a372bf717a589bb3605
 </body>
 </html>

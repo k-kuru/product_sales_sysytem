@@ -33,14 +33,11 @@
 					</tr>
 
 					<c:forEach var="userList" items="${userList}">
-<<<<<<< HEAD
 						<td><a href="javascript:document.userDetail.submit()">${userList.userId }</a></td>
 						<td><a href="javascript:document.userDetail.submit()">${userList.userName }</a></td>
-=======
 					<tr>
 						<td><a href="javascript:document.detail.submit()">${userList.userId }</a></td>
 						<td><a href="javascript:document.detail.submit()">${userList.userName }</a></td>
->>>>>>> 7e9cca14055fb605637a40adb716133166b33a51
 						<td><c:if test="${userList.authority == 0 }">一般</c:if> <c:if
 								test="${userList.authority == 1 }">管理者</c:if></td>
 					</tr>
@@ -61,14 +58,14 @@
 						</form>
 					</c:if>
 
-					<c:if test="${cartList.size()>15}">
+					<c:if test="${userList.size()>15}">
 						<form action="">
 							<button type="submit" value="${page }" disabled="disabled"
 								class="link"><%=request.getAttribute("page")%></button>
 						</form>
 					</c:if>
 
-					<c:if test="${(page*15) < cartList.size()}">
+					<c:if test="${(page*15) < userList.size()}">
 						<form action="<%=request.getContextPath()%>/UserPaging">
 							<input type="hidden" name="page_num" value="${page+1 }">
 							<input type="submit" value="${page+1 }" class="link" />
