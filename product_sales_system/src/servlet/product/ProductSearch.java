@@ -17,6 +17,12 @@ import bean.Product;
  */
 @WebServlet("/ProductSearch")
 public class ProductSearch extends HttpServlet {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		List<Product> productlist = ProductDao.findAllProduct();
+		request.setAttribute("productList",productlist);
+		request.getRequestDispatcher("/jsp/product/display/product_list.jsp").forward(request,response);
+	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
