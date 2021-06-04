@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/layout.css" rel="stylesheet" />
 <title>商品販売システム</title>
 </head>
 <body>
@@ -12,14 +14,14 @@
 
 	<h2>ユーザ更新入力画面</h2>
 
-	<p>更新する内容を入力してください。</p>
-
-	<div class="error">
+	<div class="errormessage">
 		<c:forEach var="error" items="${errorMessage}">
 			${error}<br/>
 		</c:forEach>
 	</div>
-
+	<div class="explain">
+		<p>更新する内容を入力してください。</p>
+	</div>
 	<form action="<%=request.getContextPath()%>/UserUpdateCheck" method="post">
 		<div class="form">
 			<div class="label">パスワード：</div>
@@ -92,7 +94,7 @@
 		</div>
 		</c:if>
 
-		<div class="form">
+		<div class="button">
 			<div class="label"></div>
 			<div class="input">
 				<input type="hidden" name="userId" value="${user.userId}" />
@@ -102,7 +104,7 @@
 	</form>
 
 	<form action="<%=request.getContextPath()%>/jsp/user_list.jsp" method="post">
-		<div class="form">
+		<div class="button">
 			<div class="label"></div>
 			<div class="input">
 				<input type="submit" value="戻る">

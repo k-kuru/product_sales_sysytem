@@ -5,14 +5,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/layout.css" rel="stylesheet" />
 <title>商品販売システム</title>
 </head>
 <body>
 	<%@include file="/jsp/header.jsp"%>
 	<h2>ユーザ削除確認画面</h2>
-	<p>以下のユーザを削除します。<br>よろしいですか。</p>
-	<p>ユーザ情報</p>
-
+	<div class="explain">
+		<p>以下のユーザを削除します。<br>よろしいですか。</p>
+	</div>
+	<div class="information">
+		<p>ユーザ情報</p>
+	</div>
 		<div class="form">
 			<div class="label">ユーザID：</div>
 			<div class="input">${user.userId}</div>
@@ -63,7 +68,7 @@
 
 
 	<form action="<%=request.getContextPath()%>/UserDelete" method="post">
-	<div class="form">
+	<div class="button">
 		<div class="label"></div>
 			<div class="input">
 			<input type="hidden" name="userId" value="${user.userId}" />
@@ -72,7 +77,7 @@
 		</div>
 	</form>
 		<form action="<%=request.getContextPath() %>/jsp/user_list.jsp" method="post">
-			<div class="form">
+			<div class="button">
 				<div class="label"></div>
 				<div class="input">
 					<input type="submit" value="戻る" />

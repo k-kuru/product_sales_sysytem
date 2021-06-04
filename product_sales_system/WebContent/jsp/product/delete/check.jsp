@@ -5,14 +5,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/layout.css" rel="stylesheet" />
 <title>商品販売システム</title>
 </head>
 <body>
 	<%@include file="/jsp/header.jsp"%>
 
 	<h2>商品削除確認画面</h2>
-	<p>以下の商品を削除します。<br>よろしいですか。</p>
-	<p>商品情報</p>
+	<div class="explain">
+		<p>以下の商品を削除します。<br>よろしいですか。</p>
+	</div>
+	<div class="information">
+		<p>商品情報</p>
+	</div>
 		<div class="form">
 					<div class="label">商品ID：</div>
 					<div class="input">${product.productId}</div>
@@ -34,7 +40,7 @@
 					<div class="input">${product.stock}</div>
 				</div>
 				<form action="<%=request.getContextPath()%>/ProductDeleteComplete" method="post">
-					<div class="form">
+					<div class="button">
 						<div class="label"></div>
 						<div class="input">
 							<input type="hidden" name="productId" value="${product.productId}" />
@@ -43,7 +49,7 @@
 					</div>
 				</form>
 				<form action="<%=request.getContextPath() %>/ProductDetail" method="post">
-					<div class="form">
+					<div class="button">
 						<div class="label"></div>
 						<div class="input">
 							<input type="hidden" name="productId" value="${product.productId}" />

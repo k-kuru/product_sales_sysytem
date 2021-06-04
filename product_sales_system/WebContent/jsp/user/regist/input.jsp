@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/layout.css" rel="stylesheet" />
 <title>商品販売システム</title>
 </head>
 <body>
@@ -15,13 +17,13 @@
 	</header>
 
 	<h2>ユーザ新規登録入力画面</h2>
-
-	<p>登録する情報を入力してください。</p>
-
-	<div class="error">
+	<div class="errormessage">
 		<c:forEach var="error" items="${errorMessage}">
 			${error}<br/>
 		</c:forEach>
+	</div>
+	<div class="explain">
+		<p>登録する情報を入力してください。</p>
 	</div>
 
 	<form action="<%=request.getContextPath()%>/UserRegistCheck" method="post">
@@ -50,8 +52,8 @@
 			<div class="label">生年月日：</div>
 			<div class="input">
 				<input type="text" name="birthday" value="${user.birthDay}" />
+				(入力例 1999/01/01)
 			</div>
-			(入力例 1999/01/01)
 		</div>
 
 		<div class="form">
@@ -85,7 +87,7 @@
 			</div>
 		</div>
 
-		<div class="form">
+		<div class="button">
 			<div class="label"></div>
 			<div class="input">
 				<input type="submit" value="確認" />
@@ -94,7 +96,7 @@
 	</form>
 
 	<form action="<%=request.getContextPath()%>/jsp/login.jsp" method="post">
-		<div class="form">
+		<div class="button">
 			<div class="label"></div>
 			<div class="input">
 				<input type="submit" value="戻る">
