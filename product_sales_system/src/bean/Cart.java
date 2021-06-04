@@ -1,21 +1,15 @@
 package bean;
 
 public class Cart {
-	private String product_name;
-	private int product_price;
+	private Product product;
 	private int quantity;
 
-	public String getProduct_name() {
-		return product_name;
+
+	public Product getProduct() {
+		return product;
 	}
-	public void setProduct_name(String product_name) {
-		this.product_name = product_name;
-	}
-	public int getProduct_price() {
-		return product_price;
-	}
-	public void setProduct_price(int product_price) {
-		this.product_price = product_price;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 	public int getQuantity() {
 		return quantity;

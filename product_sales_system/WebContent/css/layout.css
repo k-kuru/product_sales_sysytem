@@ -30,15 +30,14 @@ header {
 }
 
 header .title {
-	margin-left: 10px;
 	float: left;
 	line-height: 45px;
 	font-size: 25pt;
+	text-align: left;
 }
 
 header .user_info {
 	float: right;
-	margin-right: 20px;
 	line-height: 45px;
 	text-align: right;
 }
