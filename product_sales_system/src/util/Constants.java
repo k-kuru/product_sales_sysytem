@@ -20,16 +20,16 @@ public class Constants {
 	/** 女性を表す */
 	public static final int WOMAN = 1;
 
-	/** 社員ID、またはパスワードが間違っていた場合のエラーメッセージ */
-	public static final String EMPID_OR_PASSWORD_MISMATCH = "社員ID、またはパスワードが間違っています。";
+	/** ユーザID、またはパスワードが間違っていた場合のエラーメッセージ */
+	public static final String USERID_OR_PASSWORD_MISMATCH = "ユーザID、またはパスワードが間違っています。";
 
-	/** 社員IDの桁数が5桁を超えた場合のチェックエラーメッセージ */
+	/** ユーザIDの桁数が5桁を超えた場合のチェックエラーメッセージ */
 	public static final String USERID_LENGTH_OVER = "ユーザIDは20桁までで入力してください。";
 
-	/** 社員IDが半角英数字以外で入力された場合のエラーメッセージ */
+	/** ユーザIDが半角英数字以外で入力された場合のエラーメッセージ */
 	public static final String USERID_MISSMATCH = "ユーザIDは半角英数字で入力してください。";
 
-	/** 社員IDが未入力のエラーメッセージ */
+	/** ユーザIDが未入力のエラーメッセージ */
 	public static final String USERID_EMPTY = "ユーザIDを入力してください。";
 
 	/** パスワードが未入力のエラーメッセージ */
