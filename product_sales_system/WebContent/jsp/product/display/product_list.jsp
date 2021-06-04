@@ -47,11 +47,8 @@
 					</tr>
 				</c:forEach>
 			</table>
-<<<<<<< HEAD
 		</div>
 	</article>
-=======
 		</div>	</article>
->>>>>>> 99867e4dd263c6c3a6716f9ae7336d2872284950
 </body>
 </html>

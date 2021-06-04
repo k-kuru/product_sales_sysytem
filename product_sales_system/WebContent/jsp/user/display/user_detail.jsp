@@ -10,7 +10,7 @@
 <body>
 	<p>ID：${user.userId}
 	<p>名前：${user.userName}
-	<p>生年月日：${user.birthday}
+	<p>生年月日：${user.birthDay}
 	<p>性別：${user.gender == "0" ? "男性":"女性"}
 	<p>住所：${user.address}
 	<p>電話番号：${user.tel}
