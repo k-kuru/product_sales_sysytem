@@ -21,7 +21,7 @@
 			type="submit" value="更新" />
 	</form>
 	<c:choose>
-		<c:when test="${user.authority == 0}">
+		<c:when test="${loginuser.authority == 0}">
 			<form action="<%=request.getContextPath()%>/UserDeleteCheck"
 		method="post">
 		<input type="hidden" name="productId" value="${user.userId}" /> <input
@@ -29,7 +29,7 @@
 			type="submit" value="退会" />
 	</form>
 		</c:when>
-		<c:when test="${user.authority == 1}">
+		<c:when test="${loginuser.authority == 1}">
 			<form action="<%=request.getContextPath()%>/UserDeleteCheck"
 		method="post">
 		<input type="hidden" name="productId" value="${user.userId}" /> <input
