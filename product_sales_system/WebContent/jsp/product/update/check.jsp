@@ -42,7 +42,7 @@
 						    <input type="hidden" name="productExplain" value="${product.productExplain}"/>
 							<input type="hidden" name="price" value="${product.price}"/>
 							<input type="hidden" name="stock" value="${product.stock}"/>
-							<input type="submit" value="登録" />
+							<input type="submit" value="更新" />
 						</div>
 					</div>
 				</form>

@@ -15,6 +15,18 @@
 		<div>
 			<table>
 				<tr>
+<<<<<<< HEAD
+					<td>
+					<a href="<c:url value="/ProductDetail">
+					<c:param name="productId" value="${product.productId}" />
+						</c:url>">${product.productName}</a>
+					</td>
+					<td>${product.price}</td>
+					<td>${product.stock == "0" ? "なし":"あり"}</td>
+				</tr>
+			</c:forEach>
+		</table>
+=======
 					<th>商品名</th>
 					<th>値段</th>
 					<th>在庫</th>
@@ -38,6 +50,7 @@
 					</tr>
 				</c:forEach>
 			</table>
+>>>>>>> acda31318c18780b335b54b412c8a5c17ea3a66d
 		</div>
 	</article>
 </body>

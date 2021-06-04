@@ -44,6 +44,7 @@ public class ProductUpdate extends HttpServlet {
 		product.setPrice(price);
 		product.setStock(stock);
 		ProductDao.updateProduct(product);
+		request.setAttribute("product", product);
 		request.getRequestDispatcher("jsp/product/update/complete.jsp").forward(request, response);
 	}
 
