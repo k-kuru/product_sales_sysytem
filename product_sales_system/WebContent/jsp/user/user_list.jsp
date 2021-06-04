@@ -23,11 +23,11 @@
 							<th class="user_Id">ID</th>
 							<th class="userName">名前</th>
 							<th class="authority">権限</th>
-						</tr>
-						<tr>
-							<td><a href="javascript:setAndSubmit<%=request.getContextPath()%>/servlet.user/Userinfo.java">${user.UserId}</a></td>
-							<td><a href="javascript:setAndSubmit<%=request.getContextPath()%>/servlet.user/Userinfo.java">${user.UserName}</a></td>
-						</tr>
+
+								<td>${user_table.user_Id }</td>
+								<td>${user_table.user_Name }</td>
+								<td><c:if test="${user_table.authority == 0 }">一般</c:if>
+									<c:if test="${user_table.authority == 1 }">管理者</c:if></td>
 					</table>
 					<div class="user_list_label"></div>
 					<div class="user_list_input">
