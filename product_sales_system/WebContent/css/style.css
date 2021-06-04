@@ -6,6 +6,7 @@ input[type="submit"]{
 
 .page_title{
 	color:red;
+<<<<<<< HEAD
 }
 
 /* ---- 社員登録入力画面へのリンク ---- */
@@ -108,4 +109,6 @@ input[type=submit] {
 	padding: 0px 10px;
 	border-radius: 6px;
 	color: #12526d;
+=======
+>>>>>>> acda31318c18780b335b54b412c8a5c17ea3a66d
 }

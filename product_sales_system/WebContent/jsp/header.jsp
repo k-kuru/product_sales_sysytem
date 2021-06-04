@@ -8,8 +8,8 @@
 	<div class="content">
 		<div class="title">商品販売システム</div>
 		<div class="user_info">
-			ようこそ、[ここにユーザーネーム]さん　　　　
-			カート　　　　
+			ようこそ、<a href="<%=request.getContextPath() %>/jsp/mypage"><%=user.getUserName() %></a>さん　　　　
+			<a href="<%=request.getContextPath() %>/jsp/cart/cart_list">カート</a>　　　　
 			<a href="<%=request.getContextPath()%>/Logout">ログアウト</a>
 		</div>
 	</div>
