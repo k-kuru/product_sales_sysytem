@@ -12,8 +12,10 @@
 	<article>
 		<%@include file="/jsp/product/display/product_search.jsp"%>
 		<a href="<%=request.getContextPath()%>/jsp/product/regist/input.jsp">新規登録</a>
+		<div>
 			<table>
 				<tr>
+<<<<<<< HEAD
 					<td>
 					<a href="<c:url value="/ProductDetail">
 					<c:param name="productId" value="${product.productId}" />
@@ -25,6 +27,8 @@
 		</table>
 				<tr>
 			<tr>
+=======
+>>>>>>> ee4f69a45a1bb72029944a372bf717a589bb3605
 					<th>商品名</th>
 					<th>値段</th>
 					<th>在庫</th>
@@ -50,7 +54,10 @@
 			</table>
 		</div>
 	</article>
+<<<<<<< HEAD
 		</div>	</article>
 			</article>
+=======
+>>>>>>> ee4f69a45a1bb72029944a372bf717a589bb3605
 </body>
 </html>
