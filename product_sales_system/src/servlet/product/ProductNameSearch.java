@@ -25,6 +25,7 @@ public class ProductNameSearch extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String productName = request.getParameter("productName");
 		List<Product> productList = ProductDao.serchProductName(productName);
+
 		request.setAttribute("productList", productList);
 		request.getRequestDispatcher("/jsp/product/display/product_list.jsp").forward(request, response);
 	}

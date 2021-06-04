@@ -31,9 +31,9 @@
 
 						<c:forEach var="cart" items="${cartList}">
 							<tr>
-								<td>${cart.getProduct_name() }</td>
+								<td>${cart.getProduct().getProductName() }</td>
 								<td>${cart.getQuantity() }個</td>
-								<td>${cart.getProduct_price() }円×${cart.getQuantity() }</td>
+								<td>${cart.getProduct().getPrice() }円×${cart.getQuantity() }</td>
 							</tr>
 						</c:forEach>
 					</table>
@@ -41,7 +41,7 @@
 					List<Cart> cartList = (List<Cart>) session.getAttribute("cartList");
 					int sum_price = 0;
 					for (int i = 0; i < cartList.size(); i++) {
-						sum_price += cartList.get(i).getProduct_price() * cartList.get(i).getQuantity();
+						sum_price += Integer.parseInt(cartList.get(i).getProduct().getPrice()) * cartList.get(i).getQuantity();
 					}
 					%>
 					<div class="sum_price">合計金額：　<%=sum_price%></div>

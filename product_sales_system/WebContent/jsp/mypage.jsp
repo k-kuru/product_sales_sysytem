@@ -16,8 +16,7 @@
 	<div class="container content">
 		<h3 class="page_title">マイページ</h3>
 		<c:choose>
-			<!-- ログインユーザの権限が一般会員なら -->
-			<c:when test="${user.authority ==0 }">
+			<c:when test="${loginuser.authority==0 }">
 				<div class="mypage_main">
 					<a href="<%=request.getContextPath()%>/UserBuyHistory"
 						class="mypage_link">購入履歴</a>
@@ -27,7 +26,6 @@
 					<div class="mypage_explain">購入履歴を一覧表示します。</div>
 				</div>
 			</c:when>
-			<!-- ログインユーザの権限が管理者なら -->
 			<c:otherwise>
 				<a href="<%=request.getContextPath()%>/"
 					class="mypage_link">ユーザー一覧</a>

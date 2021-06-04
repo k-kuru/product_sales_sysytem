@@ -18,7 +18,7 @@
 		${error}<br>
 	</c:forEach>
 	</div>
-	<p>登録する情報を入力してください。</p>
+		<div class="explain"><p>登録する情報を入力してください。</p></div>
 		<form action="<%=request.getContextPath()%>/ProductRegistCheck" method="post">
 					<div class="form">
 						<div class="label">商品ID：</div>
@@ -50,15 +50,15 @@
 							<input type="text" name="stock" value="${product.stock}"/>
 						</div>
 					</div>
-					<div class="form">
+					<div class="button">
 						<div class="label"></div>
 						<div class="input">
 							<input type="submit" value="確認" />
 						</div>
 					</div>
 				</form>
-				<form action="<%=request.getContextPath()%>/ProductSerch">
-					<div class="form">
+				<form action="<%=request.getContextPath()%>/ProductSearch">
+					<div class="button">
 						<div class="label"></div>
 						<div class="input">
 							<input type="submit" value="戻る" />
