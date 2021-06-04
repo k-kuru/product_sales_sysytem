@@ -12,11 +12,11 @@
 <title>商品販売システム</title>
 </head>
 <body>
-	<header>
-		<div class="content">
-			<div class="title">商品販売システム</div>
-		</div>
-	</header>
+		<header>
+			<div class="content">
+				<div class="title">商品販売システム</div>
+			</div>
+		</header>
 
 	<div class="login">
 		<h3>ログイン画面</h3>

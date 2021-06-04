@@ -15,6 +15,7 @@
 <body class="list">
 
 	<%@include file="/jsp/header.jsp"%>
+	<h3>ユーザー一覧画面</h3>
 	<article class="main">
 
 		<h3 class="page_title">ユーザー一覧画面</h3>
