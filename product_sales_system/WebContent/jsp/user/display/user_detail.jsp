@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,26 +8,41 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<p>商品名：${product.productName}
-	<p>商品説明：${product.productExplain}
-	<p>値段：${product.price}￥
-	<p>在庫：${product.stock == "0" ? "なし":"あり"}
-		<form action="<%=request.getContextPath()%>/ProductUpdateInput" method="post">
-			<input type="hidden" name="productId" value="${product.productId}" />
-			<input type="hidden" name="productName" value="${product.productName}" />
-			<input type="hidden" name="productExplain" value="${product.productExplain}" />
-			<input type="hidden" name="price" value="${product.price}" />
-			<input type="hidden" name="stock" value="${product.stock}" />
-			<input type="submit" value="更新" />
-				</form>
-				<form action="<%=request.getContextPath()%>/ProductDeleteCheck" method="post">
-		<input type="hidden" name="productId" value="${product.productId}" />
-					<input type="hidden" name="productId" value="${product.productId}" />
-			<input type="hidden" name="productName" value="${product.productName}" />
-			<input type="hidden" name="productExplain" value="${product.productExplain}" />
-			<input type="hidden" name="price" value="${product.price}" />
-			<input type="hidden" name="stock" value="${product.stock}" />
-		<input type="submit" value="削除" />
-			</form>
+	<p>ID：${user.userName}
+	<p>名前：${user.userExplain}
+	<p>生年月日：${user.birthday}
+	<p>性別：${user.gender == "0" ? "男性":"女性"}
+	<p>住所：${user.address}
+	<p>電話番号：${user.tel}
+	<p>権限：${user.authority == "0" ? "一般":"管理者"}
+	<form action="<%=request.getContextPath()%>/UserUpdateInput"
+		method="post">
+		<input type="hidden" name="userId" value="${user.userId}" /> <input
+			type="submit" value="更新" />
+	</form>
+	<c:choose>
+		<c:when test="${user.authority == 0}">
+			<form action="<%=request.getContextPath()%>/UserDeleteCheck"
+		method="post">
+		<input type="hidden" name="productId" value="${user.userId}" /> <input
+			type="hidden" name="userId" value="${user.userId}" /> <input
+			type="submit" value="退会" />
+	</form>
+		</c:when>
+		<c:when test="${user.authority == 1}">
+			<form action="<%=request.getContextPath()%>/UserDeleteCheck"
+		method="post">
+		<input type="hidden" name="productId" value="${user.userId}" /> <input
+			type="hidden" name="userId" value="${user.userId}" /> <input
+			type="submit" value="削除" />
+	</form>
+		</c:when>
+	</c:choose>
+	<form action="<%=request.getContextPath()%>/UserDeleteCheck"
+		method="post">
+		<input type="hidden" name="productId" value="${user.userId}" /> <input
+			type="hidden" name="userId" value="${user.userId}" /> <input
+			type="submit" value="削除" />
+	</form>
 </body>
 </html>
