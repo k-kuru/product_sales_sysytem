@@ -38,11 +38,5 @@
 	</form>
 		</c:when>
 	</c:choose>
-	<form action="<%=request.getContextPath()%>/UserDeleteCheck"
-		method="post">
-		<input type="hidden" name="productId" value="${user.userId}" /> <input
-			type="hidden" name="userId" value="${user.userId}" /> <input
-			type="submit" value="削除" />
-	</form>
 </body>
 </html>
