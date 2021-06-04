@@ -24,6 +24,7 @@ public class ProductSearch extends HttpServlet {
 		// TODO Auto-generated method stub
 		List<Product> productlist = ProductDao.findAllProduct();
 		request.setAttribute("productList",productlist);
+		request.setAttribute("page", 1);
 		request.getRequestDispatcher("/jsp/product/display/product_list.jsp").forward(request,response);
 	}
 

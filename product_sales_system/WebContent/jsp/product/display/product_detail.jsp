@@ -49,7 +49,7 @@
 			value="削除" />
 	</form>
 	<form
-		action="<%=request.getContextPath()%>/jsp/product/display/product_list.jsp">
+		action="<%=request.getContextPath()%>/ProductSearch">
 		<input type="submit" value="戻る" />
 	</form>
 </body>

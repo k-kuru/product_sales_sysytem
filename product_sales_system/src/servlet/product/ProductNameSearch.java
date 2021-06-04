@@ -27,6 +27,7 @@ public class ProductNameSearch extends HttpServlet {
 		List<Product> productList = ProductDao.serchProductName(productName);
 
 		request.setAttribute("productList", productList);
+		request.setAttribute("page", 1);
 		request.getRequestDispatcher("/jsp/product/display/product_list.jsp").forward(request, response);
 	}
 

@@ -18,7 +18,7 @@
 					<th>値段</th>
 					<th>在庫</th>
 				</tr>
-				<c:forEach var="product" items="${productList}">
+				<c:forEach var="product" items="${productList}" begin="${(page-1)*15 }" end="${(page-1)*15+14 }" varStatus="status">
 					<tr>
 						<td><a
 							href="<c:url value="/ProductDetail">
