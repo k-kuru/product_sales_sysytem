@@ -112,7 +112,7 @@ author Nakanishi
 				</div>
 			</c:if>
 			<!-- カートが空の時 -->
-			<c:if test="${cartList.size()==0}">
+			<c:if test="${cartList==null}">
 				<div class="empty">カートが空です</div>
 				<form action="<%=request.getContextPath()%>/ProductSearch"
 					method="post">

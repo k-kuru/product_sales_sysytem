@@ -10,10 +10,11 @@
 <body>
 	<%@include file="/jsp/header.jsp"%>
 	<article>
+	<h2>商品一覧画面</h2>
 		<%@include file="/jsp/product/display/product_search.jsp"%>
 		<a href="<%=request.getContextPath()%>/jsp/product/regist/input.jsp">新規登録</a>
 		<div>
-			<table>
+			<table class="product_list_table" border=1>
 				<tr>
 					<th>商品名</th>
 					<th>値段</th>
@@ -26,13 +27,13 @@
     <c:param name="productid" value="${product.productId}" />
 </c:url>">${product.productName}</a>
 						</td>
-						<td>${product.price}</td>
+						<td>${product.price}円</td>
 						<c:choose>
 							<c:when test="${loginuser.authority == 0}">
 								<td>${product.stock == "0" ? "なし":"あり"}</td>
 							</c:when>
 							<c:when test="${loginuser.authority == 1}">
-							<td>${product.stock}</td>
+							<td>${product.stock}個</td>
 							</c:when>
 						</c:choose>
 					</tr>

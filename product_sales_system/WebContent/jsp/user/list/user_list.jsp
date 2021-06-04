@@ -30,10 +30,12 @@
 					</tr>
 
 					<c:forEach var="userList" items="${userList}">
+					<tr>
 						<td><a href="javascript:document.detail.submit()">${userList.userId }</a></td>
 						<td><a href="javascript:document.detail.submit()">${userList.userName }</a></td>
 						<td><c:if test="${userList.authority == 0 }">一般</c:if> <c:if
 								test="${userList.authority == 1 }">管理者</c:if></td>
+					</tr>
 					</c:forEach>
 				</table>
 				<div class="user_list_label"></div>

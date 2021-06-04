@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<p>ID：${user.userName}
-	<p>名前：${user.userExplain}
+	<p>ID：${user.userId}
+	<p>名前：${user.userName}
 	<p>生年月日：${user.birthday}
 	<p>性別：${user.gender == "0" ? "男性":"女性"}
 	<p>住所：${user.address}
