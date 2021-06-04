@@ -41,7 +41,8 @@
 					</table>
 					<div class="user_list_label"></div>
 					<div class="user_list_input">
-						<input type="submit" value="戻る" />
+						<a href="<%=request.getContextPath()%>/jsp/mypage.jsp">
+						<input type="submit" value="戻る" /></a>
 					</div>
 				</c:when>
 			</c:choose>

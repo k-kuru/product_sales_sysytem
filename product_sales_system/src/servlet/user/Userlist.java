@@ -1,11 +1,16 @@
 package servlet.user;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import DB.UserDao;
+import bean.User;
 
 /**
  * Servlet implementation class Userlist
@@ -34,8 +39,9 @@ public class Userlist extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		List<User> userlist = UserDao.findAllUser();
+		request.setAttribute("userList",userlist);
+		request.getRequestDispatcher("/jsp/user/user_list.jsp").forward(request,response);
 	}
 
 }
