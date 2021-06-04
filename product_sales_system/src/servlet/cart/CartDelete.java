@@ -17,11 +17,12 @@ import bean.Cart;
  * @author Nakanishi
  *
  */
-@WebServlet("/Cart_delete")
-public class Cart_delete extends HttpServlet {
+@WebServlet("/CartDelete")
+public class CartDelete extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();

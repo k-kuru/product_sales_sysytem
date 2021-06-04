@@ -12,7 +12,9 @@ import DB.UserDao;
 import bean.User;
 
 /**
- * Servlet implementation class UserUpdate
+ * ユーザ更新をしユーザ更新完了画面に遷移
+ * @author matsuzaki
+ *
  */
 @WebServlet("/UserUpdate")
 public class UserUpdate extends HttpServlet {
