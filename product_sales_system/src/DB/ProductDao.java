@@ -82,12 +82,7 @@ public class ProductDao {
 		List<Product> productList = new ArrayList<Product>();
 		try {
 			con = DBManager.getConnection();
-<<<<<<< HEAD
-
 			ps = con.prepareStatement("SELECT * FROM product WHERE product_name like ? AND delete_flag = 0 ORDER BY product_name ASC");
-=======
-			ps = con.prepareStatement("select * from product where product_name like ? And delete_flag = 0 order by product_name asc");
->>>>>>> 44b95f3e4c1ee77e774ebb0908f6e9e20b6b236b
 			ps.setString(1, "%" + product_name + "%");
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
