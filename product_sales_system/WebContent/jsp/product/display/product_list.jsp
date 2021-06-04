@@ -11,7 +11,7 @@
 	<article>
 		<%@include file="/jsp/product/display/product_search.jsp"%>
 		<a href="<%=request.getContextPath()%>/jsp/product/regist/input.jsp">新規登録</a>
-		<table>
+		<div><table>
 			<tr>
 				<th>商品名</th>
 				<th>値段</th>
@@ -19,12 +19,17 @@
 			</tr>
 			<c:forEach var="product" items="${productList}">
 				<tr>
-					<td><a href="<%=request.getContextPath()%>/ProductDetail" >${product.productName}</a></td>
+					<td><a
+						href="<c:url value="/ProductDetail">
+    <c:param name="productid" value="${product.productId}" />
+</c:url>">${product.productName}</a>
+					</td>
 					<td>${product.price}</td>
 					<td>${product.stock == "0" ? "なし":"あり"}</td>
 				</tr>
 			</c:forEach>
 		</table>
+		</div>
 	</article>
 </body>
 </html>

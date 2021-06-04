@@ -19,12 +19,15 @@ import util.Validator;
 public class ProductUpdateCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Getで受け取った場合Postへ処理を送る
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * 入力された情報を持って商品更新確認画面へ遷移
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -42,6 +45,10 @@ public class ProductUpdateCheck extends HttpServlet {
 		product.setPrice(price);
 		product.setStock(stock);
 
+		/**
+		 * 入力チェックにエラーがなければ確認画面へ
+		 * エラーがあればエラーメッセージをもって入力画面へ遷移
+		 */
 		List<String> errorMessageList = Validator.makeProductInputErrorMessageList(product);
 		if (errorMessageList.size() != 0) {
 			request.setAttribute("errorMessageList", errorMessageList);
