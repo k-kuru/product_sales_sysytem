@@ -40,7 +40,7 @@ public class Login extends HttpServlet {
 			for (int i =0; i < user.size(); i++) {
 				if (user.get(i).getUserId().equals(id) && user.get(i).getPass().equals(password)){
 					HttpSession session = request.getSession();
-					session.setAttribute("user", user.get(i));
+					session.setAttribute("loginuser", user.get(i));
 					logined = true;
 					break;
 				}
