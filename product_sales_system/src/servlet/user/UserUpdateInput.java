@@ -12,7 +12,9 @@ import DB.UserDao;
 import bean.User;
 
 /**
- * Servlet implementation class UserUpdateInput
+ * ユーザIDから詳細情報を検索しユーザ更新入力画面に遷移
+ * @author matsuzaki
+ *
  */
 @WebServlet("/UserUpdateInput")
 public class UserUpdateInput extends HttpServlet {

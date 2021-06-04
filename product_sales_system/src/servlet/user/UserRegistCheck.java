@@ -15,7 +15,9 @@ import util.Validator;
 
 
 /**
- * Servlet implementation class UserRegistCheck
+ * ユーザ情報を持ってユーザ登録確認画面に遷移
+ * @author matsuzaki
+ *
  */
 @WebServlet("/UserRegistCheck")
 public class UserRegistCheck extends HttpServlet {

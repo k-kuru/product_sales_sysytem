@@ -13,7 +13,9 @@ import bean.User;
 import util.Validator;
 
 /**
- * Servlet implementation class UserUpdateCheck
+ * ユーザ情報を持ってユーザ更新確認画面に遷移
+ * @author matsuzaki
+ *
  */
 @WebServlet("/UserUpdateCheck")
 public class UserUpdateCheck extends HttpServlet {

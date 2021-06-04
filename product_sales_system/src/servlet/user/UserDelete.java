@@ -12,7 +12,9 @@ import javax.servlet.http.HttpSession;
 import DB.UserDao;
 
 /**
- * Servlet implementation class UserDelete
+ * ユーザ削除をしユーザ削除完了画面に遷移
+ * @author matsuzaki
+ *
  */
 @WebServlet("/UserDelete")
 public class UserDelete extends HttpServlet {
@@ -21,6 +23,7 @@ public class UserDelete extends HttpServlet {
 		UserDao.deleteUser(userId);
 
 		HttpSession session = request.getSession();
+		//セッションスコープに登録されているカート情報も削除
 		session.removeAttribute("cartList");
 
 		request.getRequestDispatcher("/jsp/user/delete/complete.jsp").forward(request, response);
