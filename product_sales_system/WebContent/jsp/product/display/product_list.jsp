@@ -12,7 +12,6 @@
 	<article>
 		<%@include file="/jsp/product/display/product_search.jsp"%>
 		<a href="<%=request.getContextPath()%>/jsp/product/regist/input.jsp">新規登録</a>
-		<div>
 			<table>
 				<tr>
 					<th>商品名</th>
@@ -28,17 +27,16 @@
 						</td>
 						<td>${product.price}</td>
 						<c:choose>
-							<c:when test="${user.authority == 0}">
+							<c:when test="${loginuser.authority == 0}">
 								<td>${product.stock == "0" ? "なし":"あり"}</td>
 							</c:when>
-							<c:when test="${user.authority == 1}">
-							${product.stock}
+							<c:when test="${loginuser.authority == 1}">
+							<td>${product.stock}</td>
 							</c:when>
 						</c:choose>
 					</tr>
 				</c:forEach>
 			</table>
-		</div>
 	</article>
 </body>
 </html>
