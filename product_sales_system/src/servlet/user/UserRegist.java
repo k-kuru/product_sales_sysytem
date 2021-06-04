@@ -12,7 +12,9 @@ import DB.UserDao;
 import bean.User;
 
 /**
- * Servlet implementation class UserRegistComplete
+ * ユーザ登録をしユーザ登録完了画面に遷移
+ * @author matsuzaki
+ *
  */
 @WebServlet("/UserRegist")
 public class UserRegist extends HttpServlet {
