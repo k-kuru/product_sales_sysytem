@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
 <body>
 	<p>商品名：${product.productName}
 	<p>商品説明：${product.productExplain}
-	<p>値段：￥${product.price}
+	<p>値段：${product.price}￥
 	<p>在庫：${product.stock == "0" ? "なし":"あり"}
 		<form action="<%=request.getContextPath()%>/ProductUpdateInput" method="post">
 			<input type="hidden" name="productId" value="${product.productId}" />
@@ -28,8 +28,5 @@
 			<input type="hidden" name="stock" value="${product.stock}" />
 		<input type="submit" value="削除" />
 			</form>
-			<form action="<%=request.getContextPath()%>/jsp/product/display/product_list.jsp">
-			<input type="submit" value="戻る" />
-</form>
 </body>
 </html>
