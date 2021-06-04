@@ -28,16 +28,6 @@
 							<td><a href="javascript:setAndSubmit<%=request.getContextPath()%>/servlet.user/Userinfo.java">${user.UserId}</a></td>
 							<td><a href="javascript:setAndSubmit<%=request.getContextPath()%>/servlet.user/Userinfo.java">${user.UserName}</a></td>
 						</tr>
-
-						<c:forEach var="user" items="${userList}">
-							<tr>
-								<td>${user.user_Id }</td>
-								<td>${user.user_Name }</td>
-								<td><c:if test="${user.authority == 0}">一般</c:if>
-									<c:if test="${user.authority == 1}">管理者</c:if>
-								</td>
-							</tr>
-						</c:forEach>
 					</table>
 					<div class="user_list_label"></div>
 					<div class="user_list_input">
