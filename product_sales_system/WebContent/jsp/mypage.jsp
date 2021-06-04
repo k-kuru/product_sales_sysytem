@@ -16,7 +16,11 @@
 	<div class="container content">
 		<h3 class="page_title">マイページ</h3>
 		<c:choose>
+<<<<<<< HEAD
 			<c:when test="${user.authority ==0 }">
+=======
+			<c:when test="${loginuser.authority==0 }">
+>>>>>>> a5951f994cefc40dc4bffa7b2db4b1bc05f36cbe
 				<div class="mypage_main">
 					<a href="<%=request.getContextPath()%>/UserBuyHistory"
 						class="mypage_link">購入履歴</a>

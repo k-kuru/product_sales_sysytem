@@ -16,7 +16,7 @@
 
 	<h2>ユーザ新規登録完了画面</h2>
 
-	<p>商品登録が完了しました。</p>
+	<p>ユーザ登録が完了しました。</p>
 	<form action="<%=request.getContextPath() %>/jsp/login.jsp" method="post">
 		<div class="form">
 			<input type="submit" value="戻る" />
