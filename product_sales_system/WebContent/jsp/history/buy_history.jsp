@@ -37,7 +37,7 @@
 
 	</c:if>
 
-	<form action="<%=request.getContextPath()%>/Mypage" method="post">
+	<form action="<%=request.getContextPath()%>/mypage.jsp" method="post">
 	<div class="form">
 		<div class="label"></div>
 			<div class="input">

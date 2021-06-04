@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import DB.UserDao;
 import bean.User;
+import util.Constants;
 import util.Validator;
 /**
  * Servlet implementation class Login
@@ -51,6 +52,7 @@ public class Login extends HttpServlet {
 				request.getRequestDispatcher("/ProductSearch").forward(request, response);
 			} else {
 				//ID、またはパスワードが間違っていた場合
+				errorMessageList.add(Constants.USERID_OR_PASSWORD_MISMATCH);
 				request.setAttribute("errorMessage", errorMessageList);
 				request.getRequestDispatcher("jsp/login.jsp").forward(request, response);
 
