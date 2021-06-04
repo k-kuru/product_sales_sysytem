@@ -22,16 +22,9 @@ public class ProductNameSearch extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
-		String productName = request.getParameter("productName");
-		List<Product> productList = ProductDao.serchProductName(productName);
-		System.out.println(productList.size());
-=======
 		request.setCharacterEncoding("UTF-8");
 		String productName = request.getParameter("productName");
 		List<Product> productList = ProductDao.serchProductName(productName);
-		//System.out.println(productList.size());
->>>>>>> d2ab7213e9425fe8b4b0311f9bb3ce6c0c2960a1
 		request.setAttribute("productList", productList);
 		request.getRequestDispatcher("/jsp/product/display/product_list.jsp").forward(request, response);
 	}
