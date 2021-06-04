@@ -9,7 +9,7 @@
 <body>
 <h2>商品名検索</h2>
 <form action="<%=request.getContextPath()%>/ProductNameSearch" method="post">
-<input type = "text" name = "productname">
+<input type = "text" name = "productName">
 <input type = "submit" value = "検索">
 </form>
 </body>

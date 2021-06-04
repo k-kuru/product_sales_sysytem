@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DB.ProductDao;
+import bean.Product;
+
 /**
  * Servlet implementation class ProductDetail
  */
@@ -16,17 +19,25 @@ public class ProductDetail extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String productid = request.getParameter("productid");
+		Product product = ProductDao.showProductDetail(productid);
+		request.setAttribute("product", product);
+		request.getRequestDispatcher("/jsp/product/display/product_detail.jsp").forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+//	/**
+//	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+//	 */
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+//			throws ServletException, IOException {
+//		// TODO Auto-generated method stub
+//		String productid = request.getParameter("productid");
+//		Product product = ProductDao.showProductDetail(productid);
+//		request.setAttribute("product", product);
+//		request.getRequestDispatcher("/jsp/product/display/product_detail.jsp").forward(request, response);
+//	}
 
 }

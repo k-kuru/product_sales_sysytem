@@ -10,20 +10,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import bean.Product;
 
-/**
- * Servlet implementation class ProductDeleteCheck
- */
+
 @WebServlet("/ProductDeleteCheck")
 public class ProductDeleteCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Getで受け取った場合Postへ処理を送る
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * 商品情報を商品削除確認画面へ送る
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
