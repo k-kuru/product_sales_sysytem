@@ -11,6 +11,7 @@ import java.util.List;
 
 import bean.User;
 
+
 public class UserDao {
 
 	public static SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
