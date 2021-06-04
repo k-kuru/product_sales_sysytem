@@ -24,16 +24,14 @@
 				</form>
 				<table class="user_list_table">
 					<tr>
-						<th class="user_Id"><a
-							href="javascript:document.detail.submit()">ID</a></th>
-						<th class="userName"><a
-							href="javascript:document.detail.submit()">名前</a></th>
+						<th class="user_Id">ID</th>
+						<th class="userName">名前</a></th>
 						<th class="authority">権限</th>
 					</tr>
 
 					<c:forEach var="userList" items="${userList}">
-						<td>${userList.userId }</td>
-						<td>${userList.userName }</td>
+						<td><a href="javascript:document.detail.submit()">${userList.userId }</a></td>
+						<td><a href="javascript:document.detail.submit()">${userList.userName }</a></td>
 						<td><c:if test="${userList.authority == 0 }">一般</c:if> <c:if
 								test="${userList.authority == 1 }">管理者</c:if></td>
 					</c:forEach>
