@@ -12,9 +12,12 @@
 
 	<h2>商品更新完了画面</h2>
 	<p>商品更新が完了しました。</p>
-			<form action="<%=request.getContextPath() %>/ProductDetail" method="post">
+			<form action="<%=request.getContextPath() %>/ProductDetail" >
 				<div class="form">
-					<input type="submit" value="戻る" />
+					<div class="input">
+						<input type="hidden" name="productId" value="${product.productId}" />
+						<input type="submit" value="戻る" />
+					</div>
 				</div>
 			</form>
 </body>

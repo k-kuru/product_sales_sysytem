@@ -41,7 +41,7 @@
 						<div class="label"></div>
 						<div class="input">
 							<input type="hidden" name="productId" value="${product.productId }"/>
-							<input type="submit" value="登録" />
+							<input type="submit" value="確認" />
 						</div>
 					</div>
 				</form>

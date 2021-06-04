@@ -18,8 +18,28 @@ div.regist_link {
 div.explain {
 	text-align: center;
 }
-
-
+/* ---- 情報見出し ---- */
+div.information {
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}
+/* ---- 情報 ---- */
+div.info {
+	width: 520px;
+	margin: 0px auto;
+}
+/* ---- 完了画面(登録、変更、削除) ---- */
+div.complete {
+	text-align: center;
+	font-size: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+/* ---- 完了画面ボタン ---- */
+div.compbutton {
+	text-align: center;
+}
 /* ---- 入力フォーム(検索、登録、変更、削除) ---- */
 div.form {
 	width: 720px;

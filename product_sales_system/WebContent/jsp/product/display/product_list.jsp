@@ -19,10 +19,10 @@
 			</tr>
 			<c:forEach var="product" items="${productList}">
 				<tr>
-					<td><a
-						href="<c:url value="/ProductDetail">
-    <c:param name="productid" value="${product.productId}" />
-</c:url>">${product.productName}</a>
+					<td>
+					<a href="<c:url value="/ProductDetail">
+					<c:param name="productId" value="${product.productId}" />
+						</c:url>">${product.productName}</a>
 					</td>
 					<td>${product.price}</td>
 					<td>${product.stock == "0" ? "なし":"あり"}</td>

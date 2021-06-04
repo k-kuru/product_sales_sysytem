@@ -166,7 +166,7 @@ public class ProductDao {
 
 		try {
 			con = DBManager.getConnection();
-			ps = con.prepareStatement("UPDATE FROM product SET delete_flag = 1 WHERE product_id = ?");
+			ps = con.prepareStatement("UPDATE product SET delete_flag = 1 WHERE product_id = ?");
 
 			ps.setString(1, product_id);
 
