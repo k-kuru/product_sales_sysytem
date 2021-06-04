@@ -33,10 +33,17 @@
 					</tr>
 
 					<c:forEach var="userList" items="${userList}">
+<<<<<<< HEAD
 						<td><a href="javascript:document.userDetail.submit()">${userList.userId }</a></td>
 						<td><a href="javascript:document.userDetail.submit()">${userList.userName }</a></td>
+=======
+					<tr>
+						<td><a href="javascript:document.detail.submit()">${userList.userId }</a></td>
+						<td><a href="javascript:document.detail.submit()">${userList.userName }</a></td>
+>>>>>>> 7e9cca14055fb605637a40adb716133166b33a51
 						<td><c:if test="${userList.authority == 0 }">一般</c:if> <c:if
 								test="${userList.authority == 1 }">管理者</c:if></td>
+					</tr>
 					</c:forEach>
 				</table>
 				<div class="page_link">
