@@ -14,18 +14,20 @@ import javax.servlet.http.HttpSession;
 import bean.Cart;
 
 /**
- * Servlet implementation class cart_list
+ * カートの中身表示用サーブレット
+ * @author Nakanaishi
  */
-@WebServlet("/Cart_list")
-public class Cart_list extends HttpServlet {
+@WebServlet("/CartList")
+public class CartList extends HttpServlet {
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		List<Cart> cartList = new ArrayList<Cart>();
 		for (int i = 0; i < 5; i++) {
 			Cart cart = new Cart();
-			cart.setProduct_name("product"+i);
-			cart.setProduct_price(i*100);
+			cart.setProduct_name("product" + i);
+			cart.setProduct_price(i * 100);
 			cart.setQuantity(i);
 			cartList.add(cart);
 		}
