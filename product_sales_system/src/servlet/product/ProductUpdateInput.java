@@ -17,13 +17,16 @@ import bean.Product;
 public class ProductUpdateInput extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Getで受け取った場合Postへ処理を送る
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * 商品情報を持って商品更新入力画面へ遷移
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

@@ -12,20 +12,21 @@ import javax.servlet.http.HttpServletResponse;
 import bean.Product;
 import util.Validator;
 
-/**
- * Servlet implementation class ProductCheck
- */
+
 @WebServlet("/ProductRegistCheck")
 public class ProductRegistCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Getで受け取った場合Postへ処理を送る
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * 商品登録入力画面で入力した値を確認画面へ送る
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -45,6 +46,10 @@ public class ProductRegistCheck extends HttpServlet {
 		product.setPrice(price);
 		product.setStock(stock);
 
+		/**
+		 * 入力チェックにエラーがなければ確認画面へ
+		 * エラーがあればエラーメッセージをもって入力画面へ遷移
+		 */
 		List<String> errorMessageList = Validator.makeProductInputErrorMessageList(product);
 		if (errorMessageList.size() != 0) {
 			request.setAttribute("product", product);
