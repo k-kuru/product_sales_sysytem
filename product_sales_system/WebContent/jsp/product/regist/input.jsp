@@ -5,15 +5,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/layout.css" rel="stylesheet" />
 <title>商品販売システム</title>
 </head>
 <body>
 	<%@include file="/jsp/header.jsp"%>
 
 	<h2>商品登録入力画面</h2>
+	<div class="errormessage">
 	<c:forEach var="error" items="${errorMessageList}">
-		${error}
+		${error}<br>
 	</c:forEach>
+	</div>
 	<p>登録する情報を入力してください。</p>
 		<form action="<%=request.getContextPath()%>/ProductRegistCheck" method="post">
 					<div class="form">
