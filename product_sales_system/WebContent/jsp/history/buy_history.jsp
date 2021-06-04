@@ -14,25 +14,29 @@
 
 	<p>以前、購入した商品を表示します。</p>
 
-	<table class="buy_history_list_table">
-		<tr>
-			<th class="buyDate">日付</th>
-			<th class="buyDetail">購入内容</th>
-			<th class="price">値段</th>
-		</tr>
-			<c:forEach var="history" items="${historyList}">
+	<c:if test="${historyList.size()>=1}">
+		<table class="buy_history_list_table">
 			<tr>
-				<td>${history.buyDate}</td>
-					<td>
-				<form name ="detail" method="post" action="<%=request.getContextPath()%>/ProductDetail">
-					<input type=hidden name="productid" value="${productId}">
-				</form>
-				<a href="javascript:document.detail.submit()">${history.product.productName}</a>
-				を${history.quantity}</td>
-				<td>${history.product.price}×${history.quantity}</td>
+				<th class="buyDate">日付</th>
+				<th class="buyDetail">購入内容</th>
+				<th class="price">値段</th>
 			</tr>
-		</c:forEach>
-	</table>
+				<c:forEach var="history" items="${historyList}">
+				<tr>
+					<td>${history.buyDate}</td>
+						<td>
+					<form name ="detail" method="post" action="<%=request.getContextPath()%>/ProductDetail">
+						<input type=hidden name="productid" value="${productId}">
+					</form>
+					<a href="javascript:document.detail.submit()">${history.product.productName}</a>
+					を${history.quantity}</td>
+					<td>${history.product.price}×${history.quantity}</td>
+				</tr>
+			</c:forEach>
+		</table>
+
+	</c:if>
+
 	<form action="<%=request.getContextPath()%>/Mypage" method="post">
 	<div class="form">
 		<div class="label"></div>
