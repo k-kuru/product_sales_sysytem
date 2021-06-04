@@ -37,9 +37,9 @@ author Nakanishi
 					<c:forEach var="cart" items="${cartList }" begin="${(page-1)*15 }"
 						end="${(page-1)*15+14 }" varStatus="status">
 						<tr>
-							<td>${cart.getProduct_name() }</td>
+							<td>${cart.Product.getProductName() }</td>
 							<td>${cart.getQuantity() }</td>
-							<td>${cart.getProduct_price() }</td>
+							<td>${cart.Product.getPrice() }</td>
 							<td>
 								<form action="<%=request.getContextPath()%>/CartDelete"
 									method="post">
@@ -94,7 +94,7 @@ author Nakanishi
 					List<Cart> cartList = (List<Cart>) session.getAttribute("cartList");
 					int sum_price = 0;
 					for (int i = 0; i < cartList.size(); i++) {
-						sum_price += cartList.get(i).getProduct_price() * cartList.get(i).getQuantity();
+						sum_price += Integer.parseInt(cartList.get(i).getProduct().getPrice()) * cartList.get(i).getQuantity();
 					}
 					%>
 					<%=sum_price%>
