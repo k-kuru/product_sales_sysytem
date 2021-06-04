@@ -32,7 +32,7 @@
 								<td>${product.stock == "0" ? "なし":"あり"}</td>
 							</c:when>
 							<c:when test="${loginuser.authority == 1}">
-							<td>${product.stock}</td>
+								<td>${product.stock}</td>
 							</c:when>
 						</c:choose>
 					</tr>
