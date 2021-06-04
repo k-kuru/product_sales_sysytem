@@ -5,36 +5,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/layout.css" rel="stylesheet" />
 <title>商品販売システム</title>
 </head>
 <body>
 	<%@include file="/jsp/header.jsp"%>
 
 	<h2>商品登録確認画面</h2>
-	<p>以下の情報を登録します。<br>よろしいですか。</p>
-	<p>商品情報</p>
-		<div class="form">
-					<div class="label">商品ID：</div>
-					<div class="input">${product.productId}</div>
-				</div>
-				<div class="form">
-					<div class="label">商品名：</div>
-					<div class="input">${product.productName}</div>
-				</div>
-				<div class="form">
-					<div class="label">商品説明：</div>
-					<div class="input">${product.productExplain}</div>
-				</div>
-				<div class="form">
-					<div class="label">値段：</div>
-					<div class="input">${product.price}</div>
-				</div>
-				<div class="form">
-					<div class="label">在庫数：</div>
-					<div class="input">${product.stock}</div>
-				</div>
+	<div class="explain"><p>以下の情報を登録します。<br>よろしいですか。</p></div>
+	<div class="information"><p>商品情報</p></div>
+			<div class="info">
+				<div class="label">商品ID：</div>
+				<div class="input">${product.productId}</div>
+			</div>
+			<div class="form">
+				<div class="label">商品名：</div>
+				<div class="input">${product.productName}</div>
+			</div>
+			<div class="form">
+				<div class="label">商品説明：</div>
+				<div class="input">${product.productExplain}</div>
+			</div>
+			<div class="form">
+				<div class="label">値段：</div>
+				<div class="input">${product.price}</div>
+			</div>
+			<div class="form">
+				<div class="label">在庫数：</div>
+				<div class="input">${product.stock}</div>
+			</div>
 				<form action="<%=request.getContextPath()%>/ProductRegist" method="post">
-					<div class="form">
+					<div class="button">
 						<div class="label"></div>
 						<div class="input">
 							<input type="hidden" name="productId" value="${product.productId}" />
@@ -47,7 +49,7 @@
 					</div>
 				</form>
 				<form action="<%=request.getContextPath() %>/jsp/product/regist/input.jsp" method="post">
-					<div class="form">
+					<div class="button">
 						<div class="label"></div>
 						<div class="input">
 							<input type="hidden" name="productId" value="${product.productId}" />

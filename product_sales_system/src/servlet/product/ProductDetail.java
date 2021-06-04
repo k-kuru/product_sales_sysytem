@@ -22,7 +22,7 @@ public class ProductDetail extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String productid = request.getParameter("productid");
+		String productid = request.getParameter("productId");
 		Product product = ProductDao.showProductDetail(productid);
 		request.setAttribute("product", product);
 		request.getRequestDispatcher("/jsp/product/display/product_detail.jsp").forward(request, response);
