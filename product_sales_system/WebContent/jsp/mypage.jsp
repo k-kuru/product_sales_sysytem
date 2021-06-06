@@ -27,7 +27,7 @@
 				</div>
 			</c:when>
 			<c:otherwise>
-				<a href="<%=request.getContextPath()%>/"
+				<a href="<%=request.getContextPath()%>/jsp/user/list/user_list.jsp"
 					class="mypage_link">ユーザー一覧</a>
 				<div class="mypage_explain">購入履歴を一覧表示します。</div>
 				<a href="<%=request.getContextPath()%>/UserUpdateInput"
