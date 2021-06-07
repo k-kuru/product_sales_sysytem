@@ -32,12 +32,11 @@
 				<tr>
 					<td>${history.buyDate}</td>
 					<td>
-						<form name="productDetail" method="post"
-							action="<%=request.getContextPath()%>/ProductDetail">
-							<input type=hidden name="productid" value="${product.productId}">
-						</form>
-						${history.product.productName}
-						を${quantity}個
+						<a href="<c:url value="/ProductDetail">
+							<c:param name="productId" value="${product.productId}" />
+							</c:url>">${history.product.productName}
+						</a>
+						を${history.quantity}個
 					</td>
 					<td>${product.price}×${history.quantity}</td>
 				</tr>
