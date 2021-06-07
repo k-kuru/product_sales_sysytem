@@ -24,7 +24,7 @@ public class UserUpdateInput extends HttpServlet {
 		User user = UserDao.showUserDetail(userId);
 
 		request.setAttribute("user", user);
-		request.getRequestDispatcher("/jsp/update/update/input.jsp").forward(request,response);
+		request.getRequestDispatcher("/jsp/user/update/input.jsp").forward(request,response);
 	}
 
 }
