@@ -25,7 +25,7 @@
 				<table class="user_list_table">
 					<tr>
 						<th class="user_Id">ID</th>
-						<th class="userName">名前</a></th>
+						<th class="userName">名前</th>
 						<th class="authority">権限</th>
 					</tr>
 
