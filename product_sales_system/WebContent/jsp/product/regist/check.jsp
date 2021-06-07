@@ -13,55 +13,56 @@
 </head>
 <body>
 	<%@include file="/jsp/header.jsp"%>
-
-	<h2 class="page_title">商品登録確認画面</h2>
-	<div class="explain">
-		<p>
-			以下の情報を登録します。<br>よろしいですか。
-		</p>
-	</div>
-	<div class="information">
-		<p>商品情報</p>
-	</div>
-	<div class="check">
-		商品ID：${product.productId}<br>
-	</div>
-	<div class="check">
-		商品名：${product.productName}<br>
-	</div>
-	<div class="check">
-		商品説明：${product.productExplain}<br>
-	</div>
-	<div class="check">
-		値段：${product.price}<br>
-	</div>
-	<div class="check">在庫数：${product.stock}</div>
-
-	<form action="<%=request.getContextPath()%>/ProductRegist" method="post">
-		<div class="button">
-			<div class="label"></div>
-			<div class="input">
-				<input type="hidden" name="productId" value="${product.productId}" />
-				<input type="hidden" name="productName" value="${product.productName}" />
-				<input type="hidden" name="productExplain" value="${product.productExplain}" />
-				<input type="hidden" name="price" value="${product.price}" />
-				<input type="hidden" name="stock" value="${product.stock}" />
-				<input type="submit" value="登録" />
-			</div>
+	<div class="container content">
+		<h2 class="page_title">商品登録確認画面</h2>
+		<div class="explain">
+			<p>
+				以下の情報を登録します。<br>よろしいですか。
+			</p>
 		</div>
-	</form>
-	<form action="<%=request.getContextPath() %>/jsp/product/regist/input.jsp" method="post">
-		<div class="button">
-			<div class="label"></div>
-			<div class="input">
-				<input type="hidden" name="productId" value="${product.productId}" />
-				<input type="hidden" name="productName" value="${product.productName}" />
-				<input type="hidden" name="productExplain" value="${product.productExplain}" />
-				<input type="hidden" name="price" value="${product.price}" />
-				<input type="hidden" name="stock" value="${product.stock}" />
-				<input type="submit" value="戻る" />
-			</div>
+		<div class="information">
+			<p>商品情報</p>
 		</div>
-	</form>
+		<div class="check">
+			商品ID：${product.productId}<br>
+		</div>
+		<div class="check">
+			商品名：${product.productName}<br>
+		</div>
+		<div class="check">
+			商品説明：${product.productExplain}<br>
+		</div>
+		<div class="check">
+			値段：${product.price}<br>
+		</div>
+		<div class="check">在庫数：${product.stock}</div>
+
+		<form action="<%=request.getContextPath()%>/ProductRegist" method="post">
+			<div class="button">
+				<div class="label"></div>
+				<div class="input">
+					<input type="hidden" name="productId" value="${product.productId}" />
+					<input type="hidden" name="productName" value="${product.productName}" />
+					<input type="hidden" name="productExplain" value="${product.productExplain}" />
+					<input type="hidden" name="price" value="${product.price}" />
+					<input type="hidden" name="stock" value="${product.stock}" />
+					<input type="submit" value="登録" />
+				</div>
+			</div>
+		</form>
+		<form action="<%=request.getContextPath()%>/jsp/product/regist/input.jsp" method="post">
+			<div class="button">
+				<div class="label"></div>
+				<div class="input">
+					<input type="hidden" name="productId" value="${product.productId}" />
+					<input type="hidden" name="productName" value="${product.productName}" />
+					<input type="hidden" name="productExplain" value="${product.productExplain}" />
+					<input type="hidden" name="price" value="${product.price}" />
+					<input type="hidden" name="stock" value="${product.stock}" />
+					<input type="submit" value="戻る" />
+				</div>
+			</div>
+		</form>
+	</div>
 </body>
 </html>
