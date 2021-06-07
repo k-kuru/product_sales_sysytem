@@ -8,6 +8,8 @@
 <meta charset="UTF-8" />
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/style.css" />
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/layout.css" />
 <title>商品販売システム</title>
 </head>
 <body class="list">
