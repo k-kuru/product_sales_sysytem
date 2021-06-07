@@ -16,13 +16,11 @@
 	<div class="complete">
 		<p>商品更新が完了しました。</p>
 	</div>
+		<div class="compbutton">
 			<form action="<%=request.getContextPath() %>/ProductDetail" >
-				<div class="compbutton">
-					<div class="input">
-						<input type="hidden" name="productId" value="${product.productId}" />
-						<input type="submit" value="戻る" />
-					</div>
-				</div>
+					<input type="hidden" name="productId" value="${product.productId}" />
+					<input type="submit" value="戻る" />
 			</form>
+		</div>
 </body>
 </html>
