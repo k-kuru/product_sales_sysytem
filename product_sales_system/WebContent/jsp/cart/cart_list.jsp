@@ -52,40 +52,50 @@ author Nakanishi
 					</c:forEach>
 				</table>
 				<!--		ページング処理		-->
-				<div class="page_link">
+				<div class="page_button">
 					<c:if test="${page>=3 }">
-						<form action="<%=request.getContextPath()%>/CartPaging">
-							<input type="hidden" name="page_num" value="${page-2 }">
-							<input type="submit" value="${page-2 }" class="link" />
-						</form>
+						<div class="page_link">
+							<form action="<%=request.getContextPath()%>/CartPaging">
+								<input type="hidden" name="page_num" value="${page-2 }">
+								<input type="submit" value="${page-2 }" class="link" />
+							</form>
+						</div>
 					</c:if>
 
 					<c:if test="${page>=2 }">
-						<form action="<%=request.getContextPath()%>/CartPaging">
-							<input type="hidden" name="page_num" value="${page-1 }">
-							<input type="submit" value="${page-1 }" class="link" />
-						</form>
+						<div class="page_link">
+							<form action="<%=request.getContextPath()%>/CartPaging">
+								<input type="hidden" name="page_num" value="${page-1 }">
+								<input type="submit" value="${page-1 }" class="link" />
+							</form>
+						</div>
 					</c:if>
 
 					<c:if test="${cartList.size()>15}">
-						<form action="">
-							<button type="submit" value="${page }" disabled="disabled"
-								class="link"><%=request.getAttribute("page")%></button>
-						</form>
+						<div class="page_link">
+							<form action="">
+								<button type="submit" value="${page }" disabled="disabled"
+									class="link"><%=request.getAttribute("page")%></button>
+							</form>
+						</div>
 					</c:if>
 
 					<c:if test="${(page*15) < cartList.size()}">
-						<form action="<%=request.getContextPath()%>/CartPaging">
-							<input type="hidden" name="page_num" value="${page+1 }">
-							<input type="submit" value="${page+1 }" class="link" />
-						</form>
+						<div class="page_link">
+							<form action="<%=request.getContextPath()%>/CartPaging">
+								<input type="hidden" name="page_num" value="${page+1 }">
+								<input type="submit" value="${page+1 }" class="link" />
+							</form>
+						</div>
 					</c:if>
 
 					<c:if test="${((page+1)*15) < cartList.size()}">
-						<form action="<%=request.getContextPath()%>/CartPaging">
-							<input type="hidden" name="page_num" value="${page+2 }">
-							<input type="submit" value="${page+2 }" class="link" />
-						</form>
+						<div class="page_link">
+							<form action="<%=request.getContextPath()%>/CartPaging">
+								<input type="hidden" name="page_num" value="${page+2 }">
+								<input type="submit" value="${page+2 }" class="link" />
+							</form>
+						</div>
 					</c:if>
 				</div>
 				<!-- 		合計金額表示		 -->
@@ -97,14 +107,16 @@ author Nakanishi
 						sum_price += Integer.parseInt(cartList.get(i).getProduct().getPrice()) * cartList.get(i).getQuantity();
 					}
 					%>
-					<%=sum_price%>
+					合計　　　<%=sum_price%>円
 				</div>
 				<!-- 		購入、戻るボタン表示		 -->
-				<div class="bottun">
+				<div class="menu_button">
 					<form action="<%=request.getContextPath()%>/BuyCheck"
 						method="post">
 						<input type="submit" value="購入" class="buy" />
 					</form>
+				</div>
+				<div class="menu_button">
 					<form action="<%=request.getContextPath()%>/ProductSearch"
 						method="post">
 						<input type="submit" value="戻る" class="back" />
@@ -114,10 +126,12 @@ author Nakanishi
 			<!-- カートが空の時 -->
 			<c:if test="${cartList.size()==0}">
 				<div class="empty">カートが空です</div>
-				<form action="<%=request.getContextPath()%>/ProductSearch"
-					method="post">
-					<input type="submit" value="戻る" class="back" />
-				</form>
+				<div class="menu_button">
+					<form action="<%=request.getContextPath()%>/ProductSearch"
+						method="post">
+						<input type="submit" value="戻る" class="back" />
+					</form>
+				</div>
 			</c:if>
 		</article>
 	</div>
