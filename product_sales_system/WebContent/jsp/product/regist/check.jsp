@@ -15,12 +15,20 @@
 	<h2>商品登録確認画面</h2>
 	<div class="explain"><p>以下の情報を登録します。<br>よろしいですか。</p></div>
 	<div class="information"><p>商品情報</p></div>
-			<div class="compbutton">
-			商品ID：${product.productId}<br>
-			商品名：${product.productName}<br>
-			商品説明：${product.productExplain}<br>
-			値段：${product.price}<br>
-			在庫数：${product.stock}
+			<div class="check">
+				商品ID：${product.productId}<br>
+			</div>
+			<div class="check">
+				商品名：${product.productName}<br>
+			</div>
+			<div class="check">
+				商品説明：${product.productExplain}<br>
+			</div>
+			<div class="check">
+				値段：${product.price}<br>
+			</div>
+			<div class="check">
+				在庫数：${product.stock}
 			</div>
 
 				<form action="<%=request.getContextPath()%>/ProductRegist" method="post">

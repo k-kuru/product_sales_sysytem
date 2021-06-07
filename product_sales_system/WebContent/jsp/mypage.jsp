@@ -17,8 +17,7 @@
 		<h3 class="page_title">マイページ</h3>
 		<c:choose>
 			<c:when test="${loginuser.authority==0 }">
-				<div class="mypage_main">
-
+				<div class="mypage_link">
 					<a href="<%=request.getContextPath()%>/UserBuyHistory"
 						class="mypage_link">購入履歴</a>
 					<div class="mypage_explain">購入履歴を一覧表示します。</div>
