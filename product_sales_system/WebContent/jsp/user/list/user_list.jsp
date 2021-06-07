@@ -20,9 +20,7 @@
 		<h3 class="page_title">ユーザー一覧画面</h3>
 		<c:choose>
 			<c:when test="${userList.size()>=1 }">
-				<form name="detail" method="post"
-					action="<%=request.getContextPath()%>/UserDetail">
-					<input type=hidden name="userId" value="${userList.userId}">
+				<form name="detail" method="post" action="<%=request.getContextPath()%>/UserDetail">
 				</form>
 				<table class="user_list_table">
 					<tr>
@@ -33,8 +31,8 @@
 
 					<c:forEach var="userList" items="${userList}">
 						<tr>
-							<td><a href="javascript:document.detail.submit()">${userList.userId }</a></td>
-							<td><a href="javascript:document.detail.submit()">${userList.userName }</a></td>
+							<td><a href="javascript:document.detail.submit()">${userList.userId}</a></td>
+							<td><a href="javascript:document.detail.submit()">${userList.userName}</a></td>
 							<td><c:if test="${userList.authority == 0 }">一般</c:if> <c:if
 									test="${userList.authority == 1 }">管理者</c:if></td>
 						</tr>

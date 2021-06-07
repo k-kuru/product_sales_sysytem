@@ -15,10 +15,10 @@
 	<%@include file="/jsp/header.jsp"%>
 	<div class="container content">
 		<article class="main">
-			<h3 class="page_title">商品購入完了画面</h3>
-			<div class="comment">商品の購入が完了しました。</div>
+			<h2 class="page_title">商品購入完了画面</h2>
+			<div class="complete">商品の購入が完了しました。</div>
 			<form action="<%=request.getContextPath()%>/ProductSearch" method="post">
-				<div class="form">
+				<div class="compbutton">
 					<input type="submit" value="戻る">
 				</div>
 			</form>

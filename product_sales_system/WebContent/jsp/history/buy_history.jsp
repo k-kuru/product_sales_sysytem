@@ -9,6 +9,8 @@
 	href="<%=request.getContextPath()%>/css/layout.css" />
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/style.css" />
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/style_matsuzaki.css" />
 <title>商品販売システム</title>
 </head>
 <body>
@@ -45,40 +47,50 @@
 		</c:if>
 	</table>
 	<!--		ページング処理		-->
-	<div class="page_link">
+	<div class="page_button">
 		<c:if test="${page>=3 }">
+			<div class="page_link">
 			<form action="<%=request.getContextPath()%>/HistoryPaging">
 				<input type="hidden" name="page_num" value="${page-2 }"> <input
 					type="submit" value="${page-2 }" class="link" />
 			</form>
+			</div>
 		</c:if>
 
 		<c:if test="${page>=2 }">
+			<div class="page_link">
 			<form action="<%=request.getContextPath()%>/HistoryPaging">
 				<input type="hidden" name="page_num" value="${page-1 }"> <input
 					type="submit" value="${page-1 }" class="link" />
 			</form>
+			</div>
 		</c:if>
 
 		<c:if test="${cartList.size()>10}">
+			<div class="page_link">
 			<form action="">
 				<button type="submit" value="${page }" disabled="disabled"
 					class="link"><%=request.getAttribute("page")%></button>
 			</form>
+			</div>
 		</c:if>
 
 		<c:if test="${(page*15) < cartList.size()}">
+			<div class="page_link">
 			<form action="<%=request.getContextPath()%>/HistoryPaging">
 				<input type="hidden" name="page_num" value="${page+1 }"> <input
 					type="submit" value="${page+1 }" class="link" />
 			</form>
+			</div>
 		</c:if>
 
 		<c:if test="${((page+1)*15) < cartList.size()}">
+			<div class="page_link">
 			<form action="<%=request.getContextPath()%>/HistoryPaging">
 				<input type="hidden" name="page_num" value="${page+2 }"> <input
 					type="submit" value="${page+2 }" class="link" />
 			</form>
+			</div>
 		</c:if>
 	</div>
 
