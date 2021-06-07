@@ -67,11 +67,12 @@
 		</div>
 	</form>
 
-	<form action="<%=request.getContextPath()%>/jsp/user/update/input.jsp" method="post">
+	<form action="<%=request.getContextPath()%>/UserUpdateInput" method="post">
 		<div class="button">
 			<div class="label"></div>
 			<div class="input">
-				<input type="submit" value="戻る">
+				<input type="hidden" name="userId" value="${user.userId}" />
+				<input type="submit" value="戻る" />
 			</div>
 		</div>
 	</form>

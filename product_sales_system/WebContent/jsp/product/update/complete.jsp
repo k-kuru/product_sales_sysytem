@@ -12,14 +12,14 @@
 <body>
 	<%@include file="/jsp/header.jsp"%>
 
-	<h2>商品更新完了画面</h2>
+	<h2 class="page_title">商品更新完了画面</h2>
 	<div class="complete">
 		<p>商品更新が完了しました。</p>
 	</div>
 		<div class="compbutton">
 			<form action="<%=request.getContextPath() %>/ProductDetail" >
-					<input type="hidden" name="productId" value="${product.productId}" />
-					<input type="submit" value="戻る" />
+				<input type="hidden" name="productId" value="${product.productId}" />
+				<input type="submit" value="戻る" />
 			</form>
 		</div>
 </body>
