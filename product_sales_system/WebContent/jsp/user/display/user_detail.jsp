@@ -11,10 +11,11 @@
 	href="<%=request.getContextPath()%>/css/style.css" />
 <title>商品販売システム</title>
 </head>
+<!-- ユーザの詳細情報表示 -->
 <body>
 	<p>ID：${user.userId}
 	<p>名前：${user.userName}
-	<p>生年月日：${user.birthday}
+	<p>生年月日：${user.getBirthDay()}
 	<p>性別：${user.gender == "0" ? "男性":"女性"}
 	<p>住所：${user.address}
 	<p>電話番号：${user.tel}

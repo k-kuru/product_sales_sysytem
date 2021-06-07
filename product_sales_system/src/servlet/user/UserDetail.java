@@ -19,12 +19,13 @@ import bean.User;
 public class UserDetail extends HttpServlet {
 
 	/**
+	 * ユーザIDでユーザを特定し情報を持ってユーザ詳細画面へ遷移
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String userid;
-		if(request.getParameter("userId") != null) {
+		if(request.getParameter("userId") == null) {
 			HttpSession session = request.getSession();
 			userid=((User)session.getAttribute("loginuser")).getUserId();
 		}else {
