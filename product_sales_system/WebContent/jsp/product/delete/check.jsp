@@ -19,13 +19,21 @@
 	<div class="information">
 		<p>商品情報</p>
 	</div>
-		<div class="compbutton">
+		<div class="check">
 				商品ID：${product.productId}<br>
+			</div>
+			<div class="check">
 				商品名：${product.productName}<br>
+			</div>
+			<div class="check">
 				商品説明：${product.productExplain}<br>
+			</div>
+			<div class="check">
 				値段：${product.price}<br>
+			</div>
+			<div class="check">
 				在庫数：${product.stock}
-				</div>
+			</div>
 				<form action="<%=request.getContextPath()%>/ProductDelete" method="post">
 					<div class="button">
 						<div class="label"></div>

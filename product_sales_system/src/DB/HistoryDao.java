@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 import bean.BuyHistory;
+import bean.Cart;
 import bean.Product;
 import bean.User;
 
@@ -59,5 +60,30 @@ public class HistoryDao {
 			DBManager.close(ps, con);
 		}
 		return historyList;
+	}
+	/**
+	 *buy_historyに購入履歴を登録
+	 */
+	public static void registHistory(Cart cart, User user) {
+		Connection con = null;
+		PreparedStatement ps = null;
+
+		try {
+			con = DBManager.getConnection();
+			ps = con.prepareStatement("INSERT INTO buy_history VALUES(seq_history.NEXTVAL,?,?,?,?)");
+
+			ps.setString(1, user.getUserId());
+			ps.setString(2, cart.getProduct().getProductId());
+			ps.setString(3, String.valueOf(cart.getQuantity()));
+			Date d = new Date();
+			java.sql.Date date = new java.sql.Date(d.getTime());
+			ps.setDate(4, date);
+			ps.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(ps, con);
+		}
 	}
 }

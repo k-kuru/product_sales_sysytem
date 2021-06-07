@@ -56,6 +56,11 @@
 					<div class="button">
 						<div class="label"></div>
 						<div class="input">
+							<input type="hidden" name="productId" value="${product.productId}" />
+						    <input type="hidden" name="productName" value="${product.productName}"/>
+						    <input type="hidden" name="productExplain" value="${product.productExplain}"/>
+							<input type="hidden" name="price" value="${product.price}"/>
+							<input type="hidden" name="stock" value="${product.stock}"/>
 							<input type="submit" value="戻る" />
 						</div>
 					</div>

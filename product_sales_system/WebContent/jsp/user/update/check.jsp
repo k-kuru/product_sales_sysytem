@@ -21,15 +21,29 @@
 		<p>ユーザ情報</p>
 	</div>
 
-		<div class="compbutton">
+		<div class="check">
 			ユーザID：${user.userId}<br>
+		</div>
+		<div class="check">
 			パスワード：※非表示<br>
+		</div>
+		<div class="check">
 			名前：${user.userName}<br>
+		</div>
+		<div class="check">
 			生年月日：${user.birthDay}<br>
+		</div>
+		<div class="check">
 			性別：<c:if test="${user.gender == 0}">男性</c:if>
 				  <c:if test="${user.gender == 1}">女性</c:if><br>
+		</div>
+		<div class="check">
 			住所：${user.address}<br>
+		</div>
+		<div class="check">
 			電話番号：${user.tel}<br>
+		</div>
+		<div class="check">
 			<c:if test="${loginuser.authority == 1}">
 				権限：<c:if test="${user.authority == 0}">一般</c:if>
 				 	  <c:if test="${user.authority == 1}">管理者</c:if>
@@ -47,13 +61,13 @@
 				<input type="hidden" name="gender" value="${user.gender}" />
 				<input type="hidden" name="address" value="${user.address}" />
 				<input type="hidden" name="tel" value="${user.tel}" />
-				<input type="hidden" name="authoroty" value="${user.authority}" />
+				<input type="hidden" name="authority" value="${user.authority}" />
 				<input type="submit" value="更新" />
 			</div>
 		</div>
 	</form>
 
-	<form action="<%=request.getContextPath()%>/jsp/user/regist/input.jsp" method="post">
+	<form action="<%=request.getContextPath()%>/jsp/user/update/input.jsp" method="post">
 		<div class="button">
 			<div class="label"></div>
 			<div class="input">

@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import DB.HistoryDao;
 import bean.Cart;
+import bean.User;
 
 /**
  * Servlet implementation class Buy_complete
@@ -22,9 +24,14 @@ public class BuyComplete extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		HttpSession session=request.getSession();
+		List<Cart> cartList = (List<Cart>)session.getAttribute("cartList");
+		for (int i = 0; i < cartList.size(); i++) {
+			HistoryDao.registHistory(cartList.get(i),(User)session.getAttribute("loginuser"));
+		}
 		session.removeAttribute("cartList");
-		List<Cart> cartList = new ArrayList<Cart>();
+		cartList = new ArrayList<Cart>();
 		session.setAttribute("cartList", cartList);
 		request.getRequestDispatcher("jsp/buy/buy_complete.jsp").forward(request, response);
 	}

@@ -7,7 +7,24 @@ input[type="submit"]{
 .page_title{
 	color:red;
 }
-
+/* ---- マイページ説明 ---- */
+.mypage_explain {
+	text-align: left;
+	padding-left: 350px;
+	margin-bottom: 20px;
+}
+/* ---- マイページのリンク ---- */
+a.mypage_link {
+	text-align: left;
+	padding-left: 300px;
+	margin-bottom: 20px;
+	font-size: 25px;
+}
+/* ---- マイページのボタン ---- */
+.mypage_button {
+	text-align: center;
+	margin-top: 20px;
+}
 /* ---- 登録入力画面へのリンク ---- */
 div.regist_link {
 	padding-right: 35px;
@@ -18,17 +35,20 @@ div.regist_link {
 /* ---- テーブル ---- */
 table {
 	background-color: #FFFFFF;
-	border-color: rgb(0, 0, 0);
-	border-width: 1px;
+	border-color: #87CEEB;	border-width: 1px;
 	border-style: solid;
 	border-collapse: collapse;
 	margin: 0px auto 20px;
 }
-
-table td, table th {
+table th {
+	background-color: #b0c4de;
 	border-width: 1px;
 	border-style: solid;
-	border-color: #87CEEB;
+}
+table td {
+	border-width: 1px;
+	border-style: solid;
+
 }
 
 td.data {
@@ -80,7 +100,26 @@ a.regist {
 	text-align: right;
 	margin-bottom: 10px;
 }
-
+/* ---- ユーザ詳細情報 ---- */
+div.user_info {
+	text-align: center;
+	margin-bottom: 20px;
+}
+/* ---- 商品詳細情報 ---- */
+div.product_info {
+	text-align: center;
+	margin-bottom: 20px;
+}
+/* ---- カートに追加ボタン ---- */
+div.addbutton {
+	text-align: center;
+	margin-bottom: 10px;
+}
+/* ---- 詳細画面でのボタン ---- */
+div.menu_button {
+	text-align: center;
+	margin-bottom: 10px;
+}
 /* ---- ページの説明文 ---- */
 div.explain {
 	text-align: center;
@@ -96,7 +135,10 @@ div.info {
 	width: 520px;
 	margin: 0px auto;
 }
-
+div.check {
+	text-align: center;
+	margin-bottom: 20px;
+}
 /* ---- 完了画面(登録、変更、削除) ---- */
 div.complete {
 	text-align: center;
