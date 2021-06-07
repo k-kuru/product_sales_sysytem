@@ -30,6 +30,7 @@ public class UserBuyHistory extends HttpServlet {
 		List<BuyHistory> historyList = HistoryDao.findAllHistory(loginuser.getUserId());
 
 		request.setAttribute("historyList",historyList);
+		request.setAttribute("page", 1);
 		request.getRequestDispatcher("/jsp/history/buy_history.jsp").forward(request,response);
 	}
 
