@@ -22,7 +22,7 @@ public class UserDeleteCheck extends HttpServlet {
 		String userId = request.getParameter("userId");
 		User user = UserDao.showUserDetail(userId);
 
-		request.setAttribute("emp", user);
+		request.setAttribute("user", user);
 		request.getRequestDispatcher("/jsp/user/delete/check.jsp").forward(request,
 				response);
 	}
