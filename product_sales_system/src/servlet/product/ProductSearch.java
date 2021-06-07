@@ -13,6 +13,7 @@ import DB.ProductDao;
 import bean.Product;
 
 /**
+ * 全件検索
  * Servlet implementation class Search
  */
 @WebServlet("/ProductSearch")

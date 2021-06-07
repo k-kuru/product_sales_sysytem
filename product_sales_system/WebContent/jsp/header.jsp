@@ -11,7 +11,7 @@ User user = (User) session.getAttribute("loginuser");
 		<c:if test="${loginuser !=null}">
 			<div class="user_info">
 				ようこそ、<a href="<%=request.getContextPath()%>/jsp/mypage.jsp"><%=user.getUserName()%></a>さん
-				<a href="<%=request.getContextPath()%>/jsp/cart/cart_list.jsp">カート</a> <a
+				<a href="<%=request.getContextPath()%>/CartList">カート</a> <a
 					href="<%=request.getContextPath()%>/Logout">ログアウト</a>
 			</div>
 		</c:if>

@@ -24,7 +24,7 @@ public class CartAdd extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		doPost(request, response);
 	}
 
 	/**
@@ -40,7 +40,7 @@ public class CartAdd extends HttpServlet {
 		List<Cart> cartlist = (List<Cart>)session.getAttribute("cartList");
 		cartlist.add(cart);
 		session.setAttribute("cartList", cartlist);
-		request.getRequestDispatcher("/jsp/product/display/product_list.jsp").forward(request, response);
+		request.getRequestDispatcher("/ProductSearch").forward(request, response);
 	}
 
 }

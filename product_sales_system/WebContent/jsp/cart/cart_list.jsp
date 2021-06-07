@@ -37,9 +37,9 @@ author Nakanishi
 					<c:forEach var="cart" items="${cartList }" begin="${(page-1)*15 }"
 						end="${(page-1)*15+14 }" varStatus="status">
 						<tr>
-							<td>${cart.Product.getProductName() }</td>
+							<td>${cart.product.getProductName() }</td>
 							<td>${cart.getQuantity() }</td>
-							<td>${cart.Product.getPrice() }</td>
+							<td>${cart.product.getPrice() }</td>
 							<td>
 								<form action="<%=request.getContextPath()%>/CartDelete"
 									method="post">
@@ -112,7 +112,7 @@ author Nakanishi
 				</div>
 			</c:if>
 			<!-- カートが空の時 -->
-			<c:if test="${cartList==null}">
+			<c:if test="${cartList.size()==0}">
 				<div class="empty">カートが空です</div>
 				<form action="<%=request.getContextPath()%>/ProductSearch"
 					method="post">

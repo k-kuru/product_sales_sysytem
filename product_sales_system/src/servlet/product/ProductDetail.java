@@ -17,6 +17,8 @@ import bean.Product;
 @WebServlet("/ProductDetail")
 public class ProductDetail extends HttpServlet {
 	/**
+	 * 商品IDで商品を特定し情報をもってユーザ詳細画面へ遷移
+	 *
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

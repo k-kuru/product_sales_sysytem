@@ -13,6 +13,7 @@ import DB.ProductDao;
 import bean.Product;
 
 /**
+ * 商品を特定しその情報を持ち商品リストへ遷移
  * Servlet implementation class Product_Name_Search
  */
 @WebServlet("/ProductNameSearch")
