@@ -9,14 +9,17 @@
 	href="<%=request.getContextPath()%>/css/layout.css" />
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/style.css" />
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/style2.css" />
 <title>商品販売システム</title>
 </head>
 <body>
 	<%@include file="/jsp/header.jsp"%>
 	<article>
 		<%@include file="/jsp/product/display/product_search.jsp"%>
-		<a href="<%=request.getContextPath()%>/jsp/product/regist/input.jsp">新規登録</a>
-		<div>
+		<div class = signup
+		><a href="<%=request.getContextPath()%>/jsp/product/regist/input.jsp">新規登録</a>
+		</div>
 			<!-- 商品一覧表示 -->
 			<c:if test="${productList.size()>=1}">
 				<table>
@@ -36,7 +39,7 @@
 							</td>
 							<td>${product.price}</td>
 							<c:choose>
-								<c:when test="${user.authority == 0}">
+								<c:when test="${loginuser.authority == 0}">
 									<td>${product.stock == "0" ? "なし":"あり"}</td>
 								</c:when>
 								<c:when test="${loginuser.authority == 1}">
@@ -51,7 +54,6 @@
 			<c:if test="${productList.size()==0}">
 				<div>商品が存在しません</div>
 			</c:if>
-		</div>
 	</article>
 </body>
 </html>

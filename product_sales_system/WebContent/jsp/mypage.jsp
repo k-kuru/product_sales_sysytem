@@ -17,7 +17,7 @@
 		<h3 class="page_title">マイページ</h3>
 		<c:choose>
 			<c:when test="${loginuser.authority==0 }">
-				<div class="mypage_link">
+				<div class="mypage_main">
 					<a href="<%=request.getContextPath()%>/UserBuyHistory"
 						class="mypage_link">購入履歴</a>
 					<div class="mypage_explain">購入履歴を一覧表示します。</div>
@@ -29,8 +29,7 @@
 				</div>
 			</c:when>
 			<c:otherwise>
-				<a href="<%=request.getContextPath()%>/Userlist"
-					class="mypage_link">ユーザー一覧</a>
+				<a href="<%=request.getContextPath()%>/Userlist" class="mypage_link">ユーザー一覧</a>
 				<div class="mypage_explain">購入履歴を一覧表示します。</div>
 				<a href="<%=request.getContextPath()%>/UserDetail"
 					class="mypage_link">アカウント情報</a>
@@ -38,7 +37,9 @@
 			</c:otherwise>
 		</c:choose>
 		<form action="<%=request.getContextPath()%>/ProductSearch">
-			<input type="submit" value="戻る">
+			<div class="mypage_button">
+				<input type="submit" value="戻る">
+			</div>
 		</form>
 	</div>
 </body>
