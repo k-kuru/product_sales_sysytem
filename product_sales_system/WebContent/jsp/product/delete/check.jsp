@@ -39,7 +39,7 @@
 					<div class="label">在庫数：</div>
 					<div class="input">${product.stock}</div>
 				</div>
-				<form action="<%=request.getContextPath()%>/ProductDeleteComplete" method="post">
+				<form action="<%=request.getContextPath()%>/ProductDelete" method="post">
 					<div class="button">
 						<div class="label"></div>
 						<div class="input">
