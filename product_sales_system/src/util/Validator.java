@@ -8,8 +8,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import DB.ProductDao;
-import DB.UserDao;
 import bean.Product;
 import bean.User;
 
@@ -179,11 +177,6 @@ public class Validator {
 				// 文字種チェック
 				if (!isNumberOrAlphabet(userBean.getUserId())) {
 					errorMessageList.add(Constants.USER_ID_MISSMATCH);
-				} else {
-					// 一意制約チェック
-					if (!(UserDao.showUserDetail(userBean.getUserId()) == null)) {
-						errorMessageList.add(Constants.USER_ID_EXIST);
-					}
 				}
 			}
 		}
@@ -266,10 +259,6 @@ public class Validator {
 			} else {
 				if (!isNumberOrAlphabet(productBean.getProductId())) {
 					errorMessageList.add(Constants.PRODUCT_ID_MISSMATCH);
-				} else {
-					if (!(ProductDao.showProductDetail(productBean.getProductId()) == null)) {
-						errorMessageList.add(Constants.PRODUCT_ID_EXIST);
-					}
 				}
 			}
 		}

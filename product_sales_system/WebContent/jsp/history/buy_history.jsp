@@ -35,7 +35,8 @@
 						<form name="productDetail" method="post"
 							action="<%=request.getContextPath()%>/ProductDetail">
 							<input type=hidden name="productid" value="${product.productId}">
-						</form> <a href="javascript:document.productDetail.submit()">${history.product.productName}</a>
+						</form>
+						${history.product.productName}
 						を${quantity}個
 					</td>
 					<td>${product.price}×${history.quantity}</td>
@@ -83,9 +84,6 @@
 			</form>
 		</c:if>
 	</div>
-	<c:if test="${historyList.size()==0}">
-		<p>購入した商品はありません。</p>
-	</c:if>
 
 	<form action="<%=request.getContextPath()%>/jsp/mypage.jsp"
 		method="post">

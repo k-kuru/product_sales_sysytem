@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DB.UserDao;
 import bean.User;
+import util.Constants;
 import util.Validator;
 
 
@@ -43,6 +45,11 @@ public class UserRegistCheck extends HttpServlet {
 
 		// 入力チェック
 		List<String> errorMessageList = Validator.makeUserInputErrorMessageList(user);
+		// 一意制約チェック
+		if (!(UserDao.showUserDetail(user.getUserId()) == null)) {
+			errorMessageList.add(Constants.USER_ID_EXIST);
+		}
+
 		if(errorMessageList.size() == 0) {
 			request.setAttribute("user", user);
 			request.getRequestDispatcher("/jsp/user/regist/check.jsp").forward(request, response);
