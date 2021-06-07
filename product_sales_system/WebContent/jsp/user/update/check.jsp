@@ -47,13 +47,13 @@
 				<input type="hidden" name="gender" value="${user.gender}" />
 				<input type="hidden" name="address" value="${user.address}" />
 				<input type="hidden" name="tel" value="${user.tel}" />
-				<input type="hidden" name="authoroty" value="${user.authority}" />
+				<input type="hidden" name="authority" value="${user.authority}" />
 				<input type="submit" value="更新" />
 			</div>
 		</div>
 	</form>
 
-	<form action="<%=request.getContextPath()%>/jsp/user/regist/input.jsp" method="post">
+	<form action="<%=request.getContextPath()%>/jsp/user/update/input.jsp" method="post">
 		<div class="button">
 			<div class="label"></div>
 			<div class="input">
