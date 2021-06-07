@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +13,7 @@
 </head>
 <!-- ユーザの詳細情報表示 -->
 <body>
+	<%@include file="/jsp/header.jsp"%>
 	<p>ID：${user.userId}
 	<p>名前：${user.userName}
 	<p>生年月日：${user.getBirthDay()}
@@ -28,23 +29,22 @@
 	<c:choose>
 		<c:when test="${loginuser.authority == 0}">
 			<form action="<%=request.getContextPath()%>/UserDeleteCheck"
-		method="post">
-		<input type="hidden" name="productId" value="${user.userId}" /> <input
-			type="hidden" name="userId" value="${user.userId}" /> <input
-			type="submit" value="退会" />
-	</form>
+				method="post">
+				<input type="hidden" name="productId" value="${user.userId}" /> <input
+					type="hidden" name="userId" value="${user.userId}" /> <input
+					type="submit" value="退会" />
+			</form>
 		</c:when>
 		<c:when test="${loginuser.authority == 1}">
 			<form action="<%=request.getContextPath()%>/UserDeleteCheck"
-		method="post">
-		<input type="hidden" name="productId" value="${user.userId}" /> <input
-			type="hidden" name="userId" value="${user.userId}" /> <input
-			type="submit" value="削除" />
-	</form>
+				method="post">
+				<input type="hidden" name="productId" value="${user.userId}" /> <input
+					type="hidden" name="userId" value="${user.userId}" /> <input
+					type="submit" value="削除" />
+			</form>
 		</c:when>
 	</c:choose>
-	<form
-		action="<%=request.getContextPath()%>/jsp/mypage.jsp">
+	<form action="<%=request.getContextPath()%>/jsp/mypage.jsp">
 		<input type="submit" value="戻る" />
 	</form>
 </body>
