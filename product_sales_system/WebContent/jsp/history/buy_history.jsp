@@ -33,10 +33,10 @@
 					<td>${history.buyDate}</td>
 					<td><form name="productDetail" method="post"
 							action="<%=request.getContextPath()%>/ProductDetail">
-							<input type=hidden name="productid" value="${product.productId}">
+							<input type=hidden name="productid" value="${history.getProduct().productId}">
 						</form> <a href="javascript:document.productDetail.submit()">${history.getProduct().productName}</a>
-						を${quantity}個</td>
-					<td>${product.price}×${history.quantity}</td>
+						を${history.quantity}個</td>
+					<td>${history.getProduct().price}×${history.quantity}</td>
 				</tr>
 			</c:forEach>
 		</c:if>
