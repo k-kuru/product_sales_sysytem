@@ -15,11 +15,11 @@
 	<h2>商品登録確認画面</h2>
 	<div class="explain"><p>以下の情報を登録します。<br>よろしいですか。</p></div>
 	<div class="information"><p>商品情報</p></div>
-			<div class="form">
+			<div class="check">
 				<div class="label">商品ID：</div>
 				<div class="input">${product.productId}</div>
 			</div>
-			<div class="form">
+			<div class="check">
 				<div class="label">商品名：</div>
 				<div class="input">${product.productName}</div>
 			</div>

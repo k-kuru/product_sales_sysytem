@@ -96,6 +96,11 @@ div.info {
 	width: 520px;
 	margin: 0px auto;
 }
+/* ---- 確認画面 ---- */
+div.check {
+
+	margin-left: 100px;
+}
 /* ---- 完了画面(登録、変更、削除) ---- */
 div.complete {
 	text-align: center;
