@@ -21,16 +21,19 @@ public class Constants {
 	public static final int WOMAN = 1;
 
 	/** ユーザID、またはパスワードが間違っていた場合のエラーメッセージ */
-	public static final String USERID_OR_PASSWORD_MISMATCH = "ユーザID、またはパスワードが間違っています。";
+	public static final String USER_ID_OR_PASSWORD_MISMATCH = "ユーザID、またはパスワードが間違っています。";
 
 	/** ユーザIDの桁数が5桁を超えた場合のチェックエラーメッセージ */
-	public static final String USERID_LENGTH_OVER = "ユーザIDは20桁までで入力してください。";
+	public static final String USER_ID_LENGTH_OVER = "ユーザIDは20桁までで入力してください。";
 
 	/** ユーザIDが半角英数字以外で入力された場合のエラーメッセージ */
-	public static final String USERID_MISSMATCH = "ユーザIDは半角英数字で入力してください。";
+	public static final String USER_ID_MISSMATCH = "ユーザIDは半角英数字で入力してください。";
 
 	/** ユーザIDが未入力のエラーメッセージ */
-	public static final String USERID_EMPTY = "ユーザIDを入力してください。";
+	public static final String USER_ID_EMPTY = "ユーザIDを入力してください。";
+
+	/** ユーザIDが既に登録済みのエラーメッセージ */
+	public static final String USER_ID_EXIST = "そのユーザIDは登録済みです。";
 
 	/** パスワードが未入力のエラーメッセージ */
 	public static final String PASSWORD_EMPTY = "パスワードを入力してください。";
@@ -73,6 +76,9 @@ public class Constants {
 
 	/** 商品IDが未入力のエラーメッセージ */
 	public static final String PRODUCT_ID_EMPTY = "商品IDを入力してください。";
+
+	/** 商品IDが既に登録済みのエラーメッセージ */
+	public static final String PRODUCT_ID_EXIST = "その商品IDは登録済みです。";
 
 	/** 商品名が未入力のエラーメッセージ */
 	public static final String PRODUCT_NAME_EMPTY = "商品名を入力してください。";

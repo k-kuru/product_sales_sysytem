@@ -36,6 +36,9 @@
 		</table>
 
 	</c:if>
+	<c:if test="${historyList.size()==0}">
+		<p>購入した商品はありません。</p>
+	</c:if>
 
 	<form action="<%=request.getContextPath()%>/mypage.jsp" method="post">
 	<div class="form">
