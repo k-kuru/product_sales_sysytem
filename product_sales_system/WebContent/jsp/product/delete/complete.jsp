@@ -12,14 +12,14 @@
 <body>
 	<%@include file="/jsp/header.jsp"%>
 
-	<h2>商品削除完了画面</h2>
+	<h2 class="page_title">商品削除完了画面</h2>
 	<div class="complete">
 		<p>削除が完了しました。</p>
 	</div>
-			<form action="<%=request.getContextPath() %>/ProductSearch" method="Post">
-				<div class="compbutton">
-					<input type="submit" value="戻る" />
-				</div>
-			</form>
+	<form action="<%=request.getContextPath() %>/ProductSearch" method="Post">
+		<div class="compbutton">
+			<input type="submit" value="戻る" />
+		</div>
+	</form>
 </body>
 </html>
