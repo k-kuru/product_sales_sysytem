@@ -67,18 +67,19 @@ public class HistoryDao {
 	public static void registHistory(Cart cart, User user) {
 		Connection con = null;
 		PreparedStatement ps = null;
-
+		String product_id=cart.getProduct().getProductId();
 		try {
 			con = DBManager.getConnection();
 			ps = con.prepareStatement("INSERT INTO buy_history VALUES(seq_history.NEXTVAL,?,?,?,?)");
-
 			ps.setString(1, user.getUserId());
-			ps.setString(2, cart.getProduct().getProductId());
+			ps.setString(2, product_id);
 			ps.setString(3, String.valueOf(cart.getQuantity()));
 			Date d = new Date();
 			java.sql.Date date = new java.sql.Date(d.getTime());
 			ps.setDate(4, date);
 			ps.executeUpdate();
+
+			ProductDao.reduceStock(product_id,cart.getQuantity());
 
 		} catch (SQLException e) {
 			e.printStackTrace();
