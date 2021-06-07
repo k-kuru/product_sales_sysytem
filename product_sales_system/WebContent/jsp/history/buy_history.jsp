@@ -32,18 +32,25 @@
 				<tr>
 					<td>${history.buyDate}</td>
 					<td>
+<<<<<<< HEAD
 						<form name="detail" method="post"
+=======
+						<form name="productDetail" method="post"
+>>>>>>> e6474c774c4835a785f873f59e48d02f89bb20b4
 							action="<%=request.getContextPath()%>/ProductDetail">
-							<input type=hidden name="productid" value="${productId}">
-						</form> <a href="javascript:document.detail.submit()">${history.product.productName}</a>
-						を${history.quantity}
+							<input type=hidden name="productid" value="${product.productId}">
+						</form> <a href="javascript:document.productDetail.submit()">${history.product.productName}</a>
+						を${quantity}個
 					</td>
+<<<<<<< HEAD
 					<td>${history.product.price}×${history.quantity}</td>
 					<form name ="productDetail" method="post" action="<%=request.getContextPath()%>/ProductDetail">
 						<input type=hidden name="productid" value="${product.productId}">
 					</form>
 					<a href="javascript:document.productDetail.submit()">${history.product.productName}</a>
 					を${quantity}個</td>
+=======
+>>>>>>> e6474c774c4835a785f873f59e48d02f89bb20b4
 					<td>${product.price}×${history.quantity}</td>
 				</tr>
 			</c:forEach>
@@ -89,17 +96,27 @@
 			</form>
 		</c:if>
 	</div>
+<<<<<<< HEAD
 
 	<form action="<%=request.getContextPath()%>/jsp/mypage.jsp" method="post">
 		<div class="form">
 			<div class="label"></div>
+=======
+>>>>>>> e6474c774c4835a785f873f59e48d02f89bb20b4
 	<c:if test="${historyList.size()==0}">
 		<p>購入した商品はありません。</p>
 	</c:if>
 
+<<<<<<< HEAD
 	<form action="<%=request.getContextPath()%>/mypage.jsp" method="post">
 	<div class="button">
 		<div class="label"></div>
+=======
+	<form action="<%=request.getContextPath()%>/jsp/mypage.jsp"
+		method="post">
+		<div class="button">
+			<div class="label"></div>
+>>>>>>> e6474c774c4835a785f873f59e48d02f89bb20b4
 			<div class="input">
 				<input type="submit" value="戻る">
 			</div>
