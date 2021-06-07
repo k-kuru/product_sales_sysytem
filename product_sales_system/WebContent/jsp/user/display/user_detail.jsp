@@ -43,5 +43,9 @@
 	</form>
 		</c:when>
 	</c:choose>
+	<form
+		action="<%=request.getContextPath()%>/jsp/mypage.jsp">
+		<input type="submit" value="戻る" />
+	</form>
 </body>
 </html>

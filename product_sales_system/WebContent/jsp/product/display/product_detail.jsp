@@ -56,8 +56,7 @@
 			value="削除" />
 	</form>
 	<!-- 戻るボタン -->
-	<form>
-		action="<%=request.getContextPath()%>/ProductSearch">
+	<form action="<%=request.getContextPath()%>/ProductSearch">
 		<input type="submit" value="戻る" />
 	</form>
 </body>

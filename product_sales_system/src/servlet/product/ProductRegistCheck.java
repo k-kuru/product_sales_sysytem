@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DB.ProductDao;
 import bean.Product;
+import util.Constants;
 import util.Validator;
 
 
@@ -51,6 +53,11 @@ public class ProductRegistCheck extends HttpServlet {
 		 * エラーがあればエラーメッセージをもって入力画面へ遷移
 		 */
 		List<String> errorMessageList = Validator.makeProductInputErrorMessageList(product);
+		// 一意制約チェック
+		if (!(ProductDao.showProductDetail(product.getProductId()) == null)) {
+			errorMessageList.add(Constants.PRODUCT_ID_EXIST);
+		}
+
 		if (errorMessageList.size() != 0) {
 			request.setAttribute("product", product);
 			request.setAttribute("errorMessageList", errorMessageList);
