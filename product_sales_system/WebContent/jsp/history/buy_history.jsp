@@ -20,43 +20,27 @@
 	</div>
 
 
-<<<<<<< HEAD
 	<table class="buy_history_list_table" border=1>
-=======
-	<table class="buy_history_list_table">
-		<c:if test="${historyList.size()>=1}">
->>>>>>> 6239de7d52137ac75abfee2cae37a9337d6001f5
 		<tr>
 			<th class="buyDate">日付</th>
 			<th class="buyDetail">購入内容</th>
 			<th class="price">値段</th>
 		</tr>
-
+		<c:if test="${historyList.size()>=1}">
 			<c:forEach var="history" items="${historyList}"
 				begin="${(page-1)*15 }" end="${(page-1)*15+14 }" varStatus="status">
 				<tr>
 					<td>${history.buyDate}</td>
-<<<<<<< HEAD
 					<td><form name="productDetail" method="post"
 							action="<%=request.getContextPath()%>/ProductDetail">
 							<input type=hidden name="productid" value="${product.productId}">
 						</form> <a href="javascript:document.productDetail.submit()">${history.getProduct().productName}</a>
 						を${quantity}個</td>
 					<td>${product.price}×${history.quantity}</td>
-=======
-					<td>
-						<a href="<c:url value="/ProductDetail">
-							<c:param name="productId" value="${history.product.productId}" />
-							</c:url>">${history.product.productName}
-						</a>
-						を${history.quantity}個
-					</td>
-					<td>${history.product.price}×${history.quantity}</td>
->>>>>>> 6239de7d52137ac75abfee2cae37a9337d6001f5
 				</tr>
 			</c:forEach>
 		</c:if>
-		<c:if test="${historyList.size() == 0 }">
+		<c:if test="${historyList == null }">
 			<td colspan="3"><div class="empty">購入した商品はありません</div></td>
 		</c:if>
 	</table>
@@ -98,16 +82,10 @@
 		</c:if>
 	</div>
 
-<<<<<<< HEAD
 	<form action="<%=request.getContextPath()%>/jsp/mypage.jsp"
 		method="post">
 		<div class="button">
 			<div class="label"></div>
-=======
-	<form action="<%=request.getContextPath()%>/jsp/mypage.jsp" method="post">
-	<div class="button">
-		<div class="label"></div>
->>>>>>> 6239de7d52137ac75abfee2cae37a9337d6001f5
 			<div class="input">
 				<input type="submit" value="戻る">
 			</div>

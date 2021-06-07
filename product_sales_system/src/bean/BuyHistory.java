@@ -11,44 +11,49 @@ public class BuyHistory {
 	public int getHistoryId() {
 		return historyId;
 	}
+
 	public void setHistoryId(int historyId) {
 		this.historyId = historyId;
 	}
+
 	public int getQuantity() {
 		return quantity;
 	}
+
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+
 	public String getBuyDate() {
 		return buyDate;
 	}
+
 	public void setBuyDate(String buyDate) {
 		this.buyDate = buyDate;
 	}
-	public int getDeleteFlag() {
+
+	public int DeleteFlag() {
 		return deleteFlag;
 	}
+
 	public void setDeleteFlag(int deleteFlag) {
 		this.deleteFlag = deleteFlag;
 	}
+
 	public User getUser() {
 		return user;
 	}
+
 	public void setUser(User user) {
 		this.user = user;
 	}
-<<<<<<< HEAD
 
-=======
->>>>>>> 6239de7d52137ac75abfee2cae37a9337d6001f5
 	public Product getProduct() {
 		return product;
 	}
+
 	public void setProduct(Product product) {
 		this.product = product;
 	}
-
-
 
 }
