@@ -4,9 +4,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/layout.css" />
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/style.css" />
+<title>商品販売システム</title>
 </head>
 <body>
+<%@include file="/jsp/header.jsp"%>
+	<!-- 商品詳細表示 -->
 	<p>商品名：${product.productName}
 	<p>商品説明：${product.productExplain}
 	<p>値段：￥${product.price}
@@ -27,6 +33,7 @@
 			<option value="10">10</option>
 		</select> <input type="submit" value="カートへ入れる" />
 	</form>
+	<!-- 商品更新ボタン -->
 	<form action="<%=request.getContextPath()%>/ProductUpdateInput"
 		method="post">
 		<input type="hidden" name="productId" value="${product.productId}" />
@@ -37,6 +44,7 @@
 			name="stock" value="${product.stock}" /> <input type="submit"
 			value="更新" />
 	</form>
+	<!-- 商品削除ボタン -->
 	<form action="<%=request.getContextPath()%>/ProductDeleteCheck"
 		method="post">
 		<input type="hidden" name="productId" value="${product.productId}" />
@@ -47,7 +55,8 @@
 			name="stock" value="${product.stock}" /> <input type="submit"
 			value="削除" />
 	</form>
-	<form
+	<!-- 戻るボタン -->
+	<form>
 		action="<%=request.getContextPath()%>/ProductSearch">
 		<input type="submit" value="戻る" />
 	</form>
