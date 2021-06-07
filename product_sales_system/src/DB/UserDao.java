@@ -166,7 +166,7 @@ public class UserDao {
 
 		try {
 			con = DBManager.getConnection();
-			ps = con.prepareStatement("UPDATE user_table SET delete_flag = 1 WHERE user_id = ?) ");
+			ps = con.prepareStatement("UPDATE user_table SET delete_flag = 1 WHERE user_id = ?");
 
 			ps.setString(1, userId);
 			ps.executeUpdate();

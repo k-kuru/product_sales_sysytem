@@ -17,7 +17,7 @@
 	</div>
 		<c:choose>
 			<c:when test="${loginuser.authority == 1}">
-			<form action="<%=request.getContextPath() %>/jsp/user_list.jsp" method="post">
+			<form action="<%=request.getContextPath() %>//Userlist" method="post">
 				<div class="compbutton">
 					<input type="submit" value="戻る" />
 				</div>
@@ -25,7 +25,7 @@
 			</c:when>
 
 			<c:otherwise>
-				<form action="<%=request.getContextPath() %>/jsp/login.jsp" method="post">
+				<form action="<%=request.getContextPath() %>/Logout" method="post">
 				<div class="compbutton">
 					<input type="submit" value="戻る" />
 				</div>

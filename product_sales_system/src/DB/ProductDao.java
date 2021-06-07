@@ -87,7 +87,6 @@ public class ProductDao {
 			ps.setString(1, "%" + product_name + "%");
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				System.out.println("1");
 				Product product = new Product();
 				product.setProductId(rs.getString("product_id"));
 				product.setProductName(rs.getString("product_name"));
