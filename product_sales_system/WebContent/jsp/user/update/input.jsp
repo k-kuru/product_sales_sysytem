@@ -75,6 +75,11 @@
 			</div>
 		</div>
 
+		<div class="label"></div>
+			<div class="input">
+				<input type="hidden" name="authority" value="${user.authority}" />
+		</div>
+
 		<c:if test="${loginuser.authority == 1}">
 		<div class="form">
 			<div class="label">権限：</div>
@@ -93,12 +98,6 @@
 			</div>
 		</div>
 		</c:if>
-
-		<div class="label"></div>
-			<div class="input">
-				<input type="hidden" name="authority" value="${user.authority}" />
-			</div>
-		<a></a>
 
 		<div class="button">
 			<div class="label"></div>
