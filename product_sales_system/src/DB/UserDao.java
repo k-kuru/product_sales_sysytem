@@ -135,7 +135,7 @@ public class UserDao {
 			con = DBManager.getConnection();
 			ps = con.prepareStatement("UPDATE user_table SET user_name = ?, "
 					+ "pass = ?, birthday = ?, gender = ?, tel = ?, address = ?, "
-					+ "authority = ? WHERE user_id = ?) ");
+					+ "authority = ? WHERE user_id = ? ");
 
 			ps.setString(1, user.getUserName());
 			ps.setString(2, user.getPass());
