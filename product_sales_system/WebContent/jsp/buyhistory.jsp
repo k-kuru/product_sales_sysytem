@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="<%=request.getContextPath()%>/UserBuyHistory" method="post">
-		<input type="submit" value="表示" />
-	</form>
+	<c:forEach var="history" items="${historyList}" >
+	<tr>
+		<td>${history.buyDate}</td>
+		<td><c:out value="${var5}"/></td>
+	</c:forEach>
 </body>
 </html>

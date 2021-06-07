@@ -48,7 +48,7 @@ public class BuyHistory {
 		this.user = user;
 	}
 
-	public Product Product() {
+	public Product getProduct() {
 		return product;
 	}
 
