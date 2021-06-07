@@ -29,7 +29,7 @@ author Nakanishi
 			<c:if test="${cartList.size()>=1}">
 				<table class="list_table" border=1>
 					<tr>
-						<th class="product_name">商品名</th>
+						<th class="productname">商品名</th>
 						<th class="quantity">個数</th>
 						<th class="value">値段</th>
 						<th class="delete">削除</th>
