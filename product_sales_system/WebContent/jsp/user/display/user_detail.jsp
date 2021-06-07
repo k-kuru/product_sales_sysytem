@@ -15,7 +15,7 @@
 <body>
 	<%@include file="/jsp/header.jsp"%>
 
-	<h2>ユーザ情報画面</h2>
+	<h2 class="page_title">ユーザ情報画面</h2>
 
 	<div class="user_info">ID：${user.userId}</div>
 	<div class="user_info">名前：${user.userName}</div>

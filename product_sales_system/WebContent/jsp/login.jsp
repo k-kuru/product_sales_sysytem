@@ -17,7 +17,7 @@
 	</header>
 
 	<div class="login">
-		<h3>ログイン画面</h3>
+		<h2 class="page_title">ログイン画面</h2>
 		<div class="errormessage">
 			<c:forEach var="error" items="${errorMessage}">
 				${error}<br/>

@@ -14,7 +14,7 @@
 <body>
 	<%@include file="/jsp/header.jsp"%>
 	<div class="container content">
-		<h3 class="page_title">マイページ</h3>
+		<h2 class="page_title">マイページ</h2>
 		<c:choose>
 			<c:when test="${loginuser.authority==0 }">
 				<div class="mypage_main">

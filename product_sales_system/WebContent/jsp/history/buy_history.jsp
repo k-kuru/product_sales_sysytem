@@ -33,10 +33,11 @@
 				begin="${(page-1)*15 }" end="${(page-1)*15+14 }" varStatus="status">
 				<tr>
 					<td>${history.buyDate}</td>
-					<td><form name="productDetail" method="post"
-							action="<%=request.getContextPath()%>/ProductDetail">
-							<input type=hidden name="productid" value="${history.getProduct().productId}">
-						</form> <a href="javascript:document.productDetail.submit()">${history.getProduct().productName}</a>
+					<td>
+
+					<a href="<c:url value="/ProductDetail">
+						<c:param name="productId" value="${history.product.productId}" />
+						</c:url>">${history.product.productName}</a>
 						を${history.quantity}個</td>
 					<td>${history.getProduct().price}×${history.quantity}</td>
 				</tr>
@@ -50,7 +51,7 @@
 	<div class="page_button">
 		<c:if test="${page>=3 }">
 			<div class="page_link">
-			<form action="<%=request.getContextPath()%>/HistoryPaging">
+			<form action="<%=request.getContextPath()%>/UserBuyHistory">
 				<input type="hidden" name="page_num" value="${page-2 }"> <input
 					type="submit" value="${page-2 }" class="link" />
 			</form>
@@ -59,14 +60,14 @@
 
 		<c:if test="${page>=2 }">
 			<div class="page_link">
-			<form action="<%=request.getContextPath()%>/HistoryPaging">
+			<form action="<%=request.getContextPath()%>/UserBuyHistory">
 				<input type="hidden" name="page_num" value="${page-1 }"> <input
 					type="submit" value="${page-1 }" class="link" />
 			</form>
 			</div>
 		</c:if>
 
-		<c:if test="${cartList.size()>10}">
+		<c:if test="${historyList.size()>10}">
 			<div class="page_link">
 			<form action="">
 				<button type="submit" value="${page }" disabled="disabled"
@@ -75,18 +76,18 @@
 			</div>
 		</c:if>
 
-		<c:if test="${(page*15) < cartList.size()}">
+		<c:if test="${(page*15) < historyList.size()}">
 			<div class="page_link">
-			<form action="<%=request.getContextPath()%>/HistoryPaging">
+			<form action="<%=request.getContextPath()%>/UserBuyHistory">
 				<input type="hidden" name="page_num" value="${page+1 }"> <input
 					type="submit" value="${page+1 }" class="link" />
 			</form>
 			</div>
 		</c:if>
 
-		<c:if test="${((page+1)*15) < cartList.size()}">
+		<c:if test="${((page+1)*15) < historyList.size()}">
 			<div class="page_link">
-			<form action="<%=request.getContextPath()%>/HistoryPaging">
+			<form action="<%=request.getContextPath()%>/UserBuyHistory">
 				<input type="hidden" name="page_num" value="${page+2 }"> <input
 					type="submit" value="${page+2 }" class="link" />
 			</form>

@@ -16,7 +16,7 @@
 		</div>
 	</header>
 
-	<h2>ユーザ新規登録確認画面</h2>
+	<h2 class="page_title">ユーザ新規登録確認画面</h2>
 
 	<div class="explain">
 		<p>以下の情報でユーザを登録します。<br/>

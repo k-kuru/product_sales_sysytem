@@ -16,7 +16,7 @@
 		</div>
 	</header>
 
-	<h2>ユーザ新規登録完了画面</h2>
+	<h2 class="page_title">ユーザ新規登録完了画面</h2>
 
 	<div class="complete">
 		<p>ユーザ登録が完了しました。</p>
