@@ -53,7 +53,7 @@
 					</div>
 				</form>
 				<form action="<%=request.getContextPath()%>/ProductDetail">
-					<div class="buttun">
+					<div class="button">
 						<div class="label"></div>
 						<div class="input">
 							<input type="submit" value="戻る" />

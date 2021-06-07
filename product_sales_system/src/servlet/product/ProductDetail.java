@@ -17,6 +17,8 @@ import bean.Product;
 @WebServlet("/ProductDetail")
 public class ProductDetail extends HttpServlet {
 	/**
+	 * 商品IDで商品を特定し情報をもってユーザ詳細画面へ遷移
+	 *
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -28,6 +30,10 @@ public class ProductDetail extends HttpServlet {
 		request.getRequestDispatcher("/jsp/product/display/product_detail.jsp").forward(request, response);
 	}
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
 //	/**
 //	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 //	 */

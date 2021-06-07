@@ -19,6 +19,7 @@ import bean.User;
 public class UserDetail extends HttpServlet {
 
 	/**
+	 * ユーザIDでユーザを特定し情報を持ってユーザ詳細画面へ遷移
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

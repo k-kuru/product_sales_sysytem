@@ -5,8 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/layout.css" />
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/style.css" />
+<title>商品販売システム</title>
 </head>
+<!-- ユーザの詳細情報表示 -->
 <body>
 	<p>ID：${user.userId}
 	<p>名前：${user.userName}
