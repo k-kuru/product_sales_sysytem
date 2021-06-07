@@ -43,12 +43,10 @@ public class Validator {
 	 *         false(数値でない)
 	 */
 	public static boolean isNumber(String val) {
-		try {
-			Integer.parseInt(val);
-			return true;
-		} catch (NumberFormatException e) {
-			return false;
-		}
+		String regex = "\\A[-]?[0-9]+\\z";
+		Pattern p = Pattern.compile(regex);
+		Matcher m1 = p.matcher(val);
+		return m1.find();
 	}
 
 	/**
