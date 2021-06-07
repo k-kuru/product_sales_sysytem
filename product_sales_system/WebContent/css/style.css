@@ -40,6 +40,14 @@ table {
 	border-collapse: collapse;
 	margin: 0px auto 20px;
 }
+
+product table{
+	background-color: #FFFFFF;
+	border-color: #87CEEB;	border-width: 1px;
+	border-style: solid;
+	border-collapse: collapse;
+	float: left;
+}
 table th {
 	background-color: #b0c4de;
 	border-width: 1px;
@@ -99,6 +107,12 @@ a.regist {
 	display: block;
 	text-align: right;
 	margin-bottom: 10px;
+}
+/*---- 新規商品登録 ----*/
+div.signup
+ {
+	text-align: right;
+	margin-right: 200px;
 }
 /* ---- ユーザ詳細情報 ---- */
 div.user_info {
