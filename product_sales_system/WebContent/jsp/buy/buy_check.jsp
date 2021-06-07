@@ -48,7 +48,7 @@
 				</div>
 				<div class="address_label">発送先</div>
 				<div class="address_input">
-					<input type="text" value="${user.address}" name="address">
+					<input type="text" value="${loginuser.address}" name="address">
 				</div>
 				<div class="pay_label">支払方法</div>
 				<div class="pay_input">
