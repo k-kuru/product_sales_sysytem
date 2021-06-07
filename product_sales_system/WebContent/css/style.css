@@ -5,7 +5,7 @@ input[type="submit"]{
 }
 
 .page_title{
-	color:red;
+	color: #a52a2a;
 }
 /* ---- マイページ説明 ---- */
 .mypage_explain {
@@ -121,9 +121,31 @@ div.menu_button {
 	text-align: center;
 	margin-bottom: 10px;
 }
+/* ---- ページリンク ---- */
+div.page_link {
+	display: inline-block;
+}
+/* ---- ページリンクボタン ---- */
+div.page_button {
+	text-align: center;
+}
+/* ---- カート画面での合計金額 ---- */
+div.sum_price {
+	text-align: center;
+	margin-left: 100px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
 /* ---- ページの説明文 ---- */
 div.explain {
 	text-align: center;
+}
+/* ---- 0件の場合 ---- */
+div.empty {
+	text-align: center;
+	font-size: 25px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
 /* ---- 情報見出し ---- */
 div.information {
