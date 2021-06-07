@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import DB.UserDao;
+import bean.Cart;
 import bean.User;
 import util.Constants;
 import util.Validator;
@@ -42,6 +44,8 @@ public class Login extends HttpServlet {
 				if (user.get(i).getUserId().equals(id) && user.get(i).getPass().equals(password)){
 					HttpSession session = request.getSession();
 					session.setAttribute("loginuser", user.get(i));
+					List<Cart> cartList = new ArrayList<Cart>();
+					session.setAttribute("cartList", cartList);
 					logined = true;
 					break;
 				}
