@@ -24,13 +24,13 @@
 				<c:forEach var="history" items="${historyList}">
 				<tr>
 					<td>${history.buyDate}</td>
-						<td>
-					<form name ="detail" method="post" action="<%=request.getContextPath()%>/ProductDetail">
-						<input type=hidden name="productid" value="${productId}">
+					<td>
+					<form name ="productDetail" method="post" action="<%=request.getContextPath()%>/ProductDetail">
+						<input type=hidden name="productid" value="${product.productId}">
 					</form>
-					<a href="javascript:document.detail.submit()">${history.product.productName}</a>
-					を${history.quantity}</td>
-					<td>${history.product.price}×${history.quantity}</td>
+					<a href="javascript:document.productDetail.submit()">${history.product.productName}</a>
+					を${quantity}個</td>
+					<td>${product.price}×${history.quantity}</td>
 				</tr>
 			</c:forEach>
 		</table>
