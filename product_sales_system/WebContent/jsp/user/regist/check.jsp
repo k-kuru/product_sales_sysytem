@@ -25,15 +25,27 @@
 	<div class="information">
 		<p>商品情報</p>
 	</div>
-		<div class="compbutton">
-			ユーザID：${user.userId}
-			パスワード：${user.pass}
-			名前：${user.userName}
-			生年月日：${user.birthDay}
+		<div class="check">
+			ユーザID：${user.userId}<br>
+		</div>
+		<div class="check">
+			パスワード：※非表示<br>
+		</div>
+		<div class="check">
+			名前：${user.userName}<br>
+		</div>
+		<div class="check">
+			生年月日：${user.birthDay}<br>
+		</div>
+		<div class="check">
 			性別：<c:if test="${user.gender == 0}">男性</c:if>
-				  <c:if test="${user.gender == 1}">女性</c:if>
-			住所：${user.address}
-			電話番号： >${user.tel}
+				  <c:if test="${user.gender == 1}">女性</c:if><br>
+		</div>
+		<div class="check">
+			住所：${user.address}<br>
+		</div>
+		<div class="check">
+			電話番号：${user.tel}<br>
 		</div>
 
 	<form action="<%=request.getContextPath()%>/UserRegist" method="post">

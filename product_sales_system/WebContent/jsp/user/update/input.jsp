@@ -54,7 +54,7 @@
 					<c:if test="${user.gender == 0}">
 						checked="checked"
 					</c:if> />男性／
-					<input type="radio" name="gender" value="1"
+				<input type="radio" name="gender" value="1"
 					<c:if test="${user.gender == 1}">
 						checked="checked"
 					</c:if> />女性
@@ -73,6 +73,11 @@
 			<div class="input">
 				<input type="text" name="tel" value="${user.tel}" />
 			</div>
+		</div>
+
+		<div class="label"></div>
+			<div class="input">
+				<input type="hidden" name="authority" value="${user.authority}" />
 		</div>
 
 		<c:if test="${loginuser.authority == 1}">
@@ -103,7 +108,7 @@
 		</div>
 	</form>
 
-	<form action="<%=request.getContextPath()%>/jsp/user_list.jsp" method="post">
+	<form action="<%=request.getContextPath()%>/UserDetail" method="post">
 		<div class="button">
 			<div class="label"></div>
 			<div class="input">

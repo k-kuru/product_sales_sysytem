@@ -7,7 +7,10 @@ input[type="submit"]{
 .page_title{
 	color:red;
 }
-
+/* ---- マイページ ---- */
+.mypage_link {
+	text-align: center;
+}
 /* ---- 登録入力画面へのリンク ---- */
 div.regist_link {
 	padding-right: 35px;
@@ -96,7 +99,10 @@ div.info {
 	width: 520px;
 	margin: 0px auto;
 }
-
+div.check {
+	text-align: center;
+	margin-bottom: 20px;
+}
 /* ---- 完了画面(登録、変更、削除) ---- */
 div.complete {
 	text-align: center;
