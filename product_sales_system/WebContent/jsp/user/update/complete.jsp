@@ -12,7 +12,7 @@
 <body>
 	<%@include file="/jsp/header.jsp"%>
 
-	<h2>ユーザ更新完了画面</h2>
+	<h2 class="page_title">ユーザ更新完了画面</h2>
 	<div class="complete">
 		<p>ユーザ更新が完了しました。</p>
 	</div>

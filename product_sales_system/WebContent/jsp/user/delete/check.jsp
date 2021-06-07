@@ -11,7 +11,7 @@
 </head>
 <body>
 	<%@include file="/jsp/header.jsp"%>
-	<h2>ユーザ削除確認画面</h2>
+	<h2 class="page_title">ユーザ削除確認画面</h2>
 	<div class="explain">
 		<p>以下のユーザを削除します。<br>よろしいですか。</p>
 	</div>

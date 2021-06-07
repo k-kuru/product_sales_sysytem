@@ -17,7 +17,7 @@
 	<%@include file="/jsp/header.jsp"%>
 	<article class="main">
 
-		<h3 class="page_title">ユーザー一覧画面</h3>
+		<h2 class="page_title">ユーザー一覧画面</h2>
 		<c:choose>
 			<c:when test="${userList.size()>=1 }">
 				<form name="detail" method="post" action="<%=request.getContextPath()%>/UserDetail">
@@ -38,40 +38,50 @@
 						</tr>
 					</c:forEach>
 				</table>
-				<div class="page_link">
+				<div class="page_button">
 					<c:if test="${page>=3 }">
+						<div class="page_link">
 						<form action="<%=request.getContextPath()%>/UserPaging">
 							<input type="hidden" name="page_num" value="${page-2 }">
 							<input type="submit" value="${page-2 }" class="link" />
 						</form>
+						</div>
 					</c:if>
 
 					<c:if test="${page>=2 }">
+						<div class="page_link">
 						<form action="<%=request.getContextPath()%>/UserPaging">
 							<input type="hidden" name="page_num" value="${page-1 }">
 							<input type="submit" value="${page-1 }" class="link" />
 						</form>
+						</div>
 					</c:if>
 
 					<c:if test="${cartList.size()>15}">
+						<div class="page_link">
 						<form action="">
 							<button type="submit" value="${page }" disabled="disabled"
 								class="link"><%=request.getAttribute("page")%></button>
 						</form>
+						</div>
 					</c:if>
 
 					<c:if test="${(page*15) < cartList.size()}">
+						<div class="page_link">
 						<form action="<%=request.getContextPath()%>/UserPaging">
 							<input type="hidden" name="page_num" value="${page+1 }">
 							<input type="submit" value="${page+1 }" class="link" />
 						</form>
+						</div>
 					</c:if>
 
 					<c:if test="${((page+1)*15) < cartList.size()}">
+						<div class="page_link">
 						<form action="<%=request.getContextPath()%>/UserPaging">
 							<input type="hidden" name="page_num" value="${page+2 }">
 							<input type="submit" value="${page+2 }" class="link" />
 						</form>
+						</div>
 					</c:if>
 				</div>
 				<div class="user_list_label"></div>

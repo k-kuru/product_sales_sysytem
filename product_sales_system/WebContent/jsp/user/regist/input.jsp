@@ -16,7 +16,7 @@
 		</div>
 	</header>
 
-	<h2>ユーザ新規登録入力画面</h2>
+	<h2 class="page_title">ユーザ新規登録入力画面</h2>
 	<div class="errormessage">
 		<c:forEach var="error" items="${errorMessage}">
 			${error}<br/>

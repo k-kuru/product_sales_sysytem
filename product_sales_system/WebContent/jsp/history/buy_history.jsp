@@ -33,10 +33,11 @@
 				begin="${(page-1)*15 }" end="${(page-1)*15+14 }" varStatus="status">
 				<tr>
 					<td>${history.buyDate}</td>
-					<td><form name="productDetail" method="post"
-							action="<%=request.getContextPath()%>/ProductDetail">
-							<input type=hidden name="productid" value="${history.getProduct().productId}">
-						</form> <a href="javascript:document.productDetail.submit()">${history.getProduct().productName}</a>
+					<td>
+
+					<a href="<c:url value="/ProductDetail">
+						<c:param name="productId" value="${history.product.productId}" />
+						</c:url>">${history.product.productName}</a>
 						を${history.quantity}個</td>
 					<td>${history.getProduct().price}×${history.quantity}</td>
 				</tr>
