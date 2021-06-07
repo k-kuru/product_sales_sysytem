@@ -40,7 +40,6 @@
 	<form action="<%=request.getContextPath()%>/ProductDeleteCheck"
 		method="post">
 		<input type="hidden" name="productId" value="${product.productId}" />
-		<input type="hidden" name="productId" value="${product.productId}" />
 		<input type="hidden" name="productName" value="${product.productName}" />
 		<input type="hidden" name="productExplain"
 			value="${product.productExplain}" /> <input type="hidden"
