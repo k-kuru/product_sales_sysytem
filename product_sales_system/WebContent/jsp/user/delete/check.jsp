@@ -56,7 +56,7 @@
 			</div>
 		</div>
 	</form>
-		<form action="<%=request.getContextPath() %>/jsp/user_list.jsp" method="post">
+		<form action="<%=request.getContextPath() %>/jsp//user/list/user_list.jsp" method="post">
 			<div class="button">
 				<div class="label"></div>
 				<div class="input">
