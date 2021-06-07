@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/style.css" />
+<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/layout.css" rel="stylesheet" />
 <title>商品販売システム</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
 
 	<div class="login">
 		<h3>ログイン画面</h3>
-		<div class="error">
+		<div class="errormessage">
 			<c:forEach var="error" items="${errorMessage}">
 				${error}<br/>
 			</c:forEach>
@@ -38,7 +38,7 @@
 				<div class="login_input">
 					<input type="submit" value="ログイン" />
 				</div>
-				<div class="user_regist_link">
+				<div class="compbutton">
 					<a href="<%=request.getContextPath()%>/jsp/user/regist/input.jsp">新規登録はこちら</a>
 				</div>
 			</form>

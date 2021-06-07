@@ -5,14 +5,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/layout.css" />
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/css/style.css" />
 <title>商品販売システム</title>
 </head>
 <body>
 	<%@include file="/jsp/header.jsp"%>
 
 	<h2>購入履歴画面</h2>
-
-	<p>以前、購入した商品を表示します。</p>
+	<div class="explain">
+		<p>以前、購入した商品を表示します。</p>
+	</div>
 
 	<c:if test="${historyList.size()>=1}">
 		<table class="buy_history_list_table">
@@ -36,9 +41,12 @@
 		</table>
 
 	</c:if>
+	<c:if test="${historyList.size()==0}">
+		<p>購入した商品はありません。</p>
+	</c:if>
 
 	<form action="<%=request.getContextPath()%>/mypage.jsp" method="post">
-	<div class="form">
+	<div class="button">
 		<div class="label"></div>
 			<div class="input">
 				<input type="submit" value="戻る">

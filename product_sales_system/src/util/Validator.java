@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import DB.ProductDao;
+import DB.UserDao;
 import bean.Product;
 import bean.User;
 
@@ -131,14 +133,14 @@ public class Validator {
 		// ****** idのチェック ******
 		// 未入力チェック
 		if (isEmpty(id)) {
-			errorMessageList.add(Constants.USERID_EMPTY);
+			errorMessageList.add(Constants.USER_ID_EMPTY);
 		} else {
 			// 桁数チェック
 			if (overLength(id, 20)) {
-				errorMessageList.add(Constants.USERID_LENGTH_OVER);
+				errorMessageList.add(Constants.USER_ID_LENGTH_OVER);
 				// 数値チェック
 			} else if (!isNumberOrAlphabet(id)) {
-				errorMessageList.add(Constants.USERID_MISSMATCH);
+				errorMessageList.add(Constants.USER_ID_MISSMATCH);
 			}
 		}
 
@@ -168,14 +170,21 @@ public class Validator {
 		// ****** ユーザIDのチェック ******
 		// 未入力チェック
 		if (isEmpty(userBean.getUserId())) {
-			errorMessageList.add(Constants.USERID_EMPTY);
+			errorMessageList.add(Constants.USER_ID_EMPTY);
 		} else {
 			// 桁数チェック
 			if (overLength(userBean.getUserId(), 20)) {
-				errorMessageList.add(Constants.USERID_LENGTH_OVER);
-				// 数値チェック
-			} else if (!isNumberOrAlphabet(userBean.getUserId())) {
-				errorMessageList.add(Constants.USERID_MISSMATCH);
+				errorMessageList.add(Constants.USER_ID_LENGTH_OVER);
+			} else {
+				// 文字種チェック
+				if (!isNumberOrAlphabet(userBean.getUserId())) {
+					errorMessageList.add(Constants.USER_ID_MISSMATCH);
+				} else {
+					// 一意制約チェック
+					if (!(UserDao.showUserDetail(userBean.getUserId()) == null)) {
+						errorMessageList.add(Constants.USER_ID_EXIST);
+					}
+				}
 			}
 		}
 
@@ -254,8 +263,14 @@ public class Validator {
 			if (overLength(productBean.getProductId(), 60)) {
 				errorMessageList.add(Constants.PRODUCT_ID_LENGTH_OVER);
 				// 数値チェック
-			} else if (!isNumberOrAlphabet(productBean.getProductId())) {
-				errorMessageList.add(Constants.PRODUCT_ID_MISSMATCH);
+			} else {
+				if (!isNumberOrAlphabet(productBean.getProductId())) {
+					errorMessageList.add(Constants.PRODUCT_ID_MISSMATCH);
+				} else {
+					if (!(ProductDao.showProductDetail(productBean.getProductId()) == null)) {
+						errorMessageList.add(Constants.PRODUCT_ID_EXIST);
+					}
+				}
 			}
 		}
 
