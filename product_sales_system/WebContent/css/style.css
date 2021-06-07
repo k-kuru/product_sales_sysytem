@@ -7,7 +7,10 @@ input[type="submit"]{
 .page_title{
 	color:red;
 }
-
+/* ---- マイページ ---- */
+.mypage_link {
+	text-align: center;
+}
 /* ---- 登録入力画面へのリンク ---- */
 div.regist_link {
 	padding-right: 35px;
