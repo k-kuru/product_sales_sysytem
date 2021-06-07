@@ -18,24 +18,27 @@
 		<c:choose>
 			<c:when test="${loginuser.authority==0 }">
 				<div class="mypage_main">
+
 					<a href="<%=request.getContextPath()%>/UserBuyHistory"
 						class="mypage_link">購入履歴</a>
 					<div class="mypage_explain">購入履歴を一覧表示します。</div>
-					<a href="<%=request.getContextPath()%>/UserUpdateInput"
+
+					<a href="<%=request.getContextPath()%>/UserDetail"
 						class="mypage_link">アカウント情報</a>
-					<div class="mypage_explain">購入履歴を一覧表示します。</div>
+					<div class="mypage_explain">アカウント情報を表示、編集できます。</div>
+
 				</div>
 			</c:when>
 			<c:otherwise>
-				<a href="<%=request.getContextPath()%>/jsp/user/list/user_list.jsp"
+				<a href="<%=request.getContextPath()%>/Userlist"
 					class="mypage_link">ユーザー一覧</a>
 				<div class="mypage_explain">購入履歴を一覧表示します。</div>
-				<a href="<%=request.getContextPath()%>/UserUpdateInput"
+				<a href="<%=request.getContextPath()%>/UserDetail"
 					class="mypage_link">アカウント情報</a>
-				<div class="mypage_explain">購入履歴を一覧表示します。</div>
+				<div class="mypage_explain">アカウント情報を表示、編集できます。</div>
 			</c:otherwise>
 		</c:choose>
-		<form action="<%=request.getContextPath()%>/Userlist">
+		<form action="<%=request.getContextPath()%>/ProductSearch">
 			<input type="submit" value="戻る">
 		</form>
 	</div>
