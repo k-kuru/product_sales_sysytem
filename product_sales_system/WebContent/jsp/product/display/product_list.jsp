@@ -18,10 +18,10 @@
 	<article>
 		<%@include file="/jsp/product/display/product_search.jsp"%>
 		<c:if test="${loginuser.authority == 1}">
-		<div class=signup>
-			<a href="<%=request.getContextPath()%>/jsp/product/regist/input.jsp">新規登録</a>
-		</div>
-			</c:if>
+			<div class=signup>
+				<a href="<%=request.getContextPath()%>/jsp/product/regist/input.jsp">新規登録</a>
+			</div>
+		</c:if>
 		<!-- 商品一覧表示 -->
 		<c:if test="${productList.size()>=1}">
 			<table>
@@ -33,10 +33,9 @@
 				<c:forEach var="product" items="${productList}"
 					begin="${(page-1)*15 }" end="${(page-1)*15+14 }" varStatus="status">
 					<tr>
-						<td><a
-							href="<c:url value="/ProductDetail">
-    <c:param name="productId" value="${product.productId}" />
-</c:url>">${product.productName}</a>
+						<td><a href="<c:url value="/ProductDetail">
+							<c:param name="productId" value="${product.productId}" />
+							</c:url>">${product.productName}</a>
 						</td>
 						<td>${product.price}</td>
 						<c:choose>
