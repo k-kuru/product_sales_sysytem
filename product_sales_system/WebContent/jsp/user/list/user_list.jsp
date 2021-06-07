@@ -84,10 +84,12 @@
 						</div>
 					</c:if>
 				</div>
+				<div class="menu_button">
 				<div class="user_list_label"></div>
 				<div class="user_list_input">
 					<a href="<%=request.getContextPath()%>/jsp/mypage.jsp"> <input
 						type="submit" value="戻る" /></a>
+				</div>
 				</div>
 			</c:when>
 		</c:choose>
