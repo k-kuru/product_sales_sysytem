@@ -17,9 +17,11 @@
 	<%@include file="/jsp/header.jsp"%>
 	<article>
 		<%@include file="/jsp/product/display/product_search.jsp"%>
+			<c:if test="${loginuser.authority == 1}">
 		<div class = signup
 		><a href="<%=request.getContextPath()%>/jsp/product/regist/input.jsp">新規登録</a>
 		</div>
+	</c:if>
 			<!-- 商品一覧表示 -->
 			<c:if test="${productList.size()>=1}">
 				<table>
