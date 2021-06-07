@@ -52,7 +52,7 @@ public class Login extends HttpServlet {
 				request.getRequestDispatcher("/ProductSearch").forward(request, response);
 			} else {
 				//ID、またはパスワードが間違っていた場合
-				errorMessageList.add(Constants.USERID_OR_PASSWORD_MISMATCH);
+				errorMessageList.add(Constants.USER_ID_OR_PASSWORD_MISMATCH);
 				request.setAttribute("errorMessage", errorMessageList);
 				request.getRequestDispatcher("jsp/login.jsp").forward(request, response);
 
