@@ -91,6 +91,7 @@
 		</c:if>
 	</div>
 
+<<<<<<< HEAD
 	<form action="<%=request.getContextPath()%>/jsp/mypage.jsp" method="post">
 		<div class="form">
 			<div class="label"></div>
@@ -100,6 +101,8 @@
 	<form action="<%=request.getContextPath()%>/mypage.jsp" method="post">
 	<div class="button">
 		<div class="label"></div>
+=======
+>>>>>>> 8290e7be844064379d0c8f6ac6dbc3fc937ead3a
 	<form action="<%=request.getContextPath()%>/jsp/mypage.jsp"
 		method="post">
 		<div class="button">
