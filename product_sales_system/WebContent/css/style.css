@@ -35,8 +35,7 @@ div.regist_link {
 /* ---- テーブル ---- */
 table {
 	background-color: #FFFFFF;
-
-	border-width: 1px;
+	border-color: #87CEEB;	border-width: 1px;
 	border-style: solid;
 	border-collapse: collapse;
 	margin: 0px auto 20px;
