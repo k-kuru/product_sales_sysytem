@@ -18,10 +18,7 @@ import bean.Cart;
  */
 @WebServlet("/CartPaging")
 public class CartPaging extends HttpServlet {
-	/**
-	 * カートの中身を表示する画面でページリンクをクリックし、遷移するときの処理を行う
-	 * @param HttpServletRequest request, HttpServletResponse response
-	 */
+	/** カートの中身を表示する画面でページリンクをクリックし、遷移するときの処理を行う */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//セッション情報の取得

@@ -20,16 +20,12 @@ import db.ProductDao;
  */
 @WebServlet("/CartAdd")
 public class CartAdd extends HttpServlet {
-	/**
-	 * Get送信をPostへ送る
-	 */
+	/** Get送信をPostへ送る */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
-	/**
-	 * 商品をカートに追加するときの処理を行う
-	 */
+	/** 商品をカートに追加するときの処理を行う */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//前の画面の入力値である商品IDを、商品IDから商品情報を検索するDAOに送り、商品情報を取得する。
 		Product product = ProductDao.showProductDetail(request.getParameter("productId"));
