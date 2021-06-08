@@ -55,7 +55,7 @@ public class ProductRegistCheck extends HttpServlet {
 		List<String> errorMessageList = Validator.makeProductInputErrorMessageList(product);
 		// 一意制約チェック
 		if (!(ProductDao.showProductDetail(product.getProductId()) == null)) {
-			errorMessageList.add(Constants.PRODUCT_ID_EXIST);
+			errorMessageList.add(Constants.PRODUCT_ID_REGISTERED);
 		}
 
 		if (errorMessageList.size() != 0) {

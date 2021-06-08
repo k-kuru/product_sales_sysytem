@@ -5,26 +5,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="<%=request.getContextPath()%>/css/style.css"
-	rel="stylesheet" />
-<link href="<%=request.getContextPath()%>/css/layout.css"
-	rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/layout.css" rel="stylesheet" />
 <title>商品販売システム</title>
 </head>
 <body>
 	<%@include file="/jsp/header.jsp"%>
 	<div class="container content">
 		<h2 class="page_title">商品更新入力画面</h2>
-		<div class="errormessage">
-			<c:forEach var="error" items="${errorMessageList}">
-		${error}<br>
-			</c:forEach>
-		</div>
+			<div class="errormessage">
+				<c:forEach var="error" items="${errorMessageList}">
+					${error}<br>
+				</c:forEach>
+			</div>
 		<div class="explain">
 			<p>更新する情報を入力してください。</p>
 		</div>
-		<form action="<%=request.getContextPath()%>/ProductUpdateCheck"
-			method="post">
+		<form action="<%=request.getContextPath()%>/ProductUpdateCheck"method="post">
 			<div class="form">
 				<div class="label">商品名：</div>
 				<div class="input">

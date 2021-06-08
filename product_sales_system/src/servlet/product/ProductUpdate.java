@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import bean.Product;
 import db.ProductDao;
 
-/**
- * Servlet implementation class ProductUpdate
- */
+
 @WebServlet("/ProductUpdate")
 public class ProductUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,7 +24,7 @@ public class ProductUpdate extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * 商品を更新
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -43,6 +41,7 @@ public class ProductUpdate extends HttpServlet {
 		product.setProductExplain(productExplain);
 		product.setPrice(price);
 		product.setStock(stock);
+		//商品の更新
 		ProductDao.updateProduct(product);
 		request.setAttribute("product", product);
 		request.getRequestDispatcher("jsp/product/update/complete.jsp").forward(request, response);
