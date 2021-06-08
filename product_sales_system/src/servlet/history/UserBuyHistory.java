@@ -15,7 +15,9 @@ import bean.User;
 import db.HistoryDao;
 
 /**
- * Servlet implementation class BuyHistory
+ * 購入履歴を表示する
+ * @author matsuzaki
+ *
  */
 @WebServlet("/UserBuyHistory")
 public class UserBuyHistory extends HttpServlet {

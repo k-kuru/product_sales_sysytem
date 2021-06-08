@@ -11,13 +11,16 @@ import java.util.List;
 
 import bean.User;
 
-
+/**
+ * user_tableに関するDAO
+ * @author matsuzaki
+ */
 public class UserDao {
 
 	public static SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 
 	/**
-	 * userテーブルの全データを取得
+	 * user_tableの全データを取得
 	 * @return userList ユーザ情報のリスト
 	 */
 	public static List<User> findAllUser() {

@@ -9,8 +9,6 @@
 	href="<%=request.getContextPath()%>/css/layout.css" />
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/css/style.css" />
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/style_matsuzaki.css" />
 <title>商品販売システム</title>
 </head>
 <body>
