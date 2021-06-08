@@ -12,12 +12,12 @@ import bean.Product;
 import db.ProductDao;
 
 /**
+ *  商品IDで商品を特定し情報をもってユーザ詳細画面へ遷移
  * Servlet implementation class ProductDetail
  */
 @WebServlet("/ProductDetail")
 public class ProductDetail extends HttpServlet {
 	/**
-	 * 商品IDで商品を特定し情報をもってユーザ詳細画面へ遷移
 	 *
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
