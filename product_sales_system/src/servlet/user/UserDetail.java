@@ -13,13 +13,14 @@ import bean.User;
 import db.UserDao;
 
 /**
+ * ユーザIDでユーザを特定し情報を持ってユーザ詳細画面へ遷移
  * Servlet implementation class UserDetail
+ * @author motegi
  */
 @WebServlet("/UserDetail")
 public class UserDetail extends HttpServlet {
 
 	/**
-	 * ユーザIDでユーザを特定し情報を持ってユーザ詳細画面へ遷移
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
