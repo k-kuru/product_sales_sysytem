@@ -23,7 +23,9 @@ import bean.User;
 		"/ProductSearch", "/ProductUpdate", "/ProductUpdateCheck","/ProductUpdateInput",
 		"/UserDelete", "/UserDeleteCheck", "/UserDetail","/UserList", "/UserPaging",
 		"/UserRegist", "/UserRegistCheck", "/UserUpdate","/UserUpdateCheck", "/UserUpdateInput",
-		"/jsp/*"})
+		"/jsp/buy/*", "/jsp/cart/*", "/jsp/history/*", "/jsp/product/*", "/jsp/user/delete/*",
+		"/jsp/user/display/*", "/jsp/user/list/*", "/jsp/user/update/*", "/jsp/header.jsp",
+		"/jsp/mypage.jsp", })
 public class AccountCheckFilter implements Filter {
 
 	public AccountCheckFilter() {}
