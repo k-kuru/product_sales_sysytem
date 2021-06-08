@@ -18,10 +18,7 @@ import bean.Cart;
  */
 @WebServlet("/BuyCheck")
 public class BuyCheck extends HttpServlet {
-	/**
-	 * 商品購入確認画面へ遷移する
-	 * @param HttpServletRequest request, HttpServletResponse response
-	 */
+	/** 商品購入確認画面へ遷移する */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//セッション情報の取得
 		HttpSession session=request.getSession();
