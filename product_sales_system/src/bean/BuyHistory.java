@@ -1,11 +1,17 @@
 package bean;
 
 public class BuyHistory {
+	/**購入履歴ID*/
 	private int historyId;
+	/**個数*/
 	private int quantity;
+	/**購入履歴*/
 	private String buyDate;
+	/**論理削除用フラグ*/
 	private int deleteFlag;
+	/**ユーザー*/
 	private User user;
+	/**商品*/
 	private Product product;
 
 	public int getHistoryId() {

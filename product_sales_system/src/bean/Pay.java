@@ -1,7 +1,9 @@
 package bean;
 
 public class Pay {
+	/**購入履歴*/
 	private BuyHistory buyHistory;
+	/**合計金額*/
 	private String pay;
 
 	public BuyHistory getBuyHistory() {
