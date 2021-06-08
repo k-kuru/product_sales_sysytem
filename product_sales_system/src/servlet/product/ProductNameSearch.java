@@ -13,19 +13,18 @@ import bean.Product;
 import db.ProductDao;
 
 /**
- * 商品を特定しその情報を持ち商品リストへ遷移
- * Servlet implementation class Product_Name_Search
+ * 商品名をあいまい検索するサーブレット
  *  @author motegi
  */
 @WebServlet("/ProductNameSearch")
 public class ProductNameSearch extends HttpServlet {
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * 商品名をあいまい検索し情報を持って商品リストへ遷移する
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
+
 		String productName = request.getParameter("productName");
+		//商品名をあいまい検索し情報を取得
 		List<Product> productList = ProductDao.serchProductName(productName);
 
 		request.setAttribute("productList", productList);

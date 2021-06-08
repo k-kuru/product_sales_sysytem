@@ -13,7 +13,7 @@ import bean.User;
 import db.UserDao;
 
 /**
- * ユーザー一覧
+ * ユーザー一覧のサーブレット
  * @author kanno
  */
 @WebServlet("/UserList")
@@ -23,13 +23,14 @@ public class UserList extends HttpServlet {
 		List<User> userlist = UserDao.findAllUser();
 		/**セッションスコープに入れるやつ*/
 		request.setAttribute("userList",userlist);
-		/**ページリンク*/
+		//ページ番号がなければ表示
 		if(request.getParameter("page_num")==null) {
 			request.setAttribute("page", 1);
 		}else {
+			//ページ番号があれば2以降も表示
 			request.setAttribute("page", request.getParameter("page_num"));
 		}
-		/**ユーザー一覧に遷移*/
+		//ユーザー一覧に遷移
 		request.getRequestDispatcher("/jsp/user/list/user_list.jsp").forward(request,response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,13 +38,13 @@ public class UserList extends HttpServlet {
 		List<User> userlist = UserDao.findAllUser();
 		/**セッションスコープに入れるやつ*/
 		request.setAttribute("userList",userlist);
-		/**ページリンク*/
+		//ページリンク
 		if(request.getParameter("page_num")==null) {
 			request.setAttribute("page", 1);
 		}else {
 			request.setAttribute("page", request.getParameter("page_num"));
 		}
-		/**ユーザー一覧に遷移*/
+		//ユーザー一覧に遷移
 		request.getRequestDispatcher("/jsp/user/list/user_list.jsp").forward(request,response);
 	}
 

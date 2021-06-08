@@ -24,17 +24,23 @@ public class CartPaging extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//セッション情報の取得
 		HttpSession session=request.getSession();
+		//Cart型のリストを宣言しセッションスコープに格納されているCart型リストで初期化
 		List<Cart> cartList = (List<Cart>) session.getAttribute("cartList");
-		int sum_price = 0;
+		//合計金額用変数の初期化
+		int sumPrice = 0;
 
+		//カート内の商品の金額を足していく
 		for (int i = 0; i < cartList.size(); i++) {
-			sum_price += Integer.parseInt(cartList.get(i).getProduct().getPrice()) * cartList.get(i).getQuantity();
+			sumPrice += Integer.parseInt(cartList.get(i).getProduct().getPrice()) * cartList.get(i).getQuantity();
 		}
 
-		request.setAttribute("sum_price", sum_price);
-		request.setAttribute("page", request.getParameter("page_num"));
+		//リクエストスコープに合計金額とページ番号を格納
+		request.setAttribute("sumPrice", sumPrice);
+		request.setAttribute("page", request.getParameter("pageNum"));
 
+		//カート一覧画面へ遷移
 		request.getRequestDispatcher("jsp/cart/cart_list.jsp").forward(request, response);
 	}
 }
