@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DB.ProductDao;
 import bean.Product;
+import db.ProductDao;
 
 /**
  * 全件検索

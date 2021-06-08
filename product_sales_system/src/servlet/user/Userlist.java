@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DB.UserDao;
 import bean.User;
+import db.UserDao;
 
 /**
  * Servlet implementation class Userlist

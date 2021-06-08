@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import DB.UserDao;
 import bean.Cart;
 import bean.User;
+import db.UserDao;
 import util.Constants;
 import util.Validator;
 /**

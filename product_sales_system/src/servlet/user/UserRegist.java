@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DB.UserDao;
 import bean.User;
+import db.UserDao;
 
 /**
  * ユーザ登録をしユーザ登録完了画面に遷移
