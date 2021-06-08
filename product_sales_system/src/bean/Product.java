@@ -1,11 +1,17 @@
 package bean;
 
 public class Product {
+	/**商品ID*/
 	private String productId;
+	/**商品名*/
 	private String productName;
+	/**商品説明*/
 	private String productExplain;
+	/**値段*/
 	private String price;
+	/**在庫*/
 	private String stock;
+	/**論理削除用フラグ*/
 	private int deleteFlag;
 
 	public String getProductId() {

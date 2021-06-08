@@ -13,28 +13,37 @@ import bean.User;
 import db.UserDao;
 
 /**
- * Servlet implementation class Userlist
+ * ユーザー一覧
+ * @author kanno
  */
-@WebServlet("/Userlist")
+@WebServlet("/UserList")
 public class UserList extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		/**全てのユーザー情報を入れるやつ*/
 		List<User> userlist = UserDao.findAllUser();
+		/**セッションスコープに入れるやつ*/
 		request.setAttribute("userList",userlist);
+		/**ページリンク*/
 		if(request.getParameter("page_num")==null) {
 			request.setAttribute("page", 1);
 		}else {
 			request.setAttribute("page", request.getParameter("page_num"));
 		}
+		/**ユーザー一覧に遷移*/
 		request.getRequestDispatcher("/jsp/user/list/user_list.jsp").forward(request,response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		/**全てのユーザー情報を入れるやつ*/
 		List<User> userlist = UserDao.findAllUser();
+		/**セッションスコープに入れるやつ*/
 		request.setAttribute("userList",userlist);
+		/**ページリンク*/
 		if(request.getParameter("page_num")==null) {
 			request.setAttribute("page", 1);
 		}else {
 			request.setAttribute("page", request.getParameter("page_num"));
 		}
+		/**ユーザー一覧に遷移*/
 		request.getRequestDispatcher("/jsp/user/list/user_list.jsp").forward(request,response);
 	}
 
