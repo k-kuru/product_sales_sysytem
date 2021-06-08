@@ -13,12 +13,11 @@ import bean.Product;
 import util.Validator;
 
 /**
- * 商品更新入力画面で入力した値を確認画面へ送る
+ * 商品更新入力画面で入力した値を確認画面へ送るサーブレット
  * @author kuru
  */
 @WebServlet("/ProductUpdateCheck")
 public class ProductUpdateCheck extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Getで受け取った場合Postへ処理を送る
@@ -33,24 +32,23 @@ public class ProductUpdateCheck extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		request.setCharacterEncoding("UTF-8");
 		String productId = request.getParameter("productId");
 		String productName = request.getParameter("productName");
 		String productExplain = request.getParameter("productExplain");
 		String price = request.getParameter("price");
 		String stock = request.getParameter("stock");
+
 		Product product = new Product();
+
 		product.setProductId(productId);
 		product.setProductName(productName);
 		product.setProductExplain(productExplain);
 		product.setPrice(price);
 		product.setStock(stock);
 
-		/**
-		 * 入力チェックにエラーがなければ確認画面へ
-		 * エラーがあればエラーメッセージをもって入力画面へ遷移
-		 */
+		//入力チェック
 		List<String> errorMessageList = Validator.makeProductInputErrorMessageList(product);
+		// 一意制約チェック
 		if (errorMessageList.size() != 0) {
 			request.setAttribute("errorMessageList", errorMessageList);
 			request.getRequestDispatcher("/jsp/product/update/input.jsp").forward(request, response);

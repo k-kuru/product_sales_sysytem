@@ -12,12 +12,11 @@ import bean.Product;
 import db.ProductDao;
 
 /**
- * 商品情報を更新して完了画面に遷移
+ * 商品情報を更新して完了画面に遷移サーブレット
  * @author kuru
  */
 @WebServlet("/ProductUpdate")
 public class ProductUpdate extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 	/**
 	 * Getで受け取った場合Postへ処理を送る
 	 */
@@ -32,13 +31,14 @@ public class ProductUpdate extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		request.setCharacterEncoding("UTF-8");
 		String productId = request.getParameter("productId");
 		String productName = request.getParameter("productName");
 		String productExplain = request.getParameter("productExplain");
 		String price = request.getParameter("price");
 		String stock = request.getParameter("stock");
+
 		Product product = new Product();
+
 		product.setProductId(productId);
 		product.setProductName(productName);
 		product.setProductExplain(productExplain);
