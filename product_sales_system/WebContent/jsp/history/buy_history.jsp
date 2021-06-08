@@ -22,13 +22,14 @@
 			<p>以前、購入した商品を表示します。</p>
 		</div>
 
-		<table class="buy_history_list_table" border=1>
+		<c:if test="${historyList.size()>=1}">
+			<table class="buy_history_list_table" border=1>
 			<tr>
 				<th class="buyDate">日付</th>
 				<th class="buyDetail">購入内容</th>
 				<th class="price">値段</th>
 			</tr>
-			<c:if test="${historyList.size()>=1}">
+
 				<c:forEach var="history" items="${historyList}"
 					begin="${(page-1)*15 }" end="${(page-1)*15+14 }" varStatus="status">
 					<tr>
@@ -41,11 +42,11 @@
 						<td>${history.getProduct().price}×${history.quantity}</td>
 					</tr>
 				</c:forEach>
-			</c:if>
-			<c:if test="${historyList == null }">
+			</table>
+		</c:if>
+		<c:if test="${historyList.size() == 0 }">
 				<td colspan="3"><div class="empty">購入した商品はありません</div></td>
-			</c:if>
-		</table>
+		</c:if>
 		<!--		ページング処理		-->
 		<div class="page_button">
 			<c:if test="${page>=3 }">

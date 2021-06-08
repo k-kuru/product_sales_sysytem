@@ -25,7 +25,7 @@
 			</c:when>
 
 			<c:otherwise>
-				<form action="<%=request.getContextPath() %>/Logout" method="post">
+				<form action="<%=request.getContextPath() %>/Logout" >
 				<div class="compbutton">
 					<input type="submit" value="戻る" />
 				</div>
