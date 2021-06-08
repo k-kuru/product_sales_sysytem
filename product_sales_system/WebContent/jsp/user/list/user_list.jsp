@@ -66,7 +66,7 @@
 						</div>
 					</c:if>
 
-					<c:if test="${cartList.size()>15}">
+					<c:if test="${userList.size()>15}">
 						<div class="page_link">
 							<form action="">
 								<button type="submit" value="${page }" disabled="disabled"
