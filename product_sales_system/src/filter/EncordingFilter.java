@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
 /**
- * Servlet Filter implementation class EncordingFilter
+ * エンコード用フィルター
  */
 @WebFilter("/*")
 public class EncordingFilter implements Filter {
@@ -19,8 +19,7 @@ public class EncordingFilter implements Filter {
 	private static final String encoding = "UTF-8";
 
 	@Override
-	public void destroy() {
-	}
+	public void destroy() {}
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -31,6 +30,5 @@ public class EncordingFilter implements Filter {
 	}
 
 	@Override
-	public void init(FilterConfig arg0) throws ServletException {
-	}
+	public void init(FilterConfig arg0) throws ServletException {}
 }
