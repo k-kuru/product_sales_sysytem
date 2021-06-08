@@ -20,7 +20,8 @@ import bean.Cart;
 @WebServlet("/CartDelete")
 public class CartDelete extends HttpServlet {
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * カートの中身を消したときの処理を行う
+	 * @param HttpServletRequest request, HttpServletResponse response
 	 */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -29,8 +30,10 @@ public class CartDelete extends HttpServlet {
 		List<Cart> cartList = (List<Cart>) session.getAttribute("cartList");
 		cartList.remove(Integer.parseInt(request.getParameter("cart_num")));
 		session.removeAttribute("cartList");
+
 		session.setAttribute("cartList", cartList);
 		request.setAttribute("page", request.getParameter("page_num"));
+
 		request.getRequestDispatcher("jsp/cart/cart_list.jsp").forward(request, response);
 	}
 

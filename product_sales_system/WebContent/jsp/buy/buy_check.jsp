@@ -38,19 +38,11 @@
 							</c:forEach>
 						</table>
 					</div>
-
-					<%
-					List<Cart> cartList = (List<Cart>) session.getAttribute("cartList");
-					int sum_price = 0;
-					for (int i = 0; i < cartList.size(); i++) {
-						sum_price += Integer.parseInt(cartList.get(i).getProduct().getPrice()) * cartList.get(i).getQuantity();
-					}
-					%>
-					<div class="sum_price">合計金額：　<%=sum_price%></div>
+					<div class="sum_price">合計金額：　${sum_price }</div>
 						<div class="block">
 						<div class="address_label">発送先</div>
 						<div class="address_input">
-							<input type="text" value="${loginuser.address}" name="address">
+							<input type="text" value="${loginuser.address}" name="address" readonly="readonly">
 						</div>
 							<div class="pay_label">支払方法</div>
 							<div class="pay_input">

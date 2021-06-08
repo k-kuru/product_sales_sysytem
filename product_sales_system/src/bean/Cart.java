@@ -1,7 +1,9 @@
 package bean;
 
 public class Cart {
+	/**商品*/
 	private Product product;
+	/**個数*/
 	private int quantity;
 
 

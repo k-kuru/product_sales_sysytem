@@ -16,23 +16,29 @@ import bean.User;
 import db.HistoryDao;
 
 /**
- * Servlet implementation class Buy_complete
+ * 商品購入完了サーブレット
+ * @author Nakanishi
  */
 @WebServlet("/BuyComplete")
 public class BuyComplete extends HttpServlet {
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * 商品購入完了時の処理を行う
+	 * @param HttpServletRequest request, HttpServletResponse response
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session=request.getSession();
 		List<Cart> cartList = (List<Cart>)session.getAttribute("cartList");
+
 		for (int i = 0; i < cartList.size(); i++) {
 			HistoryDao.registHistory(cartList.get(i),(User)session.getAttribute("loginuser"));
 		}
+
 		session.removeAttribute("cartList");
+
 		cartList = new ArrayList<Cart>();
 		session.setAttribute("cartList", cartList);
+
 		request.getRequestDispatcher("jsp/buy/buy_complete.jsp").forward(request, response);
 	}
 

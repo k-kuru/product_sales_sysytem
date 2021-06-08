@@ -15,12 +15,14 @@ import bean.Product;
 import db.ProductDao;
 
 /**
- * Servlet implementation class CartAdd
+ * カート追加の処理
+ * @author Nakanishi
  */
 @WebServlet("/CartAdd")
 public class CartAdd extends HttpServlet {
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * Get送信をPostへ送る
+	 * @param HttpServletRequest request, HttpServletResponse response
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -28,18 +30,23 @@ public class CartAdd extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * 商品をカートに追加するときの処理を行う
+	 * @param HttpServletRequest request, HttpServletResponse response
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		Product product = ProductDao.showProductDetail(request.getParameter("productId"));
 		Cart cart = new Cart();
+		HttpSession session = request.getSession();
+
 		cart.setProduct(product);
 		cart.setQuantity(Integer.parseInt(request.getParameter("quantity")));
-		HttpSession session = request.getSession();
+
 		List<Cart> cartlist = (List<Cart>)session.getAttribute("cartList");
+
 		cartlist.add(cart);
 		session.setAttribute("cartList", cartlist);
+
 		request.getRequestDispatcher("/ProductSearch").forward(request, response);
 	}
 
