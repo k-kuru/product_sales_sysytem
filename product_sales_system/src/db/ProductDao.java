@@ -17,6 +17,7 @@ public class ProductDao {
 
 	/**
 	 * productテーブルの全データを取得
+	 *  @return productList 商品情報のリスト
 	 */
 	public static List<Product> findAllProduct() {
 		Connection con = null;
@@ -49,6 +50,8 @@ public class ProductDao {
 	 * 商品詳細表示
 	 * 商品IDで検索
 	 * 一致する商品があればデータを取得
+	 *  @param product_id
+	 *  @return product 商品情報
 	 */
 	public static Product showProductDetail(String product_id) {
 		Connection con = null;
@@ -79,6 +82,8 @@ public class ProductDao {
 	/**
 	 * 商品名で検索
 	 * 一致する名前があればデータを取得
+	 * @param product_name
+	 * @return productList 商品情報のリスト
 	 */
 	public static List<Product> serchProductName(String product_name) {
 		Connection con = null;
@@ -110,6 +115,7 @@ public class ProductDao {
 
 	/**
 	 * productテーブルにデータを登録
+	 * @param product 商品情報
 	 */
 	public static void registProduct(Product product) {
 		Connection con = null;
@@ -136,6 +142,7 @@ public class ProductDao {
 
 	/**
 	 * productテーブルのデータを更新
+	 * @param product 商品情報
 	 */
 	public static void updateProduct(Product product) {
 
@@ -163,6 +170,7 @@ public class ProductDao {
 
 	/**
 	 * productテーブルのデータを論理削除
+	 * @param product 商品情報
 	 */
 	public static void deleteProduct(String product_id) {
 		Connection con = null;
@@ -184,6 +192,8 @@ public class ProductDao {
 
 	/**
 	 * 商品の在庫取得
+	 * @pram product_id
+	 * @return stock 在庫
 	 */
 	public static int getStock(String product_id) {
 		Connection con = null;
@@ -206,6 +216,7 @@ public class ProductDao {
 
 	/**
 	 * 購入数にあわせ商品の在庫を減らす
+	 * @pram product_id,quantity
 	 */
 	public static void reduceStock(String product_id,int quantity) {
 		Connection con = null;

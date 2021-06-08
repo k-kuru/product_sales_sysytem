@@ -14,7 +14,10 @@ import db.ProductDao;
 import util.Constants;
 import util.Validator;
 
-
+/**
+ * 商品登録入力画面で入力した値を確認画面へ送る
+ * @author kuru
+ */
 @WebServlet("/ProductRegistCheck")
 public class ProductRegistCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;

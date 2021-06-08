@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import bean.Product;
 import db.ProductDao;
 
+/**
+ * 商品情報をデータベースに登録して完了画面に遷移
+ * @author kuru
+ */
 @WebServlet("/ProductRegist")
 public class ProductRegist extends HttpServlet {
 	private static final long serialVersionUID = 1L;

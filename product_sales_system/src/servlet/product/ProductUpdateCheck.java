@@ -13,7 +13,8 @@ import bean.Product;
 import util.Validator;
 
 /**
- * Servlet implementation class ProductUpdateCheck
+ * 商品更新入力画面で入力した値を確認画面へ送る
+ * @author kuru
  */
 @WebServlet("/ProductUpdateCheck")
 public class ProductUpdateCheck extends HttpServlet {

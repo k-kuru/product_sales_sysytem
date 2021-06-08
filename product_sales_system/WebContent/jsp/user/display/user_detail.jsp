@@ -32,7 +32,7 @@
 					type="submit" value="更新" />
 			</form>
 		</div>
-
+		<!-- 一般ユーザ 削除ボタン -->
 		<div class="menu_button">
 			<c:choose>
 				<c:when test="${loginuser.authority == 0}">
@@ -42,6 +42,7 @@
 							type="submit" value="退会" />
 					</form>
 				</c:when>
+				<!-- 管理者 削除ボタン -->
 				<c:when test="${loginuser.authority == 1}">
 					<form action="<%=request.getContextPath()%>/UserDeleteCheck"
 						method="post">
@@ -51,7 +52,7 @@
 				</c:when>
 			</c:choose>
 		</div>
-
+		<!-- 戻るボタン -->
 		<div class="menu_button">
 			<form action="<%=request.getContextPath()%>/jsp/mypage.jsp">
 				<input type="submit" value="戻る" />
