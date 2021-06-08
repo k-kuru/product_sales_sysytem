@@ -5,10 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/layout.css" />
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/css/style.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/layout.css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css" />
 <title>商品販売システム</title>
 </head>
 <body>
@@ -50,8 +48,8 @@
 			<c:if test="${page>=3 }">
 				<div class="page_link">
 					<form action="<%=request.getContextPath()%>/UserBuyHistory">
-						<input type="hidden" name="page_num" value="${page-2 }"> <input
-							type="submit" value="${page-2 }" class="link" />
+						<input type="hidden" name="page_num" value="${page-2 }">
+						<input type="submit" value="${page-2 }" class="link" />
 					</form>
 				</div>
 			</c:if>
