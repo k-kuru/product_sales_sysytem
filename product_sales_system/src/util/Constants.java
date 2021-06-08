@@ -33,7 +33,7 @@ public class Constants {
 	public static final String USER_ID_EMPTY = "ユーザIDを入力してください。";
 
 	/** ユーザIDが既に登録済みのエラーメッセージ */
-	public static final String USER_ID_EXIST = "そのユーザIDは登録済みです。";
+	public static final String USER_ID_REGISTERED = "そのユーザIDは登録済みです。";
 
 	/** パスワードが未入力のエラーメッセージ */
 	public static final String PASSWORD_EMPTY = "パスワードを入力してください。";
@@ -78,7 +78,7 @@ public class Constants {
 	public static final String PRODUCT_ID_EMPTY = "商品IDを入力してください。";
 
 	/** 商品IDが既に登録済みのエラーメッセージ */
-	public static final String PRODUCT_ID_EXIST = "その商品IDは登録済みです。";
+	public static final String PRODUCT_ID_REGISTERED = "その商品IDは登録済みです。";
 
 	/** 商品名が未入力のエラーメッセージ */
 	public static final String PRODUCT_NAME_EMPTY = "商品名を入力してください。";

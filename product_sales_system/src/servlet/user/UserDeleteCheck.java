@@ -14,7 +14,6 @@ import db.UserDao;
 /**
  * ユーザIDから詳細情報を検索しユーザ削除確認画面に遷移
  * @author matsuzaki
- *
  */
 @WebServlet("/UserDeleteCheck")
 public class UserDeleteCheck extends HttpServlet {
