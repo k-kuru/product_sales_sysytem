@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import bean.Product;
 
-/**
- * Servlet implementation class ProductUpdateInput
- */
+
 @WebServlet("/ProductUpdateInput")
 public class ProductUpdateInput extends HttpServlet {
 	private static final long serialVersionUID = 1L;

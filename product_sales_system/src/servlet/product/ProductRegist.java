@@ -43,6 +43,7 @@ public class ProductRegist extends HttpServlet {
 		product.setProductExplain(productExplain);
 		product.setPrice(price);
 		product.setStock(stock);
+		//商品の登録
 		ProductDao.registProduct(product);
 		request.getRequestDispatcher("jsp/product/regist/complete.jsp").forward(request, response);
 	}

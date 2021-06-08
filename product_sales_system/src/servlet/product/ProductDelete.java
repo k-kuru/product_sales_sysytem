@@ -31,6 +31,7 @@ public class ProductDelete extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		String productId = request.getParameter("productId");
+		//商品を論理削除
 		ProductDao.deleteProduct(productId);
 		request.getRequestDispatcher("jsp/product/delete/complete.jsp").forward(request, response);
 	}

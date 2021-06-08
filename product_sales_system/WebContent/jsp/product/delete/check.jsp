@@ -5,40 +5,34 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="<%=request.getContextPath()%>/css/style.css"
-	rel="stylesheet" />
-<link href="<%=request.getContextPath()%>/css/layout.css"
-	rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/layout.css" rel="stylesheet" />
 <title>商品販売システム</title>
 </head>
 <body>
 	<%@include file="/jsp/header.jsp"%>
-
-	<div class="container content">
-		<h2 class="page_title">商品削除確認画面</h2>
-		<div class="explain">
-			<p>
-				以下の商品を削除します。<br>よろしいですか。
-			</p>
-		</div>
-		<div class="information">
-			<p>商品情報</p>
-		</div>
-		<div class="check">
-			商品ID：${product.productId}<br>
-		</div>
-		<div class="check">
-			商品名：${product.productName}<br>
-		</div>
-		<div class="check">
-			商品説明：${product.productExplain}<br>
-		</div>
-		<div class="check">
-			値段：${product.price}<br>
-		</div>
-		<div class="check">在庫数：${product.stock}</div>
-		<form action="<%=request.getContextPath()%>/ProductDelete"
-			method="post">
+		<div class="container content">
+			<h2 class="page_title">商品削除確認画面</h2>
+				<div class="explain">
+				<p>以下の商品を削除します。<br>よろしいですか。</p>
+				</div>
+			<div class="information">
+				<p>商品情報</p>
+			</div>
+			<div class="check">
+				商品ID：${product.productId}
+			</div>
+			<div class="check">
+				商品名：${product.productName}
+			</div>
+			<div class="check">
+				商品説明：${product.productExplain}
+			</div>
+			<div class="check">
+				値段：${product.price}
+			</div>
+			<div class="check">在庫数：${product.stock}</div>
+				<form action="<%=request.getContextPath()%>/ProductDelete" method="post">
 			<div class="button">
 				<div class="label"></div>
 				<div class="input">
@@ -46,9 +40,8 @@
 					<input type="submit" value="削除" />
 				</div>
 			</div>
-		</form>
-		<form action="<%=request.getContextPath()%>/ProductDetail"
-			method="post">
+				</form>
+			<form action="<%=request.getContextPath()%>/ProductDetail" method="post">
 			<div class="button">
 				<div class="label"></div>
 				<div class="input">
