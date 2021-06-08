@@ -3,10 +3,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!--
-カート表示画面
-author Nakanishi
--->
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,8 +20,6 @@ author Nakanishi
 		<article class="main">
 			<h3 class="page_title">カート画面</h3>
 			<div class="comment">カートの中身は以下の通りです。</div>
-
-			<!-- 		カートの中身があるとき		 -->
 			<c:if test="${cartList.size()>=1}">
 				<table class="list_table" border=1>
 					<tr>
@@ -51,7 +45,6 @@ author Nakanishi
 						</tr>
 					</c:forEach>
 				</table>
-				<!--		ページング処理		-->
 				<div class="page_button">
 					<c:if test="${page>=3 }">
 						<div class="page_link">
@@ -98,21 +91,9 @@ author Nakanishi
 						</div>
 					</c:if>
 				</div>
-				<!-- 		合計金額表示		 -->
-				<div class="sum_price">
-					<%
-					List<Cart> cartList = (List<Cart>) session.getAttribute("cartList");
-					int sum_price = 0;
-					for (int i = 0; i < cartList.size(); i++) {
-						sum_price += Integer.parseInt(cartList.get(i).getProduct().getPrice()) * cartList.get(i).getQuantity();
-					}
-					%>
-					合計　　　<%=sum_price%>円
-				</div>
-				<!-- 		購入、戻るボタン表示		 -->
+				<div class="sum_price">合計 ${sum_price }円</div>
 				<div class="menu_button">
-					<form action="<%=request.getContextPath()%>/BuyCheck"
-						method="post">
+					<form action="<%=request.getContextPath()%>/BuyCheck" method="post">
 						<input type="submit" value="購入" class="buy" />
 					</form>
 				</div>
