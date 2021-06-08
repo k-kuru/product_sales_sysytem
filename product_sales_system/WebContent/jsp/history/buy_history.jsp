@@ -29,7 +29,7 @@
 			</tr>
 
 				<c:forEach var="history" items="${historyList}"
-					begin="${(page-1)*15 }" end="${(page-1)*15+14 }" varStatus="status">
+					begin="${(page-1)*10}" end="${(page-1)*10+9}" varStatus="status">
 					<tr>
 						<td>${history.buyDate}</td>
 						<td><a
@@ -59,8 +59,8 @@
 			<c:if test="${page>=2 }">
 				<div class="page_link">
 					<form action="<%=request.getContextPath()%>/UserBuyHistory">
-						<input type="hidden" name="page_num" value="${page-1 }"> <input
-							type="submit" value="${page-1 }" class="link" />
+						<input type="hidden" name="page_num" value="${page-1 }">
+						<input type="submit" value="${page-1 }" class="link" />
 					</form>
 				</div>
 			</c:if>
@@ -74,20 +74,20 @@
 				</div>
 			</c:if>
 
-			<c:if test="${(page*15) < historyList.size()}">
+			<c:if test="${(page*10) < historyList.size()}">
 				<div class="page_link">
 					<form action="<%=request.getContextPath()%>/UserBuyHistory">
-						<input type="hidden" name="page_num" value="${page+1 }"> <input
-							type="submit" value="${page+1 }" class="link" />
+						<input type="hidden" name="page_num" value="${page+1 }">
+						<input type="submit" value="${page+1 }" class="link" />
 					</form>
 				</div>
 			</c:if>
 
-			<c:if test="${((page+1)*15) < historyList.size()}">
+			<c:if test="${((page+1)*10) < historyList.size()}">
 				<div class="page_link">
 					<form action="<%=request.getContextPath()%>/UserBuyHistory">
-						<input type="hidden" name="page_num" value="${page+2 }"> <input
-							type="submit" value="${page+2 }" class="link" />
+						<input type="hidden" name="page_num" value="${page+2 }">
+						<input type="submit" value="${page+2 }" class="link" />
 					</form>
 				</div>
 			</c:if>

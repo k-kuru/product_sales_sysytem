@@ -47,7 +47,7 @@ public class UserRegistCheck extends HttpServlet {
 		List<String> errorMessageList = Validator.makeUserInputErrorMessageList(user);
 		// 一意制約チェック
 		if (!(UserDao.showUserDetail(user.getUserId()) == null)) {
-			errorMessageList.add(Constants.USER_ID_EXIST);
+			errorMessageList.add(Constants.USER_ID_REGISTERED);
 		}
 
 		if(errorMessageList.size() == 0) {
