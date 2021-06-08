@@ -17,20 +17,16 @@ import bean.Product;
 @WebServlet("/ProductDeleteCheck")
 public class ProductDeleteCheck extends HttpServlet {
 
-	/**
-	 * Getで受け取った場合Postへ処理を送る
-	 */
+	/**Getで受け取った場合Postへ処理を送る */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);
 	}
 
-	/**
-	 * 商品情報を商品削除確認画面へ送る
-	 */
+	/** 商品情報を商品削除確認画面へ送る */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
+
 		String productId = request.getParameter("productId");
 		String productName = request.getParameter("productName");
 		String productExplain = request.getParameter("productExplain");

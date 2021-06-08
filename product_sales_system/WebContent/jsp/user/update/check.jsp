@@ -76,7 +76,8 @@
 			<div class="button">
 				<div class="label"></div>
 				<div class="input">
-					<input type="hidden" name="userId" value="${user.userId}" /> <input type="submit" value="戻る" />
+					<input type="hidden" name="userId" value="${user.userId}" />
+					<input type="submit" value="戻る" />
 				</div>
 			</div>
 		</form>

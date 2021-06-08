@@ -18,9 +18,7 @@ import db.ProductDao;
  */
 @WebServlet("/ProductNameSearch")
 public class ProductNameSearch extends HttpServlet {
-	/**
-	 * 商品名をあいまい検索し情報を持って商品リストへ遷移する
-	 */
+	/** 商品名をあいまい検索し情報を持って商品リストへ遷移する */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String productName = request.getParameter("productName");

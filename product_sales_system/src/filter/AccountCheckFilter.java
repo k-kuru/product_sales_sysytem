@@ -14,28 +14,15 @@ import javax.servlet.http.HttpSession;
 import bean.User;
 
 /**
- * Servlet Filter implementation class AccountCheckFilter
+ * 不正ログインチェックフィルター
  */
 //@WebFilter(urlPatterns={"/jsp/*"})
 public class AccountCheckFilter implements Filter {
 
-	/**
-	 * Default constructor.
-	 */
-	public AccountCheckFilter() {
-		// TODO Auto-generated constructor stub
-	}
+	public AccountCheckFilter() {}
 
-	/**
-	 * @see Filter#destroy()
-	 */
-	public void destroy() {
-		// TODO Auto-generated method stub
-	}
+	public void destroy() {}
 
-	/**
-	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
-	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		// セッションを利用する準備
 		HttpSession session = ((HttpServletRequest) request).getSession();
@@ -52,11 +39,7 @@ public class AccountCheckFilter implements Filter {
 		}
 	}
 
-	/**
-	 * @see Filter#init(FilterConfig)
-	 */
-	public void init(FilterConfig fConfig) throws ServletException {
-		// TODO Auto-generated method stub
-	}
+
+	public void init(FilterConfig fConfig) throws ServletException {}
 
 }
