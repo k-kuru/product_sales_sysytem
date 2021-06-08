@@ -26,14 +26,14 @@ public class CartPaging extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
 		List<Cart> cartList = (List<Cart>) session.getAttribute("cartList");
-		int sum_price = 0;
+		int sumPrice = 0;
 
 		for (int i = 0; i < cartList.size(); i++) {
-			sum_price += Integer.parseInt(cartList.get(i).getProduct().getPrice()) * cartList.get(i).getQuantity();
+			sumPrice += Integer.parseInt(cartList.get(i).getProduct().getPrice()) * cartList.get(i).getQuantity();
 		}
 
-		request.setAttribute("sum_price", sum_price);
-		request.setAttribute("page", request.getParameter("page_num"));
+		request.setAttribute("sumPrice", sumPrice);
+		request.setAttribute("page", request.getParameter("pageNum"));
 
 		request.getRequestDispatcher("jsp/cart/cart_list.jsp").forward(request, response);
 	}

@@ -37,8 +37,8 @@
 							<td>
 								<form action="<%=request.getContextPath()%>/CartDelete"
 									method="post">
-									<input type="hidden" name="cart_num" value="${status.index}">
-									<input type="hidden" name="page_num" value="${page }">
+									<input type="hidden" name="cartNum" value="${status.index}">
+									<input type="hidden" name="pageNum" value="${page }">
 									<input type="submit" value="削除" class="delete" />
 								</form>
 							</td>
@@ -49,7 +49,7 @@
 					<c:if test="${page>=3 }">
 						<div class="page_link">
 							<form action="<%=request.getContextPath()%>/CartPaging">
-								<input type="hidden" name="page_num" value="${page-2 }">
+								<input type="hidden" name="pageNum" value="${page-2 }">
 								<input type="submit" value="${page-2 }" class="link" />
 							</form>
 						</div>
@@ -58,7 +58,7 @@
 					<c:if test="${page>=2 }">
 						<div class="page_link">
 							<form action="<%=request.getContextPath()%>/CartPaging">
-								<input type="hidden" name="page_num" value="${page-1 }">
+								<input type="hidden" name="pageNum" value="${page-1 }">
 								<input type="submit" value="${page-1 }" class="link" />
 							</form>
 						</div>
@@ -76,7 +76,7 @@
 					<c:if test="${(page*15) < cartList.size()}">
 						<div class="page_link">
 							<form action="<%=request.getContextPath()%>/CartPaging">
-								<input type="hidden" name="page_num" value="${page+1 }">
+								<input type="hidden" name="pageNum" value="${page+1 }">
 								<input type="submit" value="${page+1 }" class="link" />
 							</form>
 						</div>
@@ -85,13 +85,13 @@
 					<c:if test="${((page+1)*15) < cartList.size()}">
 						<div class="page_link">
 							<form action="<%=request.getContextPath()%>/CartPaging">
-								<input type="hidden" name="page_num" value="${page+2 }">
+								<input type="hidden" name="pageNum" value="${page+2 }">
 								<input type="submit" value="${page+2 }" class="link" />
 							</form>
 						</div>
 					</c:if>
 				</div>
-				<div class="sum_price">合計 ${sum_price }円</div>
+				<div class="sum_price">合計 ${sumPrice }円</div>
 				<div class="menu_button">
 					<form action="<%=request.getContextPath()%>/BuyCheck" method="post">
 						<input type="submit" value="購入" class="buy" />

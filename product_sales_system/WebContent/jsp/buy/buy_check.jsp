@@ -38,7 +38,7 @@
 							</c:forEach>
 						</table>
 					</div>
-					<div class="sum_price">合計金額：　${sum_price }</div>
+					<div class="sum_price">合計金額：　${sumPrice }</div>
 						<div class="block">
 						<div class="address_label">発送先</div>
 						<div class="address_input">
