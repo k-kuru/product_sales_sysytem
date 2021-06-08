@@ -15,6 +15,7 @@ import db.ProductDao;
 /**
  * 全件検索
  * Servlet implementation class Search
+ *  @author motegi
  */
 @WebServlet("/ProductSearch")
 public class ProductSearch extends HttpServlet {
