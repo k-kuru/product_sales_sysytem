@@ -21,10 +21,7 @@ import db.HistoryDao;
  */
 @WebServlet("/BuyComplete")
 public class BuyComplete extends HttpServlet {
-	/**
-	 * 商品購入完了時の処理を行う
-	 * @param HttpServletRequest request, HttpServletResponse response
-	 */
+	/** 商品購入完了時の処理を行う */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//セッション情報の取得
 		HttpSession session=request.getSession();

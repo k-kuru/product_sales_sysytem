@@ -19,9 +19,9 @@ import db.UserDao;
 @WebServlet("/UserList")
 public class UserList extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/**全てのユーザー情報を入れるやつ*/
+		//全てのユーザー情報を入れるリスト
 		List<User> userlist = UserDao.findAllUser();
-		/**セッションスコープに入れるやつ*/
+		//セッションスコープに入れる変数
 		request.setAttribute("userList",userlist);
 		//ページ番号がなければ表示
 		if(request.getParameter("page_num")==null) {
@@ -30,21 +30,22 @@ public class UserList extends HttpServlet {
 			//ページ番号があれば2以降も表示
 			request.setAttribute("page", request.getParameter("page_num"));
 		}
-		//ユーザー一覧に遷移
+		//ユーザー一覧画面に遷移
 		request.getRequestDispatcher("/jsp/user/list/user_list.jsp").forward(request,response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/**全てのユーザー情報を入れるやつ*/
+		//全てのユーザー情報を入れるリスト
 		List<User> userlist = UserDao.findAllUser();
-		/**セッションスコープに入れるやつ*/
+		//セッションスコープに入れる変数
 		request.setAttribute("userList",userlist);
-		//ページリンク
+		//ページ番号がなければ表示
 		if(request.getParameter("page_num")==null) {
 			request.setAttribute("page", 1);
 		}else {
+			//ページ番号があれば2以降も表示
 			request.setAttribute("page", request.getParameter("page_num"));
 		}
-		//ユーザー一覧に遷移
+		//ユーザー一覧画面に遷移
 		request.getRequestDispatcher("/jsp/user/list/user_list.jsp").forward(request,response);
 	}
 

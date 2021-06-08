@@ -18,10 +18,7 @@ import bean.Cart;
  */
 @WebServlet("/CartList")
 public class CartList extends HttpServlet {
-	/**
-	 * カートの中身を表示するときの処理を行う
-	 * @param HttpServletRequest request, HttpServletResponse response
-	 */
+	/** カートの中身を表示するときの処理を行う */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
