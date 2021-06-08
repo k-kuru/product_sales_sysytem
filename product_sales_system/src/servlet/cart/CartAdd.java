@@ -42,10 +42,10 @@ public class CartAdd extends HttpServlet {
 		cart.setProduct(product);
 		cart.setQuantity(Integer.parseInt(request.getParameter("quantity")));
 
-		List<Cart> cartlist = (List<Cart>)session.getAttribute("cartList");
+		List<Cart> cartList = (List<Cart>)session.getAttribute("cartList");
 
-		cartlist.add(cart);
-		session.setAttribute("cartList", cartlist);
+		cartList.add(cart);
+		session.setAttribute("cartList", cartList);
 
 		request.getRequestDispatcher("/ProductSearch").forward(request, response);
 	}
