@@ -9,6 +9,10 @@ import java.util.List;
 
 import bean.Product;
 
+/**
+ * product_tableに関するDAO
+ * @author kuru
+ */
 public class ProductDao {
 
 	/**
