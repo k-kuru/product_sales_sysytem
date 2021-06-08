@@ -12,14 +12,13 @@ import bean.User;
 import db.UserDao;
 
 /**
- * ユーザ登録をしユーザ登録完了画面に遷移
+ * ユーザ登録をしユーザ登録完了画面に遷移するサーブレット
  * @author matsuzaki
  *
  */
 @WebServlet("/UserRegist")
 public class UserRegist extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
 
 		String userId = request.getParameter("userId");
 		String userName = request.getParameter("userName");
@@ -38,6 +37,7 @@ public class UserRegist extends HttpServlet {
 		user.setTel(tel);
 		user.setAddress(address);
 
+		//ユーザを登録するメソッドを呼び出す
 		UserDao.registUser(user);
 
 		request.getRequestDispatcher("/jsp/user/regist/complete.jsp").forward(request, response);

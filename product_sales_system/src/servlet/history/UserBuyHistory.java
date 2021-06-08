@@ -29,9 +29,11 @@ public class UserBuyHistory extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		User loginuser = (User) session.getAttribute("loginuser");
+		//購入履歴を返すメソッドを呼び出す
 		List<BuyHistory> historyList = HistoryDao.findAllHistory(loginuser.getUserId());
 
 		request.setAttribute("historyList",historyList);
+		//ページ番号があれば次のページを表示する。
 		if(request.getParameter("page_num")==null) {
 			request.setAttribute("page", 1);
 		}else {

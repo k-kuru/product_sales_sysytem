@@ -19,7 +19,6 @@ import db.UserDao;
 @WebServlet("/UserUpdate")
 public class UserUpdate extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
 
 		String userId = request.getParameter("userId");
 		String userName = request.getParameter("userName");
@@ -40,6 +39,7 @@ public class UserUpdate extends HttpServlet {
 		user.setAddress(address);
 		user.setAuthority(Integer.parseInt(authority));
 
+		//ユーザを更新するメソッドを呼び出す
 		UserDao.updateUser(user);
 
 		request.getRequestDispatcher("/jsp/user/update/complete.jsp").forward(request, response);

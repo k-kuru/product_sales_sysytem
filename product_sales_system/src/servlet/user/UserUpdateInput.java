@@ -21,6 +21,7 @@ public class UserUpdateInput extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userId = request.getParameter("userId");
 
+		//ユーザ情報を返すメソッドを呼び出す
 		User user = UserDao.showUserDetail(userId);
 
 		request.setAttribute("user", user);

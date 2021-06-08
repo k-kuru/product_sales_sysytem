@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import db.UserDao;
 
 /**
- * ユーザ削除をしユーザ削除完了画面に遷移
+ * ユーザ削除をしユーザ削除完了画面に遷移するサーブレット
  * @author matsuzaki
  *
  */
@@ -20,6 +20,7 @@ import db.UserDao;
 public class UserDelete extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userId = request.getParameter("userId");
+		//ユーザ削除するメソッドを呼び出す
 		UserDao.deleteUser(userId);
 
 		HttpSession session = request.getSession();

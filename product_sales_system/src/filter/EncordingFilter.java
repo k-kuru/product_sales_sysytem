@@ -13,15 +13,13 @@ import javax.servlet.annotation.WebFilter;
 /**
  * Servlet Filter implementation class EncordingFilter
  */
-@WebFilter(urlPatterns = {"/*"})
+@WebFilter("/*")
 public class EncordingFilter implements Filter {
 
 	private static final String encoding = "UTF-8";
 
 	@Override
 	public void destroy() {
-		// TODO 自動生成されたメソッド・スタブ
-
 	}
 
 	@Override
@@ -29,13 +27,10 @@ public class EncordingFilter implements Filter {
 			throws IOException, ServletException {
 		// 文字コード設定
 		request.setCharacterEncoding(encoding);
-		response.setContentType("text/html charset=" + encoding);
 		chain.doFilter(request, response);
 	}
 
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		// TODO 自動生成されたメソッド・スタブ
-
 	}
 }

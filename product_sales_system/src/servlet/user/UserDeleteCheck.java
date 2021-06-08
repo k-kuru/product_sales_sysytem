@@ -12,13 +12,14 @@ import bean.User;
 import db.UserDao;
 
 /**
- * ユーザIDから詳細情報を検索しユーザ削除確認画面に遷移
+ * ユーザIDから詳細情報を検索しユーザ削除確認画面に遷移するサーブレット
  * @author matsuzaki
  */
 @WebServlet("/UserDeleteCheck")
 public class UserDeleteCheck extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userId = request.getParameter("userId");
+		//ユーザ情報を返すメソッドを呼び出す
 		User user = UserDao.showUserDetail(userId);
 
 		request.setAttribute("user", user);
