@@ -5,10 +5,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="<%=request.getContextPath()%>/css/style.css"
-	rel="stylesheet" />
-<link href="<%=request.getContextPath()%>/css/layout.css"
-	rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/style.css" rel="stylesheet" />
+<link href="<%=request.getContextPath()%>/css/layout.css" rel="stylesheet" />
 <title>商品販売システム</title>
 </head>
 <body>
@@ -26,16 +24,16 @@
 		</div>
 
 		<div class="check">
-			ユーザID：${user.userId}<br>
+			ユーザID：${user.userId}
 		</div>
 		<div class="check">
-			パスワード：※非表示<br>
+			パスワード：※非表示
 		</div>
 		<div class="check">
-			名前：${user.userName}<br>
+			名前：${user.userName}
 		</div>
 		<div class="check">
-			生年月日：${user.birthDay}<br>
+			生年月日：${user.birthDay}
 		</div>
 		<div class="check">
 			性別：
@@ -44,10 +42,10 @@
 			<br>
 		</div>
 		<div class="check">
-			住所：${user.address}<br>
+			住所：${user.address}
 		</div>
 		<div class="check">
-			電話番号：${user.tel}<br>
+			電話番号：${user.tel}
 		</div>
 		<div class="check">
 			<c:if test="${loginuser.authority == 1}">
