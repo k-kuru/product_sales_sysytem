@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DB.UserDao;
 import bean.User;
+import db.UserDao;
 
 /**
  * Servlet implementation class Userlist
  */
 @WebServlet("/Userlist")
-public class Userlist extends HttpServlet {
+public class UserList extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<User> userlist = UserDao.findAllUser();
 		request.setAttribute("userList",userlist);

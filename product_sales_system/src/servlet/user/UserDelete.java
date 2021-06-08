@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import DB.UserDao;
+import db.UserDao;
 
 /**
  * ユーザ削除をしユーザ削除完了画面に遷移

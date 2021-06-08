@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DB.ProductDao;
 import bean.Product;
+import db.ProductDao;
 
 /**
  * 商品を特定しその情報を持ち商品リストへ遷移

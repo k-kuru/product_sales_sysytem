@@ -99,7 +99,7 @@
 		</div>
 		<!-- 商品がない場合 -->
 		<c:if test="${productList.size()==0}">
-			<div>商品が存在しません</div>
+			<div class="empty">商品が存在しません</div>
 		</c:if>
 </body>
 </html>

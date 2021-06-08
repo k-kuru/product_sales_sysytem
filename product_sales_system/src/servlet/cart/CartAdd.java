@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import DB.ProductDao;
 import bean.Cart;
 import bean.Product;
+import db.ProductDao;
 
 /**
  * Servlet implementation class CartAdd

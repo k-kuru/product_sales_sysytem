@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DB.UserDao;
 import bean.User;
+import db.UserDao;
 
 /**
  * ユーザIDから詳細情報を検索しユーザ削除確認画面に遷移
