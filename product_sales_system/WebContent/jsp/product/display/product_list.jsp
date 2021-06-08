@@ -54,37 +54,47 @@
 		<!--		ページング処理		-->
 		<div class="page_button">
 			<c:if test="${page>=3 }">
-				<form action="<%=request.getContextPath()%>/ProductSearch">
-					<input type="hidden" name="page_num" value="${page-2 }"> <input
-						type="submit" value="${page-2 }" class="link" />
-				</form>
+				<div class="page_link">
+					<form action="<%=request.getContextPath()%>/ProductSearch">
+						<input type="hidden" name="page_num" value="${page-2 }"> <input
+							type="submit" value="${page-2 }" class="link" />
+					</form>
+				</div>
 			</c:if>
 
 			<c:if test="${page>=2 }">
-				<form action="<%=request.getContextPath()%>/ProductSearch">
-					<input type="hidden" name="page_num" value="${page-1 }"> <input
-						type="submit" value="${page-1 }" class="link" />
-				</form>
+				<div class="page_link">
+					<form action="<%=request.getContextPath()%>/ProductSearch">
+						<input type="hidden" name="page_num" value="${page-1 }"> <input
+							type="submit" value="${page-1 }" class="link" />
+					</form>
+				</div>
 			</c:if>
 
 			<c:if test="${productList.size()>10}">
-				<form action="">
-					<button type="submit" value="${page }" disabled="disabled"
-						class="link"><%=request.getAttribute("page")%></button>
-				</form>
+				<div class="page_link">
+					<form action="">
+						<button type="submit" value="${page }" disabled="disabled"
+							class="link"><%=request.getAttribute("page")%></button>
+					</form>
+				</div>
 			</c:if>
 
 			<c:if test="${(page*15) < productList.size()}">
-				<form action="<%=request.getContextPath()%>/ProductSearch">
-					<input type="hidden" name="page_num" value="${page+1 }"> <input
-						type="submit" value="${page+1 }" class="link" />
-				</form>
+				<div class="page_link">
+					<form action="<%=request.getContextPath()%>/ProductSearch">
+						<input type="hidden" name="page_num" value="${page+1 }"> <input
+							type="submit" value="${page+1 }" class="link" />
+					</form>
+				</div>
 			</c:if>
 			<c:if test="${((page+1)*15) < productList.size()}">
-				<form action="<%=request.getContextPath()%>/ProductSearch">
-					<input type="hidden" name="page_num" value="${page+2 }"> <input
-						type="submit" value="${page+2 }" class="link" />
-				</form>
+				<div class="page_link">
+					<form action="<%=request.getContextPath()%>/ProductSearch">
+						<input type="hidden" name="page_num" value="${page+2 }"> <input
+							type="submit" value="${page+2 }" class="link" />
+					</form>
+				</div>
 			</c:if>
 		</div>
 		<!-- 商品がない場合 -->
