@@ -11,12 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import bean.Product;
 
 /**
- * 商品情報を確認画面へ送る
+ * 商品情報を確認画面へ送るサーブレット
  * @author kuru
  */
 @WebServlet("/ProductDeleteCheck")
 public class ProductDeleteCheck extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Getで受け取った場合Postへ処理を送る

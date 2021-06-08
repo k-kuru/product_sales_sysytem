@@ -15,12 +15,11 @@ import util.Constants;
 import util.Validator;
 
 /**
- * 商品登録入力画面で入力した値を確認画面へ送る
+ * 商品登録入力画面で入力した値を確認画面へ送るサーブレット
  * @author kuru
  */
 @WebServlet("/ProductRegistCheck")
 public class ProductRegistCheck extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Getで受け取った場合Postへ処理を送る
@@ -36,7 +35,6 @@ public class ProductRegistCheck extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		request.setCharacterEncoding("UTF-8");
 		String productId = request.getParameter("productId");
 		String productName = request.getParameter("productName");
 		String productExplain = request.getParameter("productExplain");
@@ -51,16 +49,13 @@ public class ProductRegistCheck extends HttpServlet {
 		product.setPrice(price);
 		product.setStock(stock);
 
-		/**
-		 * 入力チェックにエラーがなければ確認画面へ
-		 * エラーがあればエラーメッセージをもって入力画面へ遷移
-		 */
+		//入力チェック
 		List<String> errorMessageList = Validator.makeProductInputErrorMessageList(product);
 		// 一意制約チェック
 		if (!(ProductDao.showProductDetail(product.getProductId()) == null)) {
 			errorMessageList.add(Constants.PRODUCT_ID_REGISTERED);
 		}
-
+		//エラーメッセージがあればエラーメッセージを持って入力画面へ遷移
 		if (errorMessageList.size() != 0) {
 			request.setAttribute("product", product);
 			request.setAttribute("errorMessageList", errorMessageList);

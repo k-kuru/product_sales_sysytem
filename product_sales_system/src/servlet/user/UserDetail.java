@@ -13,36 +13,35 @@ import bean.User;
 import db.UserDao;
 
 /**
- * ユーザIDでユーザを特定し情報を持ってユーザ詳細画面へ遷移
- * Servlet implementation class UserDetail
+ * ユーザIDからユーザ情報を検索するサーブレット
  * @author motegi
  */
 @WebServlet("/UserDetail")
 public class UserDetail extends HttpServlet {
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * ユーザIDから取得したユーザ情報を持ってユーザ詳細画面へ遷移
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String userid;
+		String userId;
+		//ユーザIDの指定がなければログインユーザのIDを取得
 		if(request.getParameter("userId") == null) {
 			HttpSession session = request.getSession();
-			userid=((User)session.getAttribute("loginuser")).getUserId();
+			userId=((User)session.getAttribute("loginuser")).getUserId();
 		}else {
-			userid = request.getParameter("userId");
+			userId = request.getParameter("userId");
 		}
-
-		User user = UserDao.showUserDetail(userid);
+		//ユーザIDからユーザ情報を検索
+		User user = UserDao.showUserDetail(userId);
 		request.setAttribute("user", user);
 		request.getRequestDispatcher("/jsp/user/display/user_detail.jsp").forward(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * 処理をGetに送る
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		doGet(request, response);
 	}
 
