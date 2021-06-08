@@ -17,7 +17,7 @@ import db.UserDao;
 import util.Constants;
 import util.Validator;
 /**
- * ログイン
+ * ログインのサーブレット
  * @author kanno
  */
 @WebServlet("/Login")
@@ -30,18 +30,19 @@ public class Login extends HttpServlet {
 
 		/**ログインチェック*/
 		List<String> errorMessageList = Validator.makeLoginErrorMessageList(id, password);
-		/**入力値が不正だった場合*/
+		//入力値が不正だった場合
 		if (!errorMessageList.isEmpty()) {
-			/**ログイン画面へ遷移*/
+			//ログイン画面へ遷移
 			request.setAttribute("errorMessage", errorMessageList);
 			request.getRequestDispatcher("/jsp/login.jsp").forward(request, response);
 
 		} else {
-			/**入力されたID、パスワードでユーザー情報を検索*/
+			//入力されたID、パスワードでユーザー情報を検索
 			List<User>user = UserDao.findAllUser();
 			request.setAttribute("userList", user);
 			boolean logined = false;
 			for (int i =0; i < user.size(); i++) {
+				//ID、パスワードを取得する
 				if (user.get(i).getUserId().equals(id) && user.get(i).getPass().equals(password)){
 					HttpSession session = request.getSession();
 					session.setAttribute("loginuser", user.get(i));
@@ -53,10 +54,10 @@ public class Login extends HttpServlet {
 			}
 			/**該当するユーザーが見つかった時*/
 			if (logined) {
-				/**商品一覧画面へ遷移*/
+				//商品一覧画面へ遷移
 				request.getRequestDispatcher("/ProductSearch").forward(request, response);
 			} else {
-				/**ID、またはパスワードが間違っていた場合*/
+				//ID、またはパスワードが間違っていた場合
 				errorMessageList.add(Constants.USER_ID_OR_PASSWORD_MISMATCH);
 				request.setAttribute("errorMessage", errorMessageList);
 				request.getRequestDispatcher("jsp/login.jsp").forward(request, response);
