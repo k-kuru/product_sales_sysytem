@@ -19,9 +19,7 @@ import bean.Cart;
  */
 @WebServlet("/CartDelete")
 public class CartDelete extends HttpServlet {
-	/**
-	 * カートの中身を消したときの処理を行う
-	 */
+	/** カートの中身を消したときの処理を行う */
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

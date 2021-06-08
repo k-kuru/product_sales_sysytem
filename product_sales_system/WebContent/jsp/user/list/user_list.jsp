@@ -50,7 +50,7 @@
 				<div class="page_button">
 					<c:if test="${page>=3 }">
 						<div class="page_link">
-							<form action="<%=request.getContextPath()%>/Userlist">
+							<form action="<%=request.getContextPath()%>/UserList">
 								<input type="hidden" name="page_num" value="${page-2 }">
 								<input type="submit" value="${page-2 }" class="link" />
 							</form>
@@ -59,7 +59,7 @@
 
 					<c:if test="${page>=2 }">
 						<div class="page_link">
-							<form action="<%=request.getContextPath()%>/Userlist">
+							<form action="<%=request.getContextPath()%>/UserList">
 								<input type="hidden" name="page_num" value="${page-1 }">
 								<input type="submit" value="${page-1 }" class="link" />
 							</form>
@@ -77,7 +77,7 @@
 
 					<c:if test="${(page*15) < userList.size()}">
 						<div class="page_link">
-							<form action="<%=request.getContextPath()%>/Userlist">
+							<form action="<%=request.getContextPath()%>/UserList">
 								<input type="hidden" name="page_num" value="${page+1 }">
 								<input type="submit" value="${page+1 }" class="link" />
 							</form>
@@ -86,7 +86,7 @@
 
 					<c:if test="${((page+1)*15) < userList.size()}">
 						<div class="page_link">
-							<form action="<%=request.getContextPath()%>/Userlist">
+							<form action="<%=request.getContextPath()%>/UserList">
 								<input type="hidden" name="page_num" value="${page+2 }">
 								<input type="submit" value="${page+2 }" class="link" />
 							</form>

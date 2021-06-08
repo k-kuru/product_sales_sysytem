@@ -24,11 +24,11 @@ import util.Validator;
 public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		/**ログイン画面からIDとパスワードを取得*/
+		//ログイン画面からIDとパスワードを取得
 		String id = request.getParameter("userId");
 		String password = request.getParameter("pass");
 
-		/**ログインチェック*/
+		//ログインチェック
 		List<String> errorMessageList = Validator.makeLoginErrorMessageList(id, password);
 		//入力値が不正だった場合
 		if (!errorMessageList.isEmpty()) {
@@ -52,7 +52,7 @@ public class Login extends HttpServlet {
 					break;
 				}
 			}
-			/**該当するユーザーが見つかった時*/
+			//該当するユーザーが見つかった時
 			if (logined) {
 				//商品一覧画面へ遷移
 				request.getRequestDispatcher("/ProductSearch").forward(request, response);
