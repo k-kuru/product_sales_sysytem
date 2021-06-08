@@ -11,7 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import bean.Product;
 import db.ProductDao;
 
-
+/**
+ * 商品情報を更新して完了画面に遷移
+ * @author kuru
+ */
 @WebServlet("/ProductUpdate")
 public class ProductUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
