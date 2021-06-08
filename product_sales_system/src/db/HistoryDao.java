@@ -14,13 +14,18 @@ import bean.Cart;
 import bean.Product;
 import bean.User;
 
+/**
+ * buy_historyテーブルに関するDAO
+ * @author matsuzaki
+ */
 public class HistoryDao {
 
 	public static SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 
 	/**
 	 * buy_historyテーブルの全データを取得
-	 * @return
+	 * @param userId ユーザID
+	 * @return historyList 購入履歴
 	 */
 	public static List<BuyHistory> findAllHistory(String userId) {
 		Connection con = null;
@@ -39,10 +44,13 @@ public class HistoryDao {
 				BuyHistory buyHistory = new BuyHistory();
 				buyHistory.setHistoryId(rs.getInt("history_id"));
 				buyHistory.setQuantity(rs.getInt("quantity"));
+
 				Date buyDate = rs.getDate("buy_date");
 				buyHistory.setBuyDate(sdf.format(buyDate));
+
 				User user = new User();
 				user.setUserId(rs.getString("user_id"));
+
 				Product product = new Product();
 				product.setProductId(rs.getString("product_id"));
 				product.setProductName(rs.getString("product_name"));
@@ -61,8 +69,11 @@ public class HistoryDao {
 		}
 		return historyList;
 	}
+
 	/**
-	 *buy_historyに購入履歴を登録
+	 * buy_historyに購入履歴を登録
+	 * @param cart カートの中身
+	 * @param user ユーザ情報
 	 */
 	public static void registHistory(Cart cart, User user) {
 		Connection con = null;

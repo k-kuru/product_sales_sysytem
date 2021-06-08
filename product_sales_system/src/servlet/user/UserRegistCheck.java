@@ -17,14 +17,13 @@ import util.Validator;
 
 
 /**
- * ユーザ情報を持ってユーザ登録確認画面に遷移
+ * ユーザ情報を持ってユーザ登録確認画面に遷移するサーブレット
  * @author matsuzaki
  *
  */
 @WebServlet("/UserRegistCheck")
 public class UserRegistCheck extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
 
 		String userId = request.getParameter("userId");
 		String userName = request.getParameter("userName");
@@ -50,6 +49,7 @@ public class UserRegistCheck extends HttpServlet {
 			errorMessageList.add(Constants.USER_ID_REGISTERED);
 		}
 
+		//エラーメッセージがなければ確認画面に遷移
 		if(errorMessageList.size() == 0) {
 			request.setAttribute("user", user);
 			request.getRequestDispatcher("/jsp/user/regist/check.jsp").forward(request, response);

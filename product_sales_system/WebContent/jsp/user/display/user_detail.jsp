@@ -42,7 +42,7 @@
 							type="submit" value="退会" />
 					</form>
 				</c:when>
-				<!-- 管理者 削除ボタン -->
+
 				<c:when test="${loginuser.authority == 1}">
 					<form action="<%=request.getContextPath()%>/UserDeleteCheck"
 						method="post">

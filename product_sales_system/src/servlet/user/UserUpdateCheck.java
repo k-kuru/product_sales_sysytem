@@ -20,7 +20,6 @@ import util.Validator;
 @WebServlet("/UserUpdateCheck")
 public class UserUpdateCheck extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
 
 		String userId = request.getParameter("userId");
 		String userName = request.getParameter("userName");
@@ -43,6 +42,7 @@ public class UserUpdateCheck extends HttpServlet {
 
 		// 入力チェック
 		List<String> errorMessageList = Validator.makeUserInputErrorMessageList(user);
+		//エラーメッセージがなければ確認画面に遷移
 		if(errorMessageList.size() == 0) {
 			request.setAttribute("user", user);
 			request.getRequestDispatcher("/jsp/user/update/check.jsp").forward(request, response);
