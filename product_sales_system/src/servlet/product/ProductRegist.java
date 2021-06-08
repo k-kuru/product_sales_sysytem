@@ -11,9 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import DB.ProductDao;
 import bean.Product;
 
-/**
- * Servlet implementation class ProductRegistCheck
- */
 @WebServlet("/ProductRegist")
 public class ProductRegist extends HttpServlet {
 	private static final long serialVersionUID = 1L;
