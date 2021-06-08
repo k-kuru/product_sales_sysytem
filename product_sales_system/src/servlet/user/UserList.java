@@ -16,7 +16,7 @@ import db.UserDao;
  * Servlet implementation class Userlist
  */
 @WebServlet("/Userlist")
-public class Userlist extends HttpServlet {
+public class UserList extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<User> userlist = UserDao.findAllUser();
 		request.setAttribute("userList",userlist);
