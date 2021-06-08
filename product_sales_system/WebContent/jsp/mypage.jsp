@@ -30,7 +30,7 @@
 			</c:when>
 			<c:otherwise>
 				<a href="<%=request.getContextPath()%>/UserList" class="mypage_link">ユーザー一覧</a>
-				<div class="mypage_explain">購入履歴を一覧表示します。</div>
+				<div class="mypage_explain">ユーザを一覧表示します。</div>
 				<a href="<%=request.getContextPath()%>/UserDetail"
 					class="mypage_link">アカウント情報</a>
 				<div class="mypage_explain">アカウント情報を表示、編集できます。</div>
