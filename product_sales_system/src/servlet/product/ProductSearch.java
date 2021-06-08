@@ -18,9 +18,7 @@ import db.ProductDao;
  */
 @WebServlet("/ProductSearch")
 public class ProductSearch extends HttpServlet {
-	/**
-	 * 商品情報を全件検索する
-	 */
+	/** 商品情報を全件検索する */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//商品情報を全件検索
 		List<Product> productlist = ProductDao.findAllProduct();
@@ -34,9 +32,7 @@ public class ProductSearch extends HttpServlet {
 
 		request.getRequestDispatcher("/jsp/product/display/product_list.jsp").forward(request,response);
 	}
-	/**
-	 * 処理をGetに送る
-	 */
+	/** 処理をGetに送る */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

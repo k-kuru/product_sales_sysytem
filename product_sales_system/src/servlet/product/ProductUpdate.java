@@ -17,17 +17,13 @@ import db.ProductDao;
  */
 @WebServlet("/ProductUpdate")
 public class ProductUpdate extends HttpServlet {
-	/**
-	 * Getで受け取った場合Postへ処理を送る
-	 */
+	/**Getで受け取った場合Postへ処理を送る*/
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);
 	}
 
-	/**
-	 * 商品を更新
-	 */
+	/** 商品を更新 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

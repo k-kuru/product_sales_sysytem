@@ -19,9 +19,7 @@ import db.UserDao;
 @WebServlet("/UserDetail")
 public class UserDetail extends HttpServlet {
 
-	/**
-	 * ユーザIDから取得したユーザ情報を持ってユーザ詳細画面へ遷移
-	 */
+	/** ユーザIDから取得したユーザ情報を持ってユーザ詳細画面へ遷移 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userId;
 		//ユーザIDの指定がなければログインユーザのIDを取得
@@ -37,9 +35,7 @@ public class UserDetail extends HttpServlet {
 		request.getRequestDispatcher("/jsp/user/display/user_detail.jsp").forward(request, response);
 	}
 
-	/**
-	 * 処理をGetに送る
-	 */
+	/** 処理をGetに送る */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		doGet(request, response);

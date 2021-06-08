@@ -17,9 +17,7 @@ import db.ProductDao;
  */
 @WebServlet("/ProductDetail")
 public class ProductDetail extends HttpServlet {
-	/**
-	 *商品IDから商品の詳細情報を検索する
-	 */
+	/**商品IDから商品の詳細情報を検索する */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -30,9 +28,7 @@ public class ProductDetail extends HttpServlet {
 		request.getRequestDispatcher("/jsp/product/display/product_detail.jsp").forward(request, response);
 	}
 
-	/**
-	 * 処理をGetに送る
-	 */
+	/**処理をGetに送る */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}

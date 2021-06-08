@@ -19,16 +19,12 @@ import util.Validator;
 @WebServlet("/ProductUpdateCheck")
 public class ProductUpdateCheck extends HttpServlet {
 
-	/**
-	 * Getで受け取った場合Postへ処理を送る
-	 */
+	/** Getで受け取った場合Postへ処理を送る */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
 	}
 
-	/**
-	 * 入力された情報を持って商品更新確認画面へ遷移
-	 */
+	/** 入力された情報を持って商品更新確認画面へ遷移 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -51,6 +47,7 @@ public class ProductUpdateCheck extends HttpServlet {
 		// 一意制約チェック
 		if (errorMessageList.size() != 0) {
 			request.setAttribute("errorMessageList", errorMessageList);
+			request.setAttribute("product", product);
 			request.getRequestDispatcher("/jsp/product/update/input.jsp").forward(request, response);
 		}else {
 		request.setAttribute("product", product);
