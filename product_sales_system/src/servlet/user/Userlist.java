@@ -20,11 +20,21 @@ public class Userlist extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<User> userlist = UserDao.findAllUser();
 		request.setAttribute("userList",userlist);
+		if(request.getParameter("page_num")==null) {
+			request.setAttribute("page", 1);
+		}else {
+			request.setAttribute("page", request.getParameter("page_num"));
+		}
 		request.getRequestDispatcher("/jsp/user/list/user_list.jsp").forward(request,response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<User> userlist = UserDao.findAllUser();
 		request.setAttribute("userList",userlist);
+		if(request.getParameter("page_num")==null) {
+			request.setAttribute("page", 1);
+		}else {
+			request.setAttribute("page", request.getParameter("page_num"));
+		}
 		request.getRequestDispatcher("/jsp/user/list/user_list.jsp").forward(request,response);
 	}
 

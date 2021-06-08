@@ -177,4 +177,47 @@ public class ProductDao {
 			DBManager.close(ps, con);
 		}
 	}
+
+	/**
+	 * 商品の在庫取得
+	 */
+	public static int getStock(String product_id) {
+		Connection con = null;
+		PreparedStatement ps = null;
+		int stock = 0;
+		try {
+			con = DBManager.getConnection();
+			ps=con.prepareStatement("SELECT stock FROM product WHERE product_id = ?");
+			ps.setString(1, product_id);
+			ResultSet rs = ps.executeQuery();
+			rs.next();
+			stock=rs.getInt("stock");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(ps,con);
+		}
+		return stock;
+	}
+
+	/**
+	 * 購入数にあわせ商品の在庫を減らす
+	 */
+	public static void reduceStock(String product_id,int quantity) {
+		Connection con = null;
+		PreparedStatement ps =null;
+		try {
+			con = DBManager.getConnection();
+			int stock=ProductDao.getStock(product_id)-quantity;
+			ps = con.prepareStatement("UPDATE product SET stock=? WHERE product_id=?");
+			ps.setString(1, String.valueOf(stock));
+			ps.setString(2, product_id);
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(ps, con);
+		}
+
+	}
 }

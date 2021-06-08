@@ -7,11 +7,13 @@
 <title>商品名検索</title>
 </head>
 <body>
-	<h2 class="page_title">商品名検索</h2>
+	<div>
+	<h3>商品名検索</h3>
 	<!-- 商品名検索欄 -->
 	<form action="<%=request.getContextPath()%>/ProductNameSearch" method="post">
 		<input type="text" name="productName">
 		<input type="submit"value="検索">
 	</form>
+	</div>
 </body>
 </html>

@@ -33,12 +33,14 @@
 						<tr>
 							<td>
 								<a href="<c:url value="/UserDetail"><c:param name="userId" value="${userList.userId}" /> </c:url>">${userList.userId}</a>
-								</form>
 							</td>
-							<td><a href="<c:url value="/UserDetail"><c:param name="userId" value="${userList.userId}" /> </c:url>">${userList.userName}</a>
+							<td>
+								<a href="<c:url value="/UserDetail"><c:param name="userId" value="${userList.userId}" /> </c:url>">${userList.userName}</a>
 							</td>
-							<td><c:if test="${userList.authority == 0 }">一般</c:if> <c:if
-									test="${userList.authority == 1 }">管理者</c:if></td>
+							<td>
+								<c:if test="${userList.authority == 0 }">一般</c:if>
+								<c:if test="${userList.authority == 1 }">管理者</c:if>
+							</td>
 						</tr>
 
 					</c:forEach>
@@ -48,7 +50,7 @@
 				<div class="page_button">
 					<c:if test="${page>=3 }">
 						<div class="page_link">
-							<form action="<%=request.getContextPath()%>/UserPaging">
+							<form action="<%=request.getContextPath()%>/Userlist">
 								<input type="hidden" name="page_num" value="${page-2 }">
 								<input type="submit" value="${page-2 }" class="link" />
 							</form>
@@ -57,14 +59,14 @@
 
 					<c:if test="${page>=2 }">
 						<div class="page_link">
-							<form action="<%=request.getContextPath()%>/UserPaging">
+							<form action="<%=request.getContextPath()%>/Userlist">
 								<input type="hidden" name="page_num" value="${page-1 }">
 								<input type="submit" value="${page-1 }" class="link" />
 							</form>
 						</div>
 					</c:if>
 
-					<c:if test="${cartList.size()>15}">
+					<c:if test="${userList.size()>15}">
 						<div class="page_link">
 							<form action="">
 								<button type="submit" value="${page }" disabled="disabled"
@@ -73,24 +75,25 @@
 						</div>
 					</c:if>
 
-					<c:if test="${(page*15) < cartList.size()}">
+					<c:if test="${(page*15) < userList.size()}">
 						<div class="page_link">
-							<form action="<%=request.getContextPath()%>/UserPaging">
+							<form action="<%=request.getContextPath()%>/Userlist">
 								<input type="hidden" name="page_num" value="${page+1 }">
 								<input type="submit" value="${page+1 }" class="link" />
 							</form>
 						</div>
 					</c:if>
 
-					<c:if test="${((page+1)*15) < cartList.size()}">
+					<c:if test="${((page+1)*15) < userList.size()}">
 						<div class="page_link">
-							<form action="<%=request.getContextPath()%>/UserPaging">
+							<form action="<%=request.getContextPath()%>/Userlist">
 								<input type="hidden" name="page_num" value="${page+2 }">
 								<input type="submit" value="${page+2 }" class="link" />
 							</form>
 						</div>
 					</c:if>
 				</div>
+
 				<div class="menu_button">
 					<div class="user_list_label"></div>
 					<div class="user_list_input">
