@@ -10,7 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import db.ProductDao;
 
-
+/**
+ * 商品情報を論理削除して完了画面に遷移
+ * @author kuru
+ */
 @WebServlet("/ProductDelete")
 public class ProductDelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
