@@ -8,12 +8,11 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 
 /**
  * Servlet Filter implementation class EncordingFilter
  */
-@WebFilter(urlPatterns = {"/*"})
+//@WebFilter("/*")
 public class EncordingFilter implements Filter {
 
 	private static final String encoding = "UTF-8";

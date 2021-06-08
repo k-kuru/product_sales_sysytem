@@ -8,7 +8,6 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -17,7 +16,7 @@ import bean.User;
 /**
  * Servlet Filter implementation class AccountCheckFilter
  */
-@WebFilter(urlPatterns={})
+//@WebFilter(urlPatterns={"/jsp/*"})
 public class AccountCheckFilter implements Filter {
 
 	/**
@@ -49,7 +48,7 @@ public class AccountCheckFilter implements Filter {
 			// セッション情報を削除
 			session.invalidate();
 			// ユーザー情報が取得できなかったらログイン画面へ遷移
-			request.getRequestDispatcher("jsp/login.jsp").forward(request, response);
+			request.getRequestDispatcher("/jsp/login.jsp").forward(request, response);
 		}
 	}
 
