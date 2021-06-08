@@ -14,8 +14,6 @@ import db.UserDao;
 import util.Constants;
 import util.Validator;
 
-
-
 /**
  * ユーザ情報を持ってユーザ登録確認画面に遷移するサーブレット
  * @author matsuzaki
