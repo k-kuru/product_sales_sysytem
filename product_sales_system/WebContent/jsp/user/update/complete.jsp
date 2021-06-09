@@ -18,7 +18,7 @@
 		</div>
 		<c:choose>
 			<c:when test="${loginuser.authority == 1}">
-				<form action="<%=request.getContextPath()%>/Userlist" method="post">
+				<form action="<%=request.getContextPath()%>/UserList" method="post">
 					<div class="compbutton">
 						<input type="submit" value="戻る" />
 					</div>

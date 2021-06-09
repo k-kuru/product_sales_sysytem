@@ -31,7 +31,10 @@
 					<c:forEach var="cart" items="${cartList }" begin="${(page-1)*15 }"
 						end="${(page-1)*15+14 }" varStatus="status">
 						<tr>
-							<td>${cart.product.getProductName() }</td>
+							<td><a
+							href="<c:url value="/ProductDetail">
+						<c:param name="productId" value="${cart.product.productId}" />
+						</c:url>">${cart.product.productName}</a></td>
 							<td>${cart.getQuantity() }</td>
 							<td>${cart.product.getPrice() }</td>
 							<td>

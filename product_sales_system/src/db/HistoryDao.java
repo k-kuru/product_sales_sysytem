@@ -36,7 +36,7 @@ public class HistoryDao {
 			con = DBManager.getConnection();
 			ps = con.prepareStatement("SELECT history_id, user_id, h.product_id, quantity, "
 					+ "buy_date, product_name, price from buy_history h inner join product p "
-					+ "On h.product_id = p.product_id WHERE user_id = ? Order By history_id asc");
+					+ "On h.product_id = p.product_id WHERE user_id = ? Order By history_id desc");
 			ps.setString(1, userId);
 			ResultSet rs = ps.executeQuery();
 

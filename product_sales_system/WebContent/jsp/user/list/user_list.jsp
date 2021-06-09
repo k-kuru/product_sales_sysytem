@@ -28,7 +28,7 @@
 						<th class="authority">権限</th>
 					</tr>
 
-					<c:forEach var="userList" items="${userList}">
+					<c:forEach var="userList" items="${userList}" begin="${(page-1)*15 }" end="${(page-1)*15+14}">
 						<input type="hidden" name="userId" value="${userList.userId }">
 						<tr>
 							<td>

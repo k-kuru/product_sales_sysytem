@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class UserDao {
 
 		try {
 			con = DBManager.getConnection();
-			ps = con.prepareStatement("SELECT * FROM user_table WHERE delete_flag = 0 ORDER BY user_id ASC");
+			ps = con.prepareStatement("SELECT * FROM user_table WHERE delete_flag = 0");
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
@@ -54,6 +55,7 @@ public class UserDao {
 		} finally {
 			DBManager.close(ps, con);
 		}
+		Collections.reverse(userList);
 		return userList;
 	}
 
