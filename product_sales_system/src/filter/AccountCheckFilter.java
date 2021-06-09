@@ -8,6 +8,7 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -16,7 +17,15 @@ import bean.User;
 /**
  * 不正ログインチェックフィルター
  */
-//@WebFilter(urlPatterns={"/jsp/*"})
+@WebFilter(urlPatterns={"/CartList", "/CartAdd", "/CartDelete", "/CartPaging","/BuyCheck",
+		"/BuyComplete", "/BuyCheck","/UserBuyHistory", "/ProductDelete", "/ProductDeleteCheck",
+		"/ProductDetail", "/ProductNameSearch","/ProductRegist", "/ProductRegistCheck",
+		"/ProductSearch", "/ProductUpdate", "/ProductUpdateCheck","/ProductUpdateInput",
+		"/UserDelete", "/UserDeleteCheck", "/UserDetail","/UserList", "/UserPaging",
+		"/UserRegist", "/UserRegistCheck", "/UserUpdate","/UserUpdateCheck", "/UserUpdateInput",
+		"/jsp/buy/*", "/jsp/cart/*", "/jsp/history/*", "/jsp/product/*", "/jsp/user/delete/*",
+		"/jsp/user/display/*", "/jsp/user/list/*", "/jsp/user/update/*", "/jsp/header.jsp",
+		"/jsp/mypage.jsp", })
 public class AccountCheckFilter implements Filter {
 
 	public AccountCheckFilter() {}
