@@ -29,11 +29,20 @@ public class CartDelete extends HttpServlet {
 		List<Cart> cartList = (List<Cart>) session.getAttribute("cartList");
 		//リストから指定されたカート番号のカート情報を取り除く
 		cartList.remove(Integer.parseInt(request.getParameter("cartNum")));
+
+		//合計金額用変数の初期化
+		int sumPrice = 0;
+		//カート内の商品の金額を足していく
+		for (int i = 0; i < cartList.size(); i++) {
+			sumPrice += Integer.parseInt(cartList.get(i).getProduct().getPrice()) * cartList.get(i).getQuantity();
+		}
+
 		//セッションスコープからリストを消去する
 		session.removeAttribute("cartList");
-
 		//セッションスコープにリストを登録する
 		session.setAttribute("cartList", cartList);
+		//リクエストスコープに合計金額とページ番号を格納
+		request.setAttribute("sumPrice", sumPrice);
 		//リクエストスコープにページ番号を登録する
 		request.setAttribute("page", request.getParameter("pageNum"));
 
