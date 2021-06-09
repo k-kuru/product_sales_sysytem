@@ -19,7 +19,7 @@
 		<div class="product_info">商品説明：${product.productExplain}</div>
 		<div class="product_info">値段：￥${product.price}</div>
 		<c:if test="${loginuser.authority == 0}">
-			<div class="product_info">在庫：${product.stock == "0" ? "なし":"あり"}</div>
+			<div class="product_info">在庫：${product.stock <= "0" ? "なし":"あり"}</div>
 			<div class="addbutton">
 			<!-- 在庫がある際購入数を選びカートへ入れる -->
 				<c:if test="${product.stock >=1 }">

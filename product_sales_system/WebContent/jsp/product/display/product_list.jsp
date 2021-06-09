@@ -41,7 +41,7 @@
 							<td>${product.price}</td>
 							<c:choose>
 								<c:when test="${loginuser.authority == 0}">
-									<td>${product.stock == "0" ? "なし":"あり"}</td>
+									<td>${product.stock <= "0" ? "なし":"あり"}</td>
 								</c:when>
 								<c:when test="${loginuser.authority == 1}">
 									<td>${product.stock}</td>
