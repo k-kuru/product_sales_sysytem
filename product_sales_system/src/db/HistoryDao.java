@@ -81,7 +81,7 @@ public class HistoryDao {
 		String product_id=cart.getProduct().getProductId();
 		try {
 			con = DBManager.getConnection();
-			ps = con.prepareStatement("INSERT INTO buy_history VALUES(seq_history.NEXTVAL,?,?,?,?)");
+			ps = con.prepareStatement("INSERT INTO buy_history VALUES(seq_history.NEXTVAL,?,?,?,TO_DATE(?,'yyyy/MM/dd'))");
 			ps.setString(1, user.getUserId());
 			ps.setString(2, product_id);
 			ps.setString(3, String.valueOf(cart.getQuantity()));

@@ -16,7 +16,8 @@ public class DBManager {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection con = DriverManager.getConnection(
-					"jdbc:oracle:thin:@localhost:1521:XE", "product_business_user","systemsss");
+					"jdbc:oracle:thin:@deployhandsonoracleinstance20210609.c2h1m6muiqww.ap-northeast-1.rds.amazonaws.com:1521:oracledb",
+					"oracleadmin","eEuK1KWjY3zqBXvb3JNr");
 			return con;
 		} catch (Exception e) {
 			throw new IllegalStateException(e);

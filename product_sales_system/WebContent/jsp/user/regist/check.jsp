@@ -25,7 +25,7 @@
 			</p>
 		</div>
 		<div class="information">
-			<p>商品情報</p>
+			<p>ユーザ情報</p>
 		</div>
 		<div class="check">
 			ユーザID：${user.userId}
