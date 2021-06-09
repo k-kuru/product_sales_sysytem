@@ -48,7 +48,7 @@
 				</div>
 			</div>
 		</form>
-		<form action="<%=request.getContextPath()%>/jsp/product/regist/input.jsp" method="post">
+		<form action="<%=request.getContextPath()%>/ProductRegistInput" method="post">
 			<div class="button">
 				<div class="label"></div>
 				<div class="input">
