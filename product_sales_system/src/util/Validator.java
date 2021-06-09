@@ -203,17 +203,6 @@ public class Validator {
 			}
 		}
 
-		// ****** 住所のチェック ******
-		// 未入力チェック
-		if (isEmpty(userBean.getAddress())) {
-			errorMessageList.add(Constants.ADDRESS_EMPTY);
-		} else {
-			// 桁数チェック
-			if (overLength(userBean.getAddress(), 60)) {
-				errorMessageList.add(Constants.ADDRESS_LENGTH_OVER);
-			}
-		}
-
 		// ****** 生年月日のチェック ******
 		// 未入力チェック
 		if (isEmpty(userBean.getBirthDay())) {
@@ -222,6 +211,17 @@ public class Validator {
 			// 日付の妥当性チェック
 			if (!isDate(userBean.getBirthDay())) {
 				errorMessageList.add(Constants.BIRTHDAY_MISSMATCH);
+			}
+		}
+
+		// ****** 住所のチェック ******
+		// 未入力チェック
+		if (isEmpty(userBean.getAddress())) {
+			errorMessageList.add(Constants.ADDRESS_EMPTY);
+		} else {
+			// 桁数チェック
+			if (overLength(userBean.getAddress(), 60)) {
+				errorMessageList.add(Constants.ADDRESS_LENGTH_OVER);
 			}
 		}
 
