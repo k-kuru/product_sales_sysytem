@@ -22,7 +22,7 @@ import bean.User;
 		"/ProductDetail", "/ProductNameSearch","/ProductRegist", "/ProductRegistCheck",
 		"/ProductSearch", "/ProductUpdate", "/ProductUpdateCheck","/ProductUpdateInput",
 		"/UserDelete", "/UserDeleteCheck", "/UserDetail","/UserList", "/UserPaging",
-		"/UserRegist", "/UserRegistCheck", "/UserUpdate","/UserUpdateCheck", "/UserUpdateInput",
+		"/UserUpdate","/UserUpdateCheck", "/UserUpdateInput",
 		"/jsp/buy/*", "/jsp/cart/*", "/jsp/history/*", "/jsp/product/*", "/jsp/user/delete/*",
 		"/jsp/user/display/*", "/jsp/user/list/*", "/jsp/user/update/*", "/jsp/header.jsp",
 		"/jsp/mypage.jsp", })
