@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import bean.User;
 import db.UserDao;
@@ -41,6 +42,17 @@ public class UserUpdate extends HttpServlet {
 
 		//ユーザを更新するメソッドを呼び出す
 		UserDao.updateUser(user);
+
+		//session呼び出し
+		HttpSession session = request.getSession();
+
+		//管理者が自分の名前を変更しているか
+		User loginUser = (User) session.getAttribute("loginuser");
+		if (user.getUserId() == loginUser.getUserId()) {
+			//ヘッダーの表示名を変える。
+			loginUser.setUserName(user.getUserName());
+
+		}
 
 		request.getRequestDispatcher("/jsp/user/update/complete.jsp").forward(request, response);
 

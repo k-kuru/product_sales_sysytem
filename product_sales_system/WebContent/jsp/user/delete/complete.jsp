@@ -17,11 +17,21 @@
 	</div>
 		<c:choose>
 			<c:when test="${loginuser.authority == 1}">
-			<form action="<%=request.getContextPath() %>//UserList" method="post">
+			<c:if test="${loginuser.userId != userId}">
+				<form action="<%=request.getContextPath() %>//UserList" method="post">
+					<div class="compbutton">
+						<input type="submit" value="戻る" />
+					</div>
+				</form>
+			</c:if>
+
+			<c:if test="${loginuser.userId == userId}">
+				<form action="<%=request.getContextPath() %>/Logout" >
 				<div class="compbutton">
 					<input type="submit" value="戻る" />
 				</div>
-			</form>
+				</form>
+			</c:if>
 			</c:when>
 
 			<c:otherwise>

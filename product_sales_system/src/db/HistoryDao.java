@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import bean.BuyHistory;
@@ -20,7 +19,7 @@ import bean.User;
  */
 public class HistoryDao {
 
-	public static SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+	public static SimpleDateFormat sdf = new SimpleDateFormat("YYYY/MM/dd");
 
 	/**
 	 * buy_historyテーブルの全データを取得
@@ -35,7 +34,7 @@ public class HistoryDao {
 		try {
 			con = DBManager.getConnection();
 			ps = con.prepareStatement("SELECT history_id, user_id, h.product_id, quantity, "
-					+ "buy_date, product_name, price from buy_history h inner join product p "
+					+ "TO_CHAR(buy_date, 'YYYY/MM/DD') AS buy_date, product_name, price from buy_history h inner join product p "
 					+ "On h.product_id = p.product_id WHERE user_id = ? Order By history_id desc");
 			ps.setString(1, userId);
 			ResultSet rs = ps.executeQuery();
@@ -45,8 +44,8 @@ public class HistoryDao {
 				buyHistory.setHistoryId(rs.getInt("history_id"));
 				buyHistory.setQuantity(rs.getInt("quantity"));
 
-				Date buyDate = rs.getDate("buy_date");
-				buyHistory.setBuyDate(sdf.format(buyDate));
+				// Date buyDate = rs.getDate("buy_date");
+				buyHistory.setBuyDate(rs.getString("buy_date"));
 
 				User user = new User();
 				user.setUserId(rs.getString("user_id"));
@@ -81,13 +80,14 @@ public class HistoryDao {
 		String product_id=cart.getProduct().getProductId();
 		try {
 			con = DBManager.getConnection();
-			ps = con.prepareStatement("INSERT INTO buy_history VALUES(seq_history.NEXTVAL,?,?,?,TO_DATE(?,'yyyy/MM/dd'))");
+			ps = con.prepareStatement("INSERT INTO buy_history "
+					+ "VALUES(seq_history.NEXTVAL,?,?,?,SYSDATE)");
 			ps.setString(1, user.getUserId());
 			ps.setString(2, product_id);
 			ps.setString(3, String.valueOf(cart.getQuantity()));
-			Date d = new Date();
-			java.sql.Date date = new java.sql.Date(d.getTime());
-			ps.setDate(4, date);
+			//Date d = new Date();
+			//java.sql.Date date = new java.sql.Date(d.getTime());
+			//ps.setString(4, date);
 			ps.executeUpdate();
 
 			ProductDao.reduceStock(product_id,cart.getQuantity());

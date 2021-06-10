@@ -53,11 +53,21 @@
 			</c:choose>
 		</div>
 		<!-- 戻るボタン -->
-		<div class="menu_button">
-			<form action="<%=request.getContextPath()%>/jsp/mypage.jsp">
-				<input type="submit" value="戻る" />
-			</form>
-		</div>
+		<c:if test="${loginuser.authority == 0}">
+			<div class="menu_button">
+				<form action="<%=request.getContextPath()%>/jsp/mypage.jsp">
+					<input type="submit" value="戻る" />
+				</form>
+			</div>
+		</c:if>
+
+		<c:if test="${loginuser.authority == 1}">
+			<div class="menu_button">
+				<form action="<%=request.getContextPath()%>/UserList">
+					<input type="submit" value="戻る" />
+				</form>
+			</div>
+		</c:if>
 	</div>
 </body>
 </html>

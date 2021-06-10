@@ -27,6 +27,8 @@ public class UserDelete extends HttpServlet {
 		//セッションスコープに登録されているカート情報も削除
 		session.removeAttribute("cartList");
 
+
+		request.setAttribute("userId", userId);
 		request.getRequestDispatcher("/jsp/user/delete/complete.jsp").forward(request, response);
 	}
 

@@ -77,10 +77,10 @@
 				</div>
 			</div>
 
-			<div class="label"></div>
-			<div class="input">
+
+			<c:if test="${loginuser.authority == 0}">
 				<input type="hidden" name="authority" value="${user.authority}" />
-			</div>
+			</c:if>
 
 			<c:if test="${loginuser.authority == 1}">
 				<div class="form">
@@ -91,12 +91,12 @@
 								checked="checked"
 							</c:if>
 							<c:if test="${user.authority == 0}">
-						checked="checked"
-					</c:if> />一般／
+								checked="checked"
+							</c:if> />一般／
 						<input type="radio" name="authority" value="1"
 							<c:if test="${user.authority == 1}">
-						checked="checked"
-					</c:if> />管理者
+								checked="checked"
+							</c:if> />管理者
 					</div>
 				</div>
 			</c:if>
